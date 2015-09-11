@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;03 13&#x3a;18&#x3a;50.314</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 13&#x3a;07&#x3a;16.687</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;11 14&#x3a;57&#x3a;54.722</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -310,7 +310,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  &#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434; ef_kat_vidt&#xa;, substring&#x28;&#x412;&#x438;&#x434;&#x41d;&#x430;&#x438;&#x43c;,1,100&#x29;  name_vid&#xa;, &#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434; ef_kat_vidt_kat_grpt_kod&#xa;, &#x41f;&#x43e;&#x43b;&#x44c;&#x437;&#x41a;&#x43e;&#x434;&#xa;FROM KAT_VIDT&#xa;order by &#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;</sql>
+    <sql>SELECT&#xa;  &#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434; ef_kat_vidt&#xa;, substring&#x28;&#x412;&#x438;&#x434;&#x41d;&#x430;&#x438;&#x43c;,1,100&#x29;  name_vid&#xa;, &#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434; ef_kat_vidt_kat_grpt_kod&#xa;, &#x41f;&#x43e;&#x43b;&#x44c;&#x437;&#x41a;&#x43e;&#x434;&#xa;FROM KAT_VIDT&#xa;--where &#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434; &#x3d; 43&#xa;order by &#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

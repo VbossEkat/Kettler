@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 16&#x3a;47&#x3a;29.319</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 13&#x3a;19&#x3a;12.640</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;11 15&#x3a;20&#x3a;48.893</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -294,7 +294,11 @@
   <order>
   <hop> <from>&#x413;&#x440;&#x443;&#x43f;&#x43f;&#x44b; &#x442;&#x43e;&#x432;&#x430;&#x440;&#x43e;&#x432; &#x438;&#x437; Product_cat</from><to>Merge Join</to><enabled>Y</enabled> </hop>
   <hop> <from>KAT_TVR</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>product_template__main</to><enabled>Y</enabled> </hop>
+  <hop> <from>product_uom</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 2</from><to>product_template__main</to><enabled>Y</enabled> </hop>
+  <hop> <from>product_template__main</from><to>product_error</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>KAT_TVR</name>
@@ -308,7 +312,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id0&#xa;, kt.&#x422;&#x43e;&#x432;&#x41d;&#x430;&#x438;&#x43c; name0&#xa;, kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; ef_grpt_kat0&#xa;, kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434;&#xa;, kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#xa;, kt.&#x422;&#x43e;&#x432;&#x415;&#x418;&#xa;, kt.&#x422;&#x43e;&#x432;&#x423;&#x43f;&#x430;&#x43a;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x420;&#x421;&#x425; list_price0&#xa;, kt.&#x41d;&#x414;&#x421;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x423;&#x447;&#x435;&#x442;&#xa;, kt.ABC&#xa;, kt.&#x428;&#x442;&#x440;&#x438;&#x445;&#x41a;&#x43e;&#x434;&#xa;, kt.&#x411;&#x424;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x41f;&#x420;&#x425;&#xa;, &#x27;fixed&#x27; mes_type0&#xa;, 1 uom_id0&#xa;, 1 categ_id0&#xa;, CAST&#x28;1 as bit&#x29; sale_ok0&#xa;, CAST&#x28;1 as bit&#x29; active0&#xa;, cast&#x28;&#x28;CASE TV_AR.active when 0 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, &#x27;sellable&#x27; state0&#xa;, 1 uom_po_id0&#xa;, &#x27;product&#x27; type0&#xa;, CASE WHEN ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;&#x3d;0 THEN 796 ELSE ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419; END okei0&#xa;, ts.&#x413;&#x440;&#x43f;1 as list_price01&#xa;FROM KAT_TVR kt&#xa;left outer join TVR_STV ts ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;left outer join &#x28;SELECT &#x5b;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#x5d;, 0 as active&#xa; 				 FROM &#x5b;KAT_GRPT&#x5d;&#xa;  					WHERE &#x413;&#x440;&#x43f;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; TV_AR on  kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#x3d; TV_AR.&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;order by kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f;&#xa;</sql>
+    <sql>SELECT&#xa;  kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id0&#xa;, kt.&#x422;&#x43e;&#x432;&#x41d;&#x430;&#x438;&#x43c; name0&#xa;, kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#xa;, kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434; ef_grpt_kat0&#xa;, kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#xa;, kt.&#x422;&#x43e;&#x432;&#x415;&#x418;&#xa;, kt.&#x422;&#x43e;&#x432;&#x423;&#x43f;&#x430;&#x43a;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x420;&#x421;&#x425; list_price0&#xa;, kt.&#x41d;&#x414;&#x421;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x423;&#x447;&#x435;&#x442;&#xa;, kt.ABC&#xa;, kt.&#x428;&#x442;&#x440;&#x438;&#x445;&#x41a;&#x43e;&#x434;&#xa;, kt.&#x411;&#x424;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x41f;&#x420;&#x425;&#xa;, &#x27;fixed&#x27; mes_type0&#xa;, 1 uom_id0&#xa;, 1 categ_id0&#xa;, CAST&#x28;1 as bit&#x29; sale_ok0&#xa;, CAST&#x28;1 as bit&#x29; active0&#xa;, cast&#x28;&#x28;CASE TV_AR.active when 0 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, &#x27;sellable&#x27; state0&#xa;, 1 uom_po_id0&#xa;, &#x27;product&#x27; type0&#xa;, CASE WHEN isnull&#x28;ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;,0&#x29;&#x3d;0 or ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;&#x3d;100 THEN 796 ELSE ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419; END okei0&#xa;, ts.&#x413;&#x440;&#x43f;1 as list_price01&#xa;FROM KAT_TVR kt&#xa;left outer join TVR_STV ts ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;left outer join &#x28;SELECT &#x5b;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#x5d;, 0 as active&#xa; 				 FROM &#x5b;KAT_GRPT&#x5d;&#xa;  					WHERE &#x413;&#x440;&#x43f;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; TV_AR on  kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#x3d; TV_AR.&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;--where kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d;1069365678&#xa;order by kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -318,6 +322,148 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>158</xloc>
       <yloc>189</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>KAT_TVR</step1>
+<step2>&#x413;&#x440;&#x443;&#x43f;&#x43f;&#x44b; &#x442;&#x43e;&#x432;&#x430;&#x440;&#x43e;&#x432; &#x438;&#x437; Product_cat</step2>
+    <keys_1>
+      <key>ef_grpt_kat0</key>
+    </keys_1>
+    <keys_2>
+      <key>ef_grpt_cat</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>311</xloc>
+      <yloc>187</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort rows</step1>
+<step2>product_uom</step2>
+    <keys_1>
+      <key>okei0</key>
+    </keys_1>
+    <keys_2>
+      <key>okei</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>616</xloc>
+      <yloc>202</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>okei0</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>447</xloc>
+      <yloc>191</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>product_error</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;product_error</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>Y</split>
+      <haspartno>N</haspartno>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>874</xloc>
+      <yloc>106</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -334,7 +480,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <commit>10000</commit>
+    <commit>100000</commit>
     <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema/>
@@ -362,7 +508,7 @@
       </value>
       <value>
         <name>uom_id</name>
-        <rename>uom_id0</rename>
+        <rename>id_uom</rename>
         <update>Y</update>
       </value>
       <value>
@@ -403,15 +549,15 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>447</xloc>
-      <yloc>189</yloc>
+      <xloc>794</xloc>
+      <yloc>227</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
+    <name>product_uom</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -420,19 +566,17 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>KAT_TVR</step1>
-<step2>&#x413;&#x440;&#x443;&#x43f;&#x43f;&#x44b; &#x442;&#x43e;&#x432;&#x430;&#x440;&#x43e;&#x432; &#x438;&#x437; Product_cat</step2>
-    <keys_1>
-      <key>ef_grpt_kat0</key>
-    </keys_1>
-    <keys_2>
-      <key>ef_grpt_cat</key>
-    </keys_2>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id id_uom&#xa;, okei&#xa;FROM product_uom&#xa;order by okei&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>311</xloc>
-      <yloc>187</yloc>
+      <xloc>615</xloc>
+      <yloc>35</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -449,7 +593,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>SELECT id as parent_id_grp&#xa;, ef_kat_vidt_kat_grpt_kod as ef_grpt_cat&#xa;FROM product_category&#xa;where ef_kat_vidt_kat_grpt_kod &#x3c;&#x3e; 0&#xa;order by ef_kat_vidt_kat_grpt_kod&#xa;&#x2f;&#x2a;&#xa;, parent_left&#xa;, parent_right&#xa;, create_uid&#xa;, create_date&#xa;, &#x22;name&#x22;&#xa;, &#x22;sequence&#x22;&#xa;, write_uid&#xa;, parent_id&#xa;, write_date&#xa;, &#x22;type&#x22;&#xa;, removal_strategy_id&#xa;, ef_grpt&#xa;, ef_kat_vidt&#xa;&#x2a;&#x2f;&#xa;</sql>
+    <sql>SELECT id as parent_id_grp&#xa;, ef_kat_vidt as ef_grpt_cat&#xa;FROM product_category&#xa;--where ef_kat_vidt &#x3d; 43&#xa;order by ef_kat_vidt&#xa;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -464,6 +608,18 @@
     </step>
 
   <step_error_handling>
+      <error>
+        <source_step>product_template__main</source_step>
+        <target_step>product_error</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
   </step_error_handling>
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
