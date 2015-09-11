@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 15&#x3a;51&#x3a;17.554</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 12&#x3a;12&#x3a;29.005</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;11 13&#x3a;19&#x3a;24.472</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -321,8 +321,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>589</xloc>
-      <yloc>69</yloc>
+      <xloc>650</xloc>
+      <yloc>73</yloc>
       </entry>
     <entry>
       <name>product_template from product_product__main</name>
@@ -355,8 +355,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>717</xloc>
-      <yloc>4</yloc>
+      <xloc>854</xloc>
+      <yloc>1</yloc>
       </entry>
     <entry>
       <name>product_template from categ_id Update </name>
@@ -389,8 +389,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>756</xloc>
-      <yloc>85</yloc>
+      <xloc>878</xloc>
+      <yloc>121</yloc>
       </entry>
     <entry>
       <name>res_partner_Title from kat_kln to </name>
