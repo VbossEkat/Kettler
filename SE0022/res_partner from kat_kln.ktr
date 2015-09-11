@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;01 16&#x3a;42&#x3a;28.855</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;10 16&#x3a;52&#x3a;09.017</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;11 11&#x3a;19&#x3a;00.288</modified_date>
   </info>
   <notepads>
     <notepad>
@@ -328,8 +328,8 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <commit>1</commit>
-    <update_bypassed>N</update_bypassed>
+    <commit>10000</commit>
+    <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema>public</schema>
       <table>res_partner</table>
@@ -389,6 +389,11 @@
         <rename>&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>country_id</name>
+        <rename>country_id1</rename>
+        <update>Y</update>
+      </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -438,7 +443,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  kk.&#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x422;&#x438;&#x43f;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x424;&#x441;&#xa;, kk.&#x410;&#x440;&#x445;&#x438;&#x432;&#x43d;&#x44b;&#x439;&#xa;, kk.&#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#xa;, kk.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#xa;, kk.&#x41f;&#x43e;&#x43b;&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE &#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer&#xa;FROM KAT_KLN kk&#xa;--LEFT OUTER JOIN CLN_DKL kd ON kd.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; &#x3d; kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;order by &#x41a;&#x43b;&#x43d;&#x424;&#x441;</sql>
+    <sql>SELECT&#xa;  kk.&#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x422;&#x438;&#x43f;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x424;&#x441;&#xa;, kk.&#x410;&#x440;&#x445;&#x438;&#x432;&#x43d;&#x44b;&#x439;&#xa;, kk.&#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#xa;, kk.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#xa;, kk.&#x41f;&#x43e;&#x43b;&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE &#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer&#xa;, 192 as country_id1&#xa;FROM KAT_KLN kk&#xa;--LEFT OUTER JOIN CLN_DKL kd ON kd.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; &#x3d; kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;order by &#x41a;&#x43b;&#x43d;&#x424;&#x441;</sql>
     <limit/>
     <lookup/>
     <execute_each_row>N</execute_each_row>

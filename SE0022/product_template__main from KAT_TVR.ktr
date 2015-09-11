@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 16&#x3a;47&#x3a;29.319</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;06&#x2f;08 17&#x3a;00&#x3a;22.304</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;11 12&#x3a;12&#x3a;32.052</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -147,7 +147,79 @@
     </attributes>
   </connection>
   <connection>
+    <name>OdooSE SAND</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>OdooSE SAND &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x43d;&#x430; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x435; RU</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
     <name>OdooSE0022</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>OdooSE0022 &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x43b;&#x43e;&#x43a;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -234,7 +306,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  &#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; x_old_id0&#xa;, &#x422;&#x43e;&#x432;&#x41d;&#x430;&#x438;&#x43c; name0&#xa;, &#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; x_tovgrp0&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x438;&#x434;&#xa;, &#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#xa;, &#x422;&#x43e;&#x432;&#x415;&#x418;&#xa;, &#x422;&#x43e;&#x432;&#x423;&#x43f;&#x430;&#x43a;&#xa;, &#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x420;&#x421;&#x425; list_price0&#xa;, &#x41d;&#x414;&#x421;&#xa;, &#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x423;&#x447;&#x435;&#x442;&#xa;, ABC&#xa;, &#x428;&#x442;&#x440;&#x438;&#x445;&#x41a;&#x43e;&#x434;&#xa;, &#x411;&#x424;&#xa;, &#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x41f;&#x420;&#x425;&#xa;, &#x27;fixed&#x27; mes_type0&#xa;, 1 uom_id0&#xa;, 1 categ_id0&#xa;, CAST&#x28;1 as bit&#x29; sale_ok0&#xa;, CAST&#x28;1 as bit&#x29; active0&#xa;, cast&#x28;&#x28;CASE TV_AR.active when 0 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, &#x27;sellable&#x27; state0&#xa;, 1 uom_po_id0&#xa;, &#x27;product&#x27; type0&#xa;FROM KAT_TVR&#xa;left outer join &#x28;SELECT &#x5b;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#x5d;, 0 as active&#xa; 				 FROM &#x5b;KAT_GRPT&#x5d;&#xa;  					WHERE &#x413;&#x440;&#x43f;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; TV_AR on  KAT_TVR.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#x3d; TV_AR.&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;</sql>
+    <sql>SELECT&#xa;  kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id&#xa;, kt.&#x422;&#x43e;&#x432;&#x41d;&#x430;&#x438;&#x43c; name0&#xa;, kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; ef_grpt&#xa;, kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434;&#xa;, kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#xa;, kt.&#x422;&#x43e;&#x432;&#x415;&#x418;&#xa;, kt.&#x422;&#x43e;&#x432;&#x423;&#x43f;&#x430;&#x43a;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x420;&#x421;&#x425; list_price0&#xa;, kt.&#x41d;&#x414;&#x421;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x423;&#x447;&#x435;&#x442;&#xa;, kt.ABC&#xa;, kt.&#x428;&#x442;&#x440;&#x438;&#x445;&#x41a;&#x43e;&#x434;&#xa;, kt.&#x411;&#x424;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x41f;&#x420;&#x425;&#xa;, &#x27;fixed&#x27; mes_type0&#xa;, 1 uom_id0&#xa;, 1 categ_id0&#xa;, CAST&#x28;1 as bit&#x29; sale_ok0&#xa;, CAST&#x28;1 as bit&#x29; active0&#xa;, cast&#x28;&#x28;CASE TV_AR.active when 0 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, &#x27;sellable&#x27; state0&#xa;, 1 uom_po_id0&#xa;, &#x27;product&#x27; type0&#xa;, CASE WHEN ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;&#x3d;0 THEN 796 ELSE ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419; END okei&#xa;, ts.&#x413;&#x440;&#x43f;1 as list_price1&#xa;FROM KAT_TVR kt&#xa;left outer join TVR_STV ts ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;left outer join &#x28;SELECT &#x5b;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#x5d;, 0 as active&#xa; 				 FROM &#x5b;KAT_GRPT&#x5d;&#xa;  					WHERE &#x413;&#x440;&#x43f;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; TV_AR on  kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#x3d; TV_AR.&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;order by kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -266,8 +338,8 @@
       <schema/>
       <table>product_template</table>
       <key>
-        <name>x_old_id0</name>
-        <field>x_old_id</field>
+        <name>ef_id</name>
+        <field>ef_id</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>

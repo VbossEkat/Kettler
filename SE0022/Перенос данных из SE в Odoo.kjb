@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 15&#x3a;51&#x3a;17.554</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 10&#x3a;10&#x3a;39.596</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;11 12&#x3a;12&#x3a;29.005</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -931,6 +931,15 @@
     <hop>
       <from>update type to invoice</from>
       <to>&#x41d;&#x424; res_company  from kat_kln</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>&#x41d;&#x424; res_company  from kat_kln</from>
+      <to>&#x410;&#x434;&#x440;&#x435;&#x441;&#x430; OpenErp</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
