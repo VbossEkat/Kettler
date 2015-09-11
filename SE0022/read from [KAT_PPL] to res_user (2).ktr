@@ -1,11 +1,11 @@
 <transformation>
   <info>
-    <name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x430; OpenErp</name>
+    <name>read from &#x5b;KAT_PPL&#x5d; to res_user &#x28;2&#x29;</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>1</trans_status>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -66,9 +66,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;06&#x2f;16 12&#x3a;45&#x3a;38.994</created_date>
+  <created_date>2015&#x2f;09&#x2f;08 13&#x3a;15&#x3a;54.414</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 10&#x3a;10&#x3a;33.870</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;08 13&#x3a;17&#x3a;41.227</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -242,92 +242,12 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>KLN_ADK KAT_TWN</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>res_partner par</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 3</from><to>Insert &#x2f; Update res_partner</to><enabled>Y</enabled> </hop>
+  <hop> <from>read from &#x5b;KAT_PPL&#x5d; to res_user</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>res_partner only empl</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 2</from><to>Insert &#x2f; Update res_user</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>KLN_ADK KAT_TWN</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  KL.&#x41a;&#x43e;&#x434;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438; ef_id_adr&#xa;, RTRIM&#x28;KL.&#x41d;&#x430;&#x438;&#x43c;&#x29; &#x2b; isnull&#x28;&#x27; &#x27; &#x2b;rtrim&#x28;KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#x29;,&#x27;&#x27;&#x29;  name_adr&#xa;, KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430; ef_id&#xa;, KL.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430;&#xa;, KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, KL.&#x41c;&#x43d;&#x434;&#x436;&#x41a;&#x43e;&#x434;&#xa;, KL.GLN&#xa;, KL.&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#xa;, KL.&#x41d;&#x430;&#x438;&#x43c;&#xa;, KL.&#x41c;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430;&#xa;, KL.ExtFile&#xa;, TW.&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x41d;&#x430;&#x438;&#x43c;&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE  KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer&#xa;, 192 as country_id1&#xa;FROM KLN_ADK KL&#xa;LEFT OUTER JOIN KAT_TWN TW ON KL.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430; &#x3d; TW.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#xa;where KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430;  &#x3c;&#x3e; 0&#xa;order by KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430;&#xa;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>142</xloc>
-      <yloc>138</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>res_partner par</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id id_par&#xa;--, &#x22;name&#x22;&#xa;, ef_id ef_id_par&#xa;FROM res_partner&#xa;where  ef_id &#x3c;&#x3e; 0&#xa;order by ef_id &#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>395</xloc>
-      <yloc>36</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join 3</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>KLN_ADK KAT_TWN</step1>
-<step2>res_partner par</step2>
-    <keys_1>
-      <key>ef_id</key>
-    </keys_1>
-    <keys_2>
-      <key>ef_id_par</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>381</xloc>
-      <yloc>212</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Insert &#x2f; Update res_partner</name>
+    <name>Insert &#x2f; Update res_user</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -338,77 +258,132 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <commit>10000</commit>
-    <update_bypassed>Y</update_bypassed>
+    <commit>100000</commit>
+    <update_bypassed>N</update_bypassed>
     <lookup>
-      <schema>public</schema>
-      <table>res_partner</table>
+      <schema/>
+      <table>res_users</table>
       <key>
-        <name>ef_id_adr</name>
-        <field>ef_id_adr</field>
+        <name>ef_id_sot_us</name>
+        <field>ef_id_sot</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
       <value>
-        <name>ef_id_adr</name>
-        <rename>ef_id_adr</rename>
+        <name>login</name>
+        <rename>login_sot_us</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>name</name>
-        <rename>name_adr</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>display_name</name>
-        <rename>&#x41d;&#x430;&#x438;&#x43c;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>zip</name>
-        <rename>&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>notify_email</name>
-        <rename>notify_email</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>type</name>
-        <rename>type</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tz</name>
-        <rename>tz</rename>
+        <name>ef_id_sot</name>
+        <rename>ef_id_sot_us</rename>
         <update>Y</update>
       </value>
       <value>
         <name>active</name>
-        <rename>active</rename>
+        <rename>active_sot_us</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>parent_id</name>
-        <rename>id_par</rename>
+        <name>company_id</name>
+        <rename>company_id_sot_us</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>customer</name>
-        <rename>customer</rename>
+        <name>partner_id</name>
+        <rename>sot_id_empl</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>country_id</name>
-        <rename>country_id1</rename>
+        <name>alias_id</name>
+        <rename>sot_id_empl</rename>
         <update>Y</update>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>558</xloc>
-      <yloc>112</yloc>
+      <xloc>780</xloc>
+      <yloc>293</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>read from &#x5b;KAT_PPL&#x5d; to res_user</name>
+    <type>TableInput</type>
+    <description>Reads information from table &#x5b;KAT_KLN&#x5d; on database &#x5b;pr_euras&#x5d;</description>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>PR_Euras</connection>
+    <sql>SELECT&#xa;  rtrim&#x28;em.&#x421;&#x43e;&#x442;&#x440;&#x424;&#x430;&#x43c;&#x438;&#x43b;&#x438;&#x44f;&#x29;&#x2b;rtrim&#x28;em.&#x421;&#x43e;&#x442;&#x440;&#x418;&#x43c;&#x44f;&#x29;&#x2b; rtrim&#x28;em.&#x421;&#x43e;&#x442;&#x440;&#x41e;&#x442;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43e;&#x29; as login_sot_us&#xa;, em.&#x421;&#x43e;&#x442;&#x440;&#x41a;&#x43e;&#x434; as ef_id_sot_us&#xa;, CAST&#x28; 1 AS bit&#x29; as active_sot_us&#xa;, 1 AS company_id_sot_us&#xa;FROM KAT_PPL em&#xa;where  em.&#x421;&#x43e;&#x442;&#x440;&#x424;&#x430;&#x43c;&#x438;&#x43b;&#x438;&#x44f; &#x3c;&#x3e; &#x27;&#x27; and em.&#x421;&#x43e;&#x442;&#x440;&#x41a;&#x43e;&#x434; &#x3c;&#x3e; 0&#xa;order by em.&#x421;&#x43e;&#x442;&#x440;&#x41a;&#x43e;&#x434; &#xa;--left outer join KAT_PDR pd ON em.&#x421;&#x43e;&#x442;&#x440;&#x41f;&#x43e;&#x434;&#x440; &#x3d; pd.&#x41f;&#x434;&#x440;&#x41a;&#x43e;&#x434;&#xa;&#xa;&#xa;&#xa;&#xa;</sql>
+    <limit/>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>495</xloc>
+      <yloc>310</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>res_partner only empl</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id as sot_id_empl&#xa;, ef_id_sot as ef_id_sot_empl&#xa;FROM res_partner&#xa;where ef_id_sot &#x3c;&#x3e; 0&#xa;order by ef_id_sot&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>651</xloc>
+      <yloc>170</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>read from &#x5b;KAT_PPL&#x5d; to res_user</step1>
+<step2>res_partner only empl</step2>
+    <keys_1>
+      <key>ef_id_sot_us</key>
+    </keys_1>
+    <keys_2>
+      <key>ef_id_sot_empl</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>670</xloc>
+      <yloc>283</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

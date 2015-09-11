@@ -1,5 +1,5 @@
   <connection>
-    <name>OdooSE0022</name>
+    <name>OdooSE SAND &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x43d;&#x430; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x435; RU</name>
     <server>192.168.1.29</server>
     <type>POSTGRESQL</type>
     <access>Native</access>

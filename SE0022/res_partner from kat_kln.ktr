@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;01 16&#x3a;42&#x3a;28.855</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;06&#x2f;09 14&#x3a;50&#x3a;07.840</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;10 16&#x3a;52&#x3a;09.017</modified_date>
   </info>
   <notepads>
     <notepad>
@@ -167,7 +167,79 @@
     </attributes>
   </connection>
   <connection>
+    <name>OdooSE SAND</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>OdooSE SAND &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x43d;&#x430; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x435; RU</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
     <name>OdooSE0022</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>OdooSE0022 &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x43b;&#x43e;&#x43a;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -263,7 +335,7 @@
       <table>res_partner</table>
       <key>
         <name>&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;</name>
-        <field>x_old_id</field>
+        <field>ef_id</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
@@ -313,7 +385,7 @@
         <update>Y</update>
       </value>
       <value>
-        <name>x_old_id</name>
+        <name>ef_id</name>
         <rename>&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;</rename>
         <update>Y</update>
       </value>
@@ -366,7 +438,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  &#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c;&#xa;, &#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, &#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;, &#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, &#x41a;&#x43b;&#x43d;&#x422;&#x438;&#x43f;&#xa;, &#x41a;&#x43b;&#x43d;&#x424;&#x441;&#xa;, &#x410;&#x440;&#x445;&#x438;&#x432;&#x43d;&#x44b;&#x439;&#xa;, &#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#xa;, &#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#xa;, &#x41f;&#x43e;&#x43b;&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE &#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer&#xa;FROM KAT_KLN&#xa;order by &#x41a;&#x43b;&#x43d;&#x424;&#x441;</sql>
+    <sql>SELECT&#xa;  kk.&#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x422;&#x438;&#x43f;&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x424;&#x441;&#xa;, kk.&#x410;&#x440;&#x445;&#x438;&#x432;&#x43d;&#x44b;&#x439;&#xa;, kk.&#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#xa;, kk.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#xa;, kk.&#x41f;&#x43e;&#x43b;&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE &#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer&#xa;FROM KAT_KLN kk&#xa;--LEFT OUTER JOIN CLN_DKL kd ON kd.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; &#x3d; kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;order by &#x41a;&#x43b;&#x43d;&#x424;&#x441;</sql>
     <limit/>
     <lookup/>
     <execute_each_row>N</execute_each_row>

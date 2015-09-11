@@ -1,11 +1,11 @@
 <transformation>
   <info>
-    <name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x430; OpenErp</name>
+    <name>update type to invoice</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>1</trans_status>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -66,9 +66,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;06&#x2f;16 12&#x3a;45&#x3a;38.994</created_date>
+  <created_date>2015&#x2f;09&#x2f;07 11&#x3a;59&#x3a;06.710</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 10&#x3a;10&#x3a;33.870</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;07 12&#x3a;16&#x3a;20.350</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -242,90 +242,8 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>KLN_ADK KAT_TWN</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>res_partner par</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 3</from><to>Insert &#x2f; Update res_partner</to><enabled>Y</enabled> </hop>
+  <hop> <from>res_partner type to invoice</from><to>Insert &#x2f; Update res_partner</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>KLN_ADK KAT_TWN</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  KL.&#x41a;&#x43e;&#x434;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438; ef_id_adr&#xa;, RTRIM&#x28;KL.&#x41d;&#x430;&#x438;&#x43c;&#x29; &#x2b; isnull&#x28;&#x27; &#x27; &#x2b;rtrim&#x28;KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#x29;,&#x27;&#x27;&#x29;  name_adr&#xa;, KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430; ef_id&#xa;, KL.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430;&#xa;, KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, KL.&#x41c;&#x43d;&#x434;&#x436;&#x41a;&#x43e;&#x434;&#xa;, KL.GLN&#xa;, KL.&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#xa;, KL.&#x41d;&#x430;&#x438;&#x43c;&#xa;, KL.&#x41c;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430;&#xa;, KL.ExtFile&#xa;, TW.&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x41d;&#x430;&#x438;&#x43c;&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE  KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer&#xa;, 192 as country_id1&#xa;FROM KLN_ADK KL&#xa;LEFT OUTER JOIN KAT_TWN TW ON KL.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430; &#x3d; TW.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#xa;where KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430;  &#x3c;&#x3e; 0&#xa;order by KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430;&#xa;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>142</xloc>
-      <yloc>138</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>res_partner par</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id id_par&#xa;--, &#x22;name&#x22;&#xa;, ef_id ef_id_par&#xa;FROM res_partner&#xa;where  ef_id &#x3c;&#x3e; 0&#xa;order by ef_id &#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>395</xloc>
-      <yloc>36</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join 3</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>KLN_ADK KAT_TWN</step1>
-<step2>res_partner par</step2>
-    <keys_1>
-      <key>ef_id</key>
-    </keys_1>
-    <keys_2>
-      <key>ef_id_par</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>381</xloc>
-      <yloc>212</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Insert &#x2f; Update res_partner</name>
     <type>InsertUpdate</type>
@@ -338,77 +256,53 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <commit>10000</commit>
+    <commit>100000</commit>
     <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema>public</schema>
       <table>res_partner</table>
       <key>
-        <name>ef_id_adr</name>
-        <field>ef_id_adr</field>
+        <name>id</name>
+        <field>id</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
-      <value>
-        <name>ef_id_adr</name>
-        <rename>ef_id_adr</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>name</name>
-        <rename>name_adr</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>display_name</name>
-        <rename>&#x41d;&#x430;&#x438;&#x43c;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>zip</name>
-        <rename>&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>notify_email</name>
-        <rename>notify_email</rename>
-        <update>Y</update>
-      </value>
       <value>
         <name>type</name>
         <rename>type</rename>
         <update>Y</update>
       </value>
-      <value>
-        <name>tz</name>
-        <rename>tz</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>active</name>
-        <rename>active</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>parent_id</name>
-        <rename>id_par</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>customer</name>
-        <rename>customer</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>country_id</name>
-        <rename>country_id1</rename>
-        <update>Y</update>
-      </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>558</xloc>
-      <yloc>112</yloc>
+      <xloc>595</xloc>
+      <yloc>127</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>res_partner type to invoice</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id&#xa;, &#x27;invoice&#x27; as type&#xa;FROM res_partner&#xa;where id in &#x28;SELECT parent_id from res_partner&#x29; &#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>307</xloc>
+      <yloc>131</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

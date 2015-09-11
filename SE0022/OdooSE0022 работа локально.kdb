@@ -1,12 +1,12 @@
   <connection>
-    <name>OdooSE0022</name>
-    <server>192.168.1.29</server>
+    <name>OdooSE0022 &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x43b;&#x43e;&#x43a;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;</name>
+    <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
-    <database>gke_sand001</database>
+    <database>SE0022</database>
     <port>5432</port>
-    <username>odoo</username>
-    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <username>postgres</username>
+    <password>Encrypted 2be98dfa719d39596ae0aff228dc6fa8c</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
