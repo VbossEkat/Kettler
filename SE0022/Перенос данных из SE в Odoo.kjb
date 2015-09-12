@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 15&#x3a;51&#x3a;17.554</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 13&#x3a;19&#x3a;24.472</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;11 17&#x3a;54&#x3a;01.589</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -325,13 +325,13 @@
       <yloc>73</yloc>
       </entry>
     <entry>
-      <name>product_template from product_product__main</name>
+      <name>product_product from product_template</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>product_template from product_product__main</transname>
+      <transname>product_product from product_template</transname>
       <directory>&#x2f;</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -831,7 +831,7 @@
     </hop>
     <hop>
       <from>product_template__main from KAT_TVR</from>
-      <to>product_template from product_product__main</to>
+      <to>product_product from product_template</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -843,7 +843,7 @@
       <to>product_template from categ_id Update </to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>

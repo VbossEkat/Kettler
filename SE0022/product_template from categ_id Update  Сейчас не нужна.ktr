@@ -1,11 +1,11 @@
 <transformation>
   <info>
-    <name>product_template__main from KAT_TVR</name>
+    <name>product_template from categ_id Update  &#x421;&#x435;&#x439;&#x447;&#x430;&#x441; &#x43d;&#x435; &#x43d;&#x443;&#x436;&#x43d;&#x430;</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>1</trans_status>
+    <trans_status>2</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -46,11 +46,11 @@
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
-    <size_rowset>1000</size_rowset>
+    <size_rowset>10000</size_rowset>
     <sleep_time_empty>50</sleep_time_empty>
     <sleep_time_full>50</sleep_time_full>
     <unique_connections>N</unique_connections>
-    <feedback_shown>N</feedback_shown>
+    <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
     <shared_objects_file/>
@@ -58,21 +58,6 @@
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
     <dependencies>
-      <dependency>
-        <connection>PR_Euras</connection>
-        <table>KAT_TVR kt&#xa;left outer join TVR_STV ts ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;LEFT OUTER JOIN kat_tvr_bit ktb ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ktb.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;  &#xa;&#x2f;&#x2a;  </table>
-        <field/>
-      </dependency>
-      <dependency>
-        <connection>OdooSE0022</connection>
-        <table>product_uom&#xa;order by okei&#xa;</table>
-        <field/>
-      </dependency>
-      <dependency>
-        <connection>OdooSE0022</connection>
-        <table>product_category&#xa;--</table>
-        <field/>
-      </dependency>
     </dependencies>
     <partitionschemas>
     </partitionschemas>
@@ -81,40 +66,15 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;06&#x2f;02 16&#x3a;47&#x3a;29.319</created_date>
+  <created_date>2015&#x2f;06&#x2f;03 13&#x3a;54&#x3a;52.195</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;12 19&#x3a;05&#x3a;34.401</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;11 15&#x3a;23&#x3a;28.126</modified_date>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>basis_sba_local</name>
-    <server>10.0.0.110&#x5c;iruboss</server>
-    <type>MSSQL</type>
-    <access>Native</access>
-    <database>basis_sba</database>
-    <port>1433</port>
-    <username>sa</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2f983</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>basis_sba_rem</name>
-    <server>62.109.31.30</server>
+    <name>Basis_sba</name>
+    <server>62.190.31.30</server>
     <type>MSSQL</type>
     <access>Native</access>
     <database>basis_sba</database>
@@ -125,16 +85,7 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <connection>
@@ -307,40 +258,10 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>&#x413;&#x440;&#x443;&#x43f;&#x43f;&#x44b; &#x442;&#x43e;&#x432;&#x430;&#x440;&#x43e;&#x432; &#x438;&#x437; Product_cat</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>KAT_TVR</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>product_uom</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>Sort rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 2</from><to>product_template__main</to><enabled>Y</enabled> </hop>
-  <hop> <from>product_template__main</from><to>product_error</to><enabled>Y</enabled> </hop>
+  <hop> <from>product_category</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>product_template</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Update product_template categ_id</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>KAT_TVR</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id0&#xa;, kt.&#x422;&#x43e;&#x432;&#x41d;&#x430;&#x438;&#x43c; name0&#xa;, kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#xa;, kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434; ef_grpt_kat0&#xa;, kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#xa;, kt.&#x422;&#x43e;&#x432;&#x415;&#x418;&#xa;, kt.&#x422;&#x43e;&#x432;&#x423;&#x43f;&#x430;&#x43a;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x420;&#x421;&#x425; list_price0&#xa;, kt.&#x41d;&#x414;&#x421;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x423;&#x447;&#x435;&#x442;&#xa;, kt.ABC&#xa;, kt.&#x428;&#x442;&#x440;&#x438;&#x445;&#x41a;&#x43e;&#x434;&#xa;, kt.&#x411;&#x424;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x41f;&#x420;&#x425;&#xa;, &#x27;fixed&#x27; mes_type0&#xa;, 1 uom_id0&#xa;, 1 categ_id0&#xa;--, CAST&#x28;1 as bit&#x29; sale_ok0&#xa;, CAST&#x28;1 as bit&#x29; active0&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; sale_ok0&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; purchase_ok0&#xa;--, cast&#x28;&#x28;CASE &#x28;TV_AR.active &#x2b; KV.active&#x29;  when 0 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, &#x27;sellable&#x27; state0&#xa;, 1 uom_po_id0&#xa;, &#x27;product&#x27; type0&#xa;, CASE WHEN isnull&#x28;ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;,0&#x29;&#x3d;0 or ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;&#x3d;100 THEN 796 ELSE ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419; END okei0&#xa;, ts.&#x413;&#x440;&#x43f;1 as list_price01&#xa;FROM KAT_TVR kt&#xa;left outer join TVR_STV ts ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;LEFT OUTER JOIN kat_tvr_bit ktb ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ktb.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;  &#xa;&#x2f;&#x2a;  WHERE  ISNULL&#x28;ktb.bit01,0&#x29; &#x3d; 1&#xa;left outer join &#x28;SELECT &#x5b;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#x5d;, 0 as active&#xa; 				 FROM &#x5b;KAT_GRPT&#x5d;&#xa;  					WHERE &#x413;&#x440;&#x43f;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; TV_AR on  kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#x3d; TV_AR.&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;left outer join &#x28;SELECT &#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434;, 0 as active&#xa; 				 FROM KAT_VIDT&#xa;  					WHERE &#x412;&#x438;&#x434;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; KV on  kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434; &#x3d; KV.&#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434; &#x2a;&#x2f;&#xa;&#xa;--where kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d;1069365678&#xa;order by kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>157</xloc>
-      <yloc>189</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Merge Join</name>
     <type>MergeJoin</type>
@@ -353,139 +274,25 @@
            <schema_name/>
            </partitioning>
 <join_type>LEFT OUTER</join_type>
-<step1>KAT_TVR</step1>
-<step2>&#x413;&#x440;&#x443;&#x43f;&#x43f;&#x44b; &#x442;&#x43e;&#x432;&#x430;&#x440;&#x43e;&#x432; &#x438;&#x437; Product_cat</step2>
+<step1>product_template</step1>
+<step2>product_category</step2>
     <keys_1>
-      <key>ef_grpt_kat0</key>
+      <key>x_tovgrp</key>
     </keys_1>
     <keys_2>
-      <key>ef_grpt_cat</key>
+      <key>x_grpt_prod</key>
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>311</xloc>
-      <yloc>187</yloc>
+      <xloc>529</xloc>
+      <yloc>386</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Merge Join 2</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>Sort rows</step1>
-<step2>product_uom</step2>
-    <keys_1>
-      <key>okei0</key>
-    </keys_1>
-    <keys_2>
-      <key>okei</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>616</xloc>
-      <yloc>202</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>okei0</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>447</xloc>
-      <yloc>191</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>product_error</name>
-    <type>TextFileOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <separator>&#x3b;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding/>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;product_error</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>Y</split>
-      <haspartno>N</haspartno>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>874</xloc>
-      <yloc>106</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>product_template__main</name>
-    <type>InsertUpdate</type>
+    <name>Update product_template categ_id</name>
+    <type>Update</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -495,88 +302,35 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <commit>100000</commit>
-    <update_bypassed>N</update_bypassed>
+    <skip_lookup>N</skip_lookup>
+    <commit>1000</commit>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
     <lookup>
       <schema/>
       <table>product_template</table>
       <key>
-        <name>ef_id0</name>
-        <field>ef_id</field>
+        <name>id0</name>
+        <field>id</field>
         <condition>&#x3d;</condition>
         <name2/>
-      </key>
-      <value>
-        <name>name</name>
-        <rename>name0</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>list_price</name>
-        <rename>list_price0</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>mes_type</name>
-        <rename>mes_type0</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>uom_id</name>
-        <rename>id_uom</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sale_ok</name>
-        <rename>sale_ok0</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>state</name>
-        <rename>state0</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>uom_po_id</name>
-        <rename>uom_po_id0</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>active</name>
-        <rename>active01</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>type</name>
-        <rename>type0</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ef_id</name>
-        <rename>ef_id0</rename>
-        <update>Y</update>
-      </value>
+        </key>
       <value>
         <name>categ_id</name>
         <rename>parent_id_grp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>purchase_ok</name>
-        <rename>purchase_ok0</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
+        </value>
+      </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>794</xloc>
-      <yloc>227</yloc>
+      <xloc>712</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>product_uom</name>
+    <name>product_category</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -587,7 +341,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id id_uom&#xa;, okei&#xa;FROM product_uom&#xa;order by okei&#xa;</sql>
+    <sql>SELECT&#xa;  id parent_id_grp&#xa;,  x_grpt x_grpt_prod&#xa;FROM product_category&#xa;where  x_grpt is not null&#xa;order by 2&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -595,14 +349,14 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>615</xloc>
-      <yloc>35</yloc>
+      <xloc>577</xloc>
+      <yloc>205</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>&#x413;&#x440;&#x443;&#x43f;&#x43f;&#x44b; &#x442;&#x43e;&#x432;&#x430;&#x440;&#x43e;&#x432; &#x438;&#x437; Product_cat</name>
+    <name>product_template</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -613,7 +367,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>SELECT id as parent_id_grp&#xa;, ef_kat_vidt as ef_grpt_cat&#xa;FROM product_category&#xa;--where ef_kat_vidt &#x3d; 43&#xa;order by ef_kat_vidt&#xa;&#xa;</sql>
+    <sql>SELECT&#xa;  id id0&#xa;, x_old_id&#xa;, x_tovgrp&#xa;FROM product_template&#xa;order by x_tovgrp&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -621,25 +375,13 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>296</xloc>
-      <yloc>18</yloc>
+      <xloc>298</xloc>
+      <yloc>356</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step_error_handling>
-      <error>
-        <source_step>product_template__main</source_step>
-        <target_step>product_error</target_step>
-        <is_enabled>Y</is_enabled>
-        <nr_valuename/>
-        <descriptions_valuename/>
-        <fields_valuename/>
-        <codes_valuename/>
-        <max_errors/>
-        <max_pct_errors/>
-        <min_pct_rows/>
-      </error>
   </step_error_handling>
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
