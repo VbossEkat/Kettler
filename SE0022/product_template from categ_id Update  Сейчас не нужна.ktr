@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;03 13&#x3a;54&#x3a;52.195</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 15&#x3a;23&#x3a;28.126</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;14 12&#x3a;43&#x3a;51.582</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -258,15 +258,21 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>product_category</from><to>Merge Join</to><enabled>Y</enabled> </hop>
   <hop> <from>product_template</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>Update product_template categ_id</to><enabled>Y</enabled> </hop>
+  <hop> <from>TVR_DEF</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>res_partner</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 2</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows 2</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>res_partner 2</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 3</from><to>ins_upd product_supplierinfo</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Merge Join</name>
     <type>MergeJoin</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -274,83 +280,18 @@
            <schema_name/>
            </partitioning>
 <join_type>LEFT OUTER</join_type>
-<step1>product_template</step1>
-<step2>product_category</step2>
+<step1>TVR_DEF</step1>
+<step2>product_template</step2>
     <keys_1>
-      <key>x_tovgrp</key>
+      <key>ef_id1</key>
     </keys_1>
     <keys_2>
-      <key>x_grpt_prod</key>
+      <key>ef_id_prod</key>
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>529</xloc>
-      <yloc>386</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Update product_template categ_id</name>
-    <type>Update</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <skip_lookup>N</skip_lookup>
-    <commit>1000</commit>
-    <use_batch>N</use_batch>
-    <error_ignored>N</error_ignored>
-    <ignore_flag_field/>
-    <lookup>
-      <schema/>
-      <table>product_template</table>
-      <key>
-        <name>id0</name>
-        <field>id</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-        </key>
-      <value>
-        <name>categ_id</name>
-        <rename>parent_id_grp</rename>
-        </value>
-      </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>712</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>product_category</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id parent_id_grp&#xa;,  x_grpt x_grpt_prod&#xa;FROM product_category&#xa;where  x_grpt is not null&#xa;order by 2&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>577</xloc>
-      <yloc>205</yloc>
+      <xloc>344</xloc>
+      <yloc>376</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -367,7 +308,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id id0&#xa;, x_old_id&#xa;, x_tovgrp&#xa;FROM product_template&#xa;order by x_tovgrp&#xa;</sql>
+    <sql>SELECT&#xa;  id prod_id&#xa;, ef_id as ef_id_prod&#xa;FROM product_template&#xa;where ef_id &#x3c;&#x3e; 0&#xa;order by ef_id&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -375,13 +316,341 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>298</xloc>
-      <yloc>356</yloc>
+      <xloc>326</xloc>
+      <yloc>193</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TVR_DEF</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>PR_Euras</connection>
+    <sql>SELECT&#xa;  td.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id1&#xa;, td.&#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3 as ef_id_sup&#xa;, td.&#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430; as product_int_code_sup&#xa;, CASE ISNULL&#x28;kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;,0&#x29; WHEN 0 THEN 1 ELSE kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; END as company_id_NF_id&#xa;, 1 as min_qty1&#xa;, 1 as delay1&#xa;--, &#x2a;&#xa;FROM TVR_DEF TD&#xa;left outer join &#x28;SELECT &#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; FROM KAT_KLN WHERE &#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434; &#x3d; 7&#x29; KK ON td.&#x417;&#x430;&#x43a;&#x443;&#x43f; &#x3d; kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;left outer join KAT_KLN KK1 ON td.&#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3 &#x3d; kk1.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;where isnull&#x28;kk1.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;,0&#x29; &#x3c;&#x3e; 0  &#xa;--where &#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430; &#x3d; &#x27;0841955&#x27;&#xa;order by td.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>169</xloc>
+      <yloc>372</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>ins_upd product_supplierinfo</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <commit>10000</commit>
+    <update_bypassed>Y</update_bypassed>
+    <lookup>
+      <schema>public</schema>
+      <table>product_supplierinfo</table>
+      <key>
+        <name>prod_id</name>
+        <field>product_tmpl_id</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>product_tmpl_id</name>
+        <rename>prod_id</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>name</name>
+        <rename>name_id_sup</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>product_code</name>
+        <rename>product_int_code_sup</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>company_id</name>
+        <rename>id_nf</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>min_qty</name>
+        <rename>min_qty1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>delay</name>
+        <rename>delay1</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1051</xloc>
+      <yloc>360</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>res_partner</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  rc.id as id_nf&#xa;, rp.ef_id as ef_id_nf&#xa;FROM res_company rc&#xa;INNER JOIN res_partner rp ON rc.partner_id &#x3d; rp.id&#xa;where rp.ef_id &#x3c;&#x3e; 0&#xa;order by rp.ef_id&#xa;&#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>600</xloc>
+      <yloc>193</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort rows</step1>
+<step2>res_partner</step2>
+    <keys_1>
+      <key>company_id_NF_id</key>
+    </keys_1>
+    <keys_2>
+      <key>ef_id_nf</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>587</xloc>
+      <yloc>374</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>company_id_NF_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>471</xloc>
+      <yloc>374</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>res_partner 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id as name_id_sup&#xa;, ef_id as ef_id_sup1&#xa;FROM res_partner&#xa;where ef_id &#x3c;&#x3e; 0&#xa;order by ef_id&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>819</xloc>
+      <yloc>207</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>ef_id_sup</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>707</xloc>
+      <yloc>372</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 3</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort rows 2</step1>
+<step2>res_partner 2</step2>
+    <keys_1>
+      <key>ef_id_sup</key>
+    </keys_1>
+    <keys_2>
+      <key>ef_id_sup1</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>857</xloc>
+      <yloc>371</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>product_error_supl</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;product_error_supl</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>Y</split>
+      <haspartno>N</haspartno>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1138</xloc>
+      <yloc>257</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step_error_handling>
+      <error>
+        <source_step>ins_upd product_supplierinfo</source_step>
+        <target_step>product_error_supl</target_step>
+        <is_enabled>N</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
   </step_error_handling>
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>

@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;09&#x2f;09 13&#x3a;22&#x3a;55.448</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;10 16&#x3a;42&#x3a;30.648</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;14 11&#x3a;38&#x3a;51.116</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -242,12 +242,12 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Merge Join</from><to>Insert &#x2f; Update res_partner</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Insert &#x2f; Update res_company</to><enabled>Y</enabled> </hop>
   <hop> <from>read from &#x5b;KAT_KLN&#x5d;</from><to>Merge Join</to><enabled>Y</enabled> </hop>
   <hop> <from>res_partner</from><to>Merge Join</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Insert &#x2f; Update res_partner</name>
+    <name>Insert &#x2f; Update res_company</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>

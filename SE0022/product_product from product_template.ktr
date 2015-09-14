@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 17&#x3a;30&#x3a;35.677</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 17&#x3a;54&#x3a;04.478</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;14 11&#x3a;31&#x3a;32.906</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -244,10 +244,10 @@
   <order>
   <hop> <from>SKU_BAR_NOT_NULL &#x415;&#x410;&#x41d;13</from><to>Merge Join</to><enabled>Y</enabled> </hop>
   <hop> <from>product_template</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>TVR_DEF &#x432;&#x435;&#x441; &#x43e;&#x431;&#x44a;&#x435;&#x43c;</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Merge Join</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Merge Join 2</from><to>ins_upd product_product</to><enabled>Y</enabled> </hop>
   <hop> <from>ins_upd product_product</from><to>Update product_template</to><enabled>Y</enabled> </hop>
+  <hop> <from>TVR_DEF &#x432;&#x435;&#x441; &#x43e;&#x431;&#x44a;&#x435;&#x43c;</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Merge Join</name>
@@ -317,7 +317,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  Skucode&#xa;, LTRIM&#x28;RTRIM&#x28;upc&#x29;&#x29; upc&#xa;, cast&#x28;Skuid as int&#x29; ef_id2&#xa;FROM dbo.SKU_BAR_NOT_NULL&#xa;order by skuid&#xa;</sql>
+    <sql>SELECT&#xa;  Skucode&#xa;, LTRIM&#x28;RTRIM&#x28;upc&#x29;&#x29; upc1&#xa;, cast&#x28;Skuid as int&#x29; ef_id2&#xa;FROM dbo.SKU_BAR_NOT_NULL&#xa;order by skuid&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -343,7 +343,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  &#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id1&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x435;&#x441;&#x411;&#x440;&#x443;&#x442;&#x442;&#x43e; weight1&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x435;&#x441;&#x41d;&#x435;&#x442;&#x442;&#x43e; weight_net1&#xa;--, &#x422;&#x43e;&#x432;&#x417;&#x43e;&#x43d;&#x430;&#x425;&#x440;&#x430;&#x43d;&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;1&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;2&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;4&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;5&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;6&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;1&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;2&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;3&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;4&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;5&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;6&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;7&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;8&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;9&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;10&#xa;, &#x41e;&#x431;&#x44a;&#x435;&#x43c; volume1&#xa;--, &#x41c;&#x438;&#x43d;&#x41e;&#x441;&#x442;&#xa;, substring&#x28;rtrim&#x28;ltrim&#x28;&#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430;&#x29;&#x29;,1,13&#x29; ean131&#xa;--, &#x414;&#x43e;&#x43f;&#xa;--, &#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434;&#xa;--, &#x421;&#x442;&#x440;&#x430;&#x43d;&#x430;&#xa;--, &#x413;&#x422;&#x414;&#xa;--, &#x421;&#x435;&#x440;&#x442;&#x438;&#x444;&#xa;--, &#x417;&#x430;&#x43a;&#x443;&#x43f;&#xa;--, &#x421;&#x440;&#x43e;&#x43a;&#x416;&#xa;FROM TVR_DEF&#xa;order by &#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;</sql>
+    <sql>SELECT&#xa;  &#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id1&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x435;&#x441;&#x411;&#x440;&#x443;&#x442;&#x442;&#x43e; weight1&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x435;&#x441;&#x41d;&#x435;&#x442;&#x442;&#x43e; weight_net1&#xa;--, &#x422;&#x43e;&#x432;&#x417;&#x43e;&#x43d;&#x430;&#x425;&#x440;&#x430;&#x43d;&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;1&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;2&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;4&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;5&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;6&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;1&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;2&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;3&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;4&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;5&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;6&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;7&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;8&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;9&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;10&#xa;, &#x41e;&#x431;&#x44a;&#x435;&#x43c; volume1&#xa;--, &#x41c;&#x438;&#x43d;&#x41e;&#x441;&#x442;&#xa;, substring&#x28;rtrim&#x28;ltrim&#x28;&#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430;&#x29;&#x29;,1,13&#x29; ean131&#xa;--, &#x414;&#x43e;&#x43f;&#xa;--, &#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434;&#xa;--, &#x421;&#x442;&#x440;&#x430;&#x43d;&#x430;&#xa;--, &#x413;&#x422;&#x414;&#xa;--, &#x421;&#x435;&#x440;&#x442;&#x438;&#x444;&#xa;--, &#x417;&#x430;&#x43a;&#x443;&#x43f;&#xa; -- , &#x421;&#x440;&#x43e;&#x43a;&#x416; warranty1&#xa;FROM TVR_DEF&#xa;order by &#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -351,8 +351,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>442</xloc>
-      <yloc>42</yloc>
+      <xloc>529</xloc>
+      <yloc>20</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -444,7 +444,7 @@
       </value>
       <value>
         <name>ean13</name>
-        <rename>ean131</rename>
+        <rename>upc1</rename>
         <update>Y</update>
       </value>
       <value>
