@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>product_template from categ_id Update  &#x421;&#x435;&#x439;&#x447;&#x430;&#x441; &#x43d;&#x435; &#x43d;&#x443;&#x436;&#x43d;&#x430;</name>
+    <name>ins_upd product_supplierinfo from Tvr_Def  </name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;03 13&#x3a;54&#x3a;52.195</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;14 12&#x3a;48&#x3a;38.355</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;14 14&#x3a;16&#x3a;39.425</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -266,7 +266,8 @@
   <hop> <from>Merge Join 2</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 2</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
   <hop> <from>res_partner 2</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 3</from><to>ins_upd product_supplierinfo</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 3</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>ins_upd product_supplierinfo</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Merge Join</name>
@@ -316,8 +317,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>326</xloc>
-      <yloc>193</yloc>
+      <xloc>340</xloc>
+      <yloc>229</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -334,7 +335,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  td.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id1&#xa;, td.&#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3 as ef_id_sup&#xa;, td.&#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430; as product_int_code_sup&#xa;, CASE ISNULL&#x28;kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;,0&#x29; WHEN 0 THEN 1 ELSE kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; END as company_id_NF_id&#xa;, 1 as min_qty1&#xa;, 1 as delay1&#xa;--, &#x2a;&#xa;FROM TVR_DEF TD&#xa;left outer join &#x28;SELECT &#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; FROM KAT_KLN WHERE &#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434; &#x3d; 7&#x29; KK ON td.&#x417;&#x430;&#x43a;&#x443;&#x43f; &#x3d; kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;left outer join KAT_KLN KK1 ON td.&#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3 &#x3d; kk1.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;where isnull&#x28;kk1.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;,0&#x29; &#x3c;&#x3e; 0  &#xa;--where &#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430; &#x3d; &#x27;0841955&#x27;&#xa;order by td.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;</sql>
+    <sql>SELECT&#xa;  td.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id1&#xa;--, td.&#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3 as ef_id_sup&#xa;, td.&#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434; as ef_id_sup&#xa;, td.&#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430; as product_int_code_sup&#xa;, CASE ISNULL&#x28;kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;,0&#x29; WHEN 0 THEN 1 ELSE kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; END as company_id_NF_id&#xa;, 1 as min_qty1&#xa;, 1 as delay1&#xa;--, &#x2a;&#xa;FROM TVR_DEF TD&#xa;left outer join &#x28;SELECT &#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; FROM KAT_KLN WHERE &#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434; &#x3d; 7&#x29; KK ON td.&#x417;&#x430;&#x43a;&#x443;&#x43f; &#x3d; kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;left outer join KAT_KLN KK1 ON td.&#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3 &#x3d; kk1.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;where isnull&#x28;kk1.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;,0&#x29; &#x3c;&#x3e; 0  &#xa;--and &#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430; &#x3d; &#x27;0841955&#x27;&#xa;order by td.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -404,8 +405,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1051</xloc>
-      <yloc>360</yloc>
+      <xloc>1132</xloc>
+      <yloc>361</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -430,8 +431,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>600</xloc>
-      <yloc>193</yloc>
+      <xloc>585</xloc>
+      <yloc>227</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -510,7 +511,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id as name_id_sup&#xa;, ef_id as ef_id_sup1&#xa;FROM res_partner&#xa;where ef_id &#x3c;&#x3e; 0&#xa;order by ef_id&#xa;</sql>
+    <sql>SELECT&#xa;  id as name_id_sup&#xa;, ef_id as ef_id_sup1&#xa;--,&#x2a;&#xa;FROM res_partner&#xa;where ef_id &#x3c;&#x3e; 0 -- and ef_id &#x3d; 7523&#xa;order by ef_id&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -518,8 +519,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>819</xloc>
-      <yloc>207</yloc>
+      <xloc>853</xloc>
+      <yloc>237</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -605,7 +606,7 @@
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
@@ -632,8 +633,49 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1138</xloc>
-      <yloc>257</yloc>
+      <xloc>1211</xloc>
+      <yloc>228</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>ins_upd product_supplierinfo</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>name_id_sup</leftvalue>
+   <function>IS NOT NULL</function>
+   <rightvalue/>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>prod_id</leftvalue>
+   <function>IS NOT NULL</function>
+   <rightvalue/>
+   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>984</xloc>
+      <yloc>372</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

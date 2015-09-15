@@ -46,7 +46,7 @@
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
-    <size_rowset>1000</size_rowset>
+    <size_rowset>10000</size_rowset>
     <sleep_time_empty>50</sleep_time_empty>
     <sleep_time_full>50</sleep_time_full>
     <unique_connections>N</unique_connections>
@@ -58,21 +58,6 @@
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
     <dependencies>
-      <dependency>
-        <connection>PR_Euras</connection>
-        <table>KAT_TVR kt&#xa;left outer join TVR_STV ts ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;LEFT OUTER JOIN kat_tvr_bit ktb ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ktb.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;  &#xa;&#x2f;&#x2a;  </table>
-        <field/>
-      </dependency>
-      <dependency>
-        <connection>OdooSE0022</connection>
-        <table>product_uom&#xa;order by okei&#xa;</table>
-        <field/>
-      </dependency>
-      <dependency>
-        <connection>OdooSE0022</connection>
-        <table>product_category&#xa;--</table>
-        <field/>
-      </dependency>
     </dependencies>
     <partitionschemas>
     </partitionschemas>
@@ -83,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 16&#x3a;47&#x3a;29.319</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;12 19&#x3a;05&#x3a;34.401</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;15 18&#x3a;41&#x3a;29.082</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -313,7 +298,7 @@
   <hop> <from>Merge Join</from><to>Sort rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Merge Join 2</from><to>product_template__main</to><enabled>Y</enabled> </hop>
-  <hop> <from>product_template__main</from><to>product_error</to><enabled>Y</enabled> </hop>
+  <hop> <from>product_template__main</from><to>product_error</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>KAT_TVR</name>
@@ -327,7 +312,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id0&#xa;, kt.&#x422;&#x43e;&#x432;&#x41d;&#x430;&#x438;&#x43c; name0&#xa;, kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#xa;, kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434; ef_grpt_kat0&#xa;, kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#xa;, kt.&#x422;&#x43e;&#x432;&#x415;&#x418;&#xa;, kt.&#x422;&#x43e;&#x432;&#x423;&#x43f;&#x430;&#x43a;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x420;&#x421;&#x425; list_price0&#xa;, kt.&#x41d;&#x414;&#x421;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x423;&#x447;&#x435;&#x442;&#xa;, kt.ABC&#xa;, kt.&#x428;&#x442;&#x440;&#x438;&#x445;&#x41a;&#x43e;&#x434;&#xa;, kt.&#x411;&#x424;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x41f;&#x420;&#x425;&#xa;, &#x27;fixed&#x27; mes_type0&#xa;, 1 uom_id0&#xa;, 1 categ_id0&#xa;--, CAST&#x28;1 as bit&#x29; sale_ok0&#xa;, CAST&#x28;1 as bit&#x29; active0&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; sale_ok0&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; purchase_ok0&#xa;--, cast&#x28;&#x28;CASE &#x28;TV_AR.active &#x2b; KV.active&#x29;  when 0 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, &#x27;sellable&#x27; state0&#xa;, 1 uom_po_id0&#xa;, &#x27;product&#x27; type0&#xa;, CASE WHEN isnull&#x28;ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;,0&#x29;&#x3d;0 or ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;&#x3d;100 THEN 796 ELSE ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419; END okei0&#xa;, ts.&#x413;&#x440;&#x43f;1 as list_price01&#xa;FROM KAT_TVR kt&#xa;left outer join TVR_STV ts ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;LEFT OUTER JOIN kat_tvr_bit ktb ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ktb.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;  &#xa;&#x2f;&#x2a;  WHERE  ISNULL&#x28;ktb.bit01,0&#x29; &#x3d; 1&#xa;left outer join &#x28;SELECT &#x5b;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#x5d;, 0 as active&#xa; 				 FROM &#x5b;KAT_GRPT&#x5d;&#xa;  					WHERE &#x413;&#x440;&#x43f;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; TV_AR on  kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#x3d; TV_AR.&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;left outer join &#x28;SELECT &#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434;, 0 as active&#xa; 				 FROM KAT_VIDT&#xa;  					WHERE &#x412;&#x438;&#x434;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; KV on  kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434; &#x3d; KV.&#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434; &#x2a;&#x2f;&#xa;&#xa;--where kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d;1069365678&#xa;order by kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434;&#xa;</sql>
+    <sql>SELECT&#xa;  kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id0&#xa;, kt.&#x422;&#x43e;&#x432;&#x41d;&#x430;&#x438;&#x43c; name0&#xa;, kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#xa;, kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434; ef_grpt_kat0&#xa;, kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#xa;, kt.&#x422;&#x43e;&#x432;&#x415;&#x418;&#xa;, kt.&#x422;&#x43e;&#x432;&#x423;&#x43f;&#x430;&#x43a;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x420;&#x421;&#x425; list_price0&#xa;, kt.&#x41d;&#x414;&#x421;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x423;&#x447;&#x435;&#x442;&#xa;, kt.ABC&#xa;, kt.&#x428;&#x442;&#x440;&#x438;&#x445;&#x41a;&#x43e;&#x434;&#xa;, kt.&#x411;&#x424;&#xa;, kt.&#x422;&#x43e;&#x432;&#x426;&#x435;&#x43d;&#x430;&#x41f;&#x420;&#x425;&#xa;, &#x27;fixed&#x27; mes_type0&#xa;, 1 uom_id0&#xa;, 1 categ_id0&#xa;--, CAST&#x28;1 as bit&#x29; sale_ok0&#xa;, CAST&#x28;1 as bit&#x29; active0&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; sale_ok0&#xa;, cast&#x28;&#x28;CASE &#x28;ISNULL&#x28;ktb.bit01,0&#x29;&#x29;  when 1 then 0 else 1 end&#x29; as bit&#x29; purchase_ok0&#xa;--, cast&#x28;&#x28;CASE &#x28;TV_AR.active &#x2b; KV.active&#x29;  when 0 then 0 else 1 end&#x29; as bit&#x29; active01&#xa;, &#x27;sellable&#x27; state0&#xa;, 1 uom_po_id0&#xa;, &#x27;product&#x27; type0&#xa;, CASE WHEN isnull&#x28;ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;,0&#x29;&#x3d;0 or ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;&#x3d;100 THEN 796 ELSE ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419; END okei0&#xa;, ts.&#x413;&#x440;&#x43f;1 as list_price01&#xa;, cast&#x28;sl.shelf_life as int&#x29; as life_time1&#xa;, 0 as wara&#xa;FROM KAT_TVR kt&#xa;left outer join TVR_STV ts ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;LEFT OUTER JOIN kat_tvr_bit ktb ON kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ktb.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;  &#xa;left outer join  WMS.shelf_life sl ON RTRIM&#x28;kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#x29;&#x3d;RTRIM&#x28;sl.skucode&#x29;&#xa;&#x2f;&#x2a;  WHERE  ISNULL&#x28;ktb.bit01,0&#x29; &#x3d; 1&#xa;left outer join &#x28;SELECT &#x5b;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#x5d;, 0 as active&#xa; 				 FROM &#x5b;KAT_GRPT&#x5d;&#xa;  					WHERE &#x413;&#x440;&#x43f;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; TV_AR on  kt.&#x422;&#x43e;&#x432;&#x413;&#x440;&#x43f; &#x3d; TV_AR.&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;left outer join &#x28;SELECT &#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434;, 0 as active&#xa; 				 FROM KAT_VIDT&#xa;  					WHERE &#x412;&#x438;&#x434;&#x41d;&#x430;&#x438;&#x43c; LIKE &#x27;&#x25;&#x410;&#x420;&#x425;&#x418;&#x412;&#x25;&#x27;&#x29; KV on  kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434; &#x3d; KV.&#x412;&#x438;&#x434;&#x41a;&#x43e;&#x434; &#x2a;&#x2f;&#xa;--where sl.shelf_life &#x3e; 0 and ktb.bit01 &#x3d; 0&#xa;&#xa;--where kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d;1069365678&#xa;order by kt.&#x422;&#x43e;&#x432;&#x412;&#x438;&#x434;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -566,10 +551,20 @@
         <rename>purchase_ok0</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>life_time</name>
+        <rename>life_time1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>warranty</name>
+        <rename>wara</rename>
+        <update>Y</update>
+      </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>794</xloc>
+      <xloc>793</xloc>
       <yloc>227</yloc>
       <draw>Y</draw>
       </GUI>
