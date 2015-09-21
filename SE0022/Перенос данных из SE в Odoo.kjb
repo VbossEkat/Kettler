@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 15&#x3a;51&#x3a;17.554</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;14 13&#x3a;01&#x3a;38.237</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;21 18&#x3a;31&#x3a;20.435</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -181,6 +181,7 @@
     </attributes>
   </connection>
     <slaveservers>
+         <slaveserver><name>ODOO_RU_SlaveServer</name><hostname>192.168.1.30</hostname><port/><webAppName/><username>odoo-pg</username><password>Encrypted 2be98afc86aa7ce82b209a8618fc1fb82</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>N</master></slaveserver>
     </slaveservers>
 <job-log-table><connection/>
 <schema/>
@@ -559,8 +560,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>357</xloc>
-      <yloc>303</yloc>
+      <xloc>351</xloc>
+      <yloc>315</yloc>
       </entry>
     <entry>
       <name>read from &#x5b;KAT_PPL&#x5d; to resource_resource &#x28;3&#x29;</name>

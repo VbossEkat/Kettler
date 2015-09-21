@@ -1,0 +1,1 @@
+<slaveserver><name>ODOO_RU_SlaveServer</name><hostname>192.168.1.30</hostname><port/><webAppName/><username>odoo-pg</username><password>Encrypted 2be98afc86aa7ce82b209a8618fc1fb82</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>N</master></slaveserver>

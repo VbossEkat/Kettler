@@ -62,13 +62,14 @@
     <partitionschemas>
     </partitionschemas>
     <slaveservers>
+         <slaveserver><name>ODOO_RU_SlaveServer</name><hostname>192.168.1.30</hostname><port/><webAppName/><username>odoo-pg</username><password>Encrypted 2be98afc86aa7ce82b209a8618fc1fb82</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>N</master></slaveserver>
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;16 12&#x3a;45&#x3a;38.994</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;17 18&#x3a;27&#x3a;37.658</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;21 18&#x3a;31&#x3a;18.026</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -242,10 +243,20 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>res_partner par</from><to>Merge Join 3</to><enabled>N</enabled> </hop>
-  <hop> <from>Merge Join 3</from><to>Insert &#x2f; Update res_partner</to><enabled>N</enabled> </hop>
-  <hop> <from>KLN_ADK KAT_TWN</from><to>Replace in string</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string</from><to>Text file output</to><enabled>Y</enabled> </hop>
+  <hop> <from>res_partner par</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x420;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x441; &#x433;&#x43e;&#x440;&#x43e;&#x434;&#x430;&#x43c;&#x438;</from><to>&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x420;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x441; &#x423;&#x43b;&#x438;&#x446;&#x430;&#x43c;&#x438;</from><to>&#x423;&#x43b;&#x438;&#x446;&#x44b;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x43d;&#x430; &#x43f;&#x43e;&#x442;&#x43e;&#x43a;&#x438;</from><to>&#x420;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x441; &#x433;&#x43e;&#x440;&#x43e;&#x434;&#x430;&#x43c;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x43d;&#x430; &#x43f;&#x43e;&#x442;&#x43e;&#x43a;&#x438;</from><to>&#x420;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x441; &#x423;&#x43b;&#x438;&#x446;&#x430;&#x43c;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>KLN_ADK KAT_TWN</from><to>&#x417;&#x430;&#x43c;&#x435;&#x43d;&#x430; &#x26;nbsp</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x417;&#x430;&#x43c;&#x435;&#x43d;&#x430; &#x26;nbsp</from><to>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x43d;&#x430; &#x43f;&#x43e;&#x442;&#x43e;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x423;&#x43b;&#x438;&#x446;&#x44b;</from><to>Append streams</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430;</from><to>Append streams</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams</from><to>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x435;&#x43d;&#x438;&#x435;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x435;&#x43d;&#x438;&#x435;</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 3</from><to>&#x41e;&#x442;&#x431;&#x438;&#x440;&#x430;&#x435;&#x43c; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x441; &#x43e;&#x448;&#x438;&#x431;&#x43a;&#x430;&#x43c;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41e;&#x442;&#x431;&#x438;&#x440;&#x430;&#x435;&#x43c; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x441; &#x43e;&#x448;&#x438;&#x431;&#x43a;&#x430;&#x43c;&#x438;</from><to>&#x410;&#x434;&#x440;&#x435;&#x441;&#x430; &#x441; &#x43e;&#x448;&#x438;&#x431;&#x43a;&#x430;&#x43c;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41e;&#x442;&#x431;&#x438;&#x440;&#x430;&#x435;&#x43c; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x441; &#x43e;&#x448;&#x438;&#x431;&#x43a;&#x430;&#x43c;&#x438;</from><to>Insert &#x2f; Update res_partner</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Insert &#x2f; Update res_partner</name>
@@ -325,11 +336,21 @@
         <rename>country_id1</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>street</name>
+        <rename>&#x423;&#x43b;&#x438;&#x446;&#x430;1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>city</name>
+        <rename>&#x413;&#x43e;&#x440;&#x43e;&#x434;1</rename>
+        <update>Y</update>
+      </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>576</xloc>
-      <yloc>215</yloc>
+      <xloc>1115</xloc>
+      <yloc>207</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -346,7 +367,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  KL.&#x41a;&#x43e;&#x434;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438; ef_id_adr&#xa;, RTRIM&#x28;KL.&#x41d;&#x430;&#x438;&#x43c;&#x29; &#x2b; isnull&#x28;&#x27; &#x27; &#x2b;rtrim&#x28;KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#x29;,&#x27;&#x27;&#x29;  name_adr&#xa;, KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430; ef_id&#xa;, KL.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430;&#xa;, KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#xa;, KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, KL.&#x41c;&#x43d;&#x434;&#x436;&#x41a;&#x43e;&#x434;&#xa;, KL.GLN&#xa;, KL.&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#xa;, KL.&#x41d;&#x430;&#x438;&#x43c;&#xa;, KL.&#x41c;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430;&#xa;, KL.ExtFile&#xa;, TW.&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x41d;&#x430;&#x438;&#x43c; as &#x413;&#x43e;&#x440;&#x43e;&#x434;12&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE  KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer&#xa;, 192 as country_id1&#xa;FROM KLN_ADK KL&#xa;LEFT OUTER JOIN KAT_TWN TW ON KL.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430; &#x3d; TW.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#xa;where KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430;  &#x3c;&#x3e; 0&#xa;order by KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430;&#xa;&#xa;</sql>
+    <sql>SELECT&#xa;  KL.&#x41a;&#x43e;&#x434;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438; ef_id_adr&#xa;, RTRIM&#x28;KL.&#x41d;&#x430;&#x438;&#x43c;&#x29; &#x2b; isnull&#x28;&#x27; &#x27; &#x2b;rtrim&#x28;KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#x29;,&#x27;&#x27;&#x29;  name_adr&#xa;, KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430; ef_id&#xa;, KL.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430;&#xa;, KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#xa;, KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, KL.&#x41c;&#x43d;&#x434;&#x436;&#x41a;&#x43e;&#x434;&#xa;, KL.GLN&#xa;, KL.&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#xa;, KL.&#x41d;&#x430;&#x438;&#x43c;&#xa;, KL.&#x41c;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430;&#xa;, KL.ExtFile&#xa;, TW.&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x41d;&#x430;&#x438;&#x43c; as &#x413;&#x43e;&#x440;&#x43e;&#x434;12&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE  KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer&#xa;, 192 as country_id1&#xa;, CASE SUBSTRING&#x28;LTRIM&#x28;KL.&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#x29;,1,2&#x29; when &#x27;&#x443;&#x43b;&#x27; then 1 else 0 end as is_street&#xa;FROM KLN_ADK KL&#xa;LEFT OUTER JOIN KAT_TWN TW ON KL.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430; &#x3d; TW.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#xa;where KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430;  &#x3c;&#x3e; 0&#xa;order by KL.&#x41a;&#x43e;&#x434;&#x41a;&#x43b;&#x438;&#x435;&#x43d;&#x442;&#x430;&#xa;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -354,8 +375,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>70</xloc>
-      <yloc>138</yloc>
+      <xloc>95</xloc>
+      <yloc>114</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -372,7 +393,7 @@
            <schema_name/>
            </partitioning>
 <join_type>LEFT OUTER</join_type>
-<step1>KLN_ADK KAT_TWN</step1>
+<step1>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x435;&#x43d;&#x438;&#x435;</step1>
 <step2>res_partner par</step2>
     <keys_1>
       <key>ef_id</key>
@@ -382,8 +403,196 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>381</xloc>
-      <yloc>212</yloc>
+      <xloc>803</xloc>
+      <yloc>154</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x420;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x441; &#x433;&#x43e;&#x440;&#x43e;&#x434;&#x430;&#x43c;&#x438;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</in_stream_name>
+        <out_stream_name>&#x414;&#x43e;&#x43c;1</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5e; &#x2a;&#x28;&#x441;.&#x7c;&#x43f;.&#x7c;&#x43f;&#x5c;.&#x7c;&#x433;&#x5c;.&#x7c;,&#x7c; &#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z -&#x28;&#x29;&#x2116;&#x5d;&#x2b;&#x29; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;,&#x443;&#x43b;.&#x7c;, &#x443;&#x43b;.&#x7c;,  &#x443;&#x43b;.&#x7c;, &#x43f;&#x440;.&#x7c;,&#x43f;&#x440;.&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x29; &#x2a;&#x28;&#x5b;0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
+        <replace_by_string>&#x24;6</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</in_stream_name>
+        <out_stream_name>&#x423;&#x43b;&#x438;&#x446;&#x430;1</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5e; &#x2a;&#x28;&#x441;.&#x7c;&#x43f;.&#x7c;&#x43f;&#x5c;.&#x7c;&#x433;&#x5c;.&#x7c;,&#x7c; &#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z -&#x28;&#x29;&#x2116;&#x5d;&#x2b;&#x29; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;,&#x443;&#x43b;.&#x7c;, &#x443;&#x43b;.&#x7c;,  &#x443;&#x43b;.&#x7c;, &#x43f;&#x440;.&#x7c;,&#x43f;&#x440;.&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x29; &#x2a;&#x28;&#x5b;0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
+        <replace_by_string>&#x24;4</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>yes</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</in_stream_name>
+        <out_stream_name>&#x413;&#x43e;&#x440;&#x43e;&#x434;1</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5e; &#x2a;&#x28;&#x441;.&#x7c;&#x43f;.&#x7c;&#x43f;&#x5c;.&#x7c;&#x433;&#x5c;.&#x7c;,&#x7c; &#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z -&#x28;&#x29;&#x2116;&#x5d;&#x2b;&#x29; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;,&#x443;&#x43b;.&#x7c;, &#x443;&#x43b;.&#x7c;,  &#x443;&#x43b;.&#x7c;, &#x43f;&#x440;.&#x7c;,&#x43f;&#x440;.&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x29; &#x2a;&#x28;&#x5b;0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
+        <replace_by_string>&#x24;2</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>yes</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</in_stream_name>
+        <out_stream_name>&#x41d;&#x41f;1</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5e; &#x2a;&#x28;&#x441;.&#x7c;&#x43f;.&#x7c;&#x43f;&#x5c;.&#x7c;&#x433;&#x5c;.&#x7c;,&#x7c; &#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z -&#x28;&#x29;&#x2116;&#x5d;&#x2b;&#x29; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;,&#x443;&#x43b;.&#x7c;, &#x443;&#x43b;.&#x7c;,  &#x443;&#x43b;.&#x7c;, &#x43f;&#x440;.&#x7c;,&#x43f;&#x440;.&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x29; &#x2a;&#x28;&#x5b;0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
+        <replace_by_string>&#x24;1</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>yes</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</in_stream_name>
+        <out_stream_name>&#x421;&#x442;&#x440;&#x43e;&#x435;&#x43d;&#x438;&#x435;1</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5e; &#x2a;&#x28;&#x441;.&#x7c;&#x43f;.&#x7c;&#x43f;&#x5c;.&#x7c;&#x433;&#x5c;.&#x7c;,&#x7c; &#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z -&#x28;&#x29;&#x2116;&#x5d;&#x2b;&#x29; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;,&#x443;&#x43b;.&#x7c;, &#x443;&#x43b;.&#x7c;,  &#x443;&#x43b;.&#x7c;, &#x43f;&#x440;.&#x7c;,&#x43f;&#x440;.&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x29; &#x2a;&#x28;&#x5b;0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
+        <replace_by_string>&#x24;5</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>yes</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>406</xloc>
+      <yloc>91</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430;</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;_&#x433;&#x43e;&#x440;&#x43e;&#x434;</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>&#x423;&#x43b;&#x438;&#x446;&#x430;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x413;&#x43e;&#x440;&#x43e;&#x434;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x41d;&#x41f;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x421;&#x442;&#x440;&#x43e;&#x435;&#x43d;&#x438;&#x435;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>512</xloc>
+      <yloc>76</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -408,14 +617,43 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>395</xloc>
-      <yloc>36</yloc>
+      <xloc>804</xloc>
+      <yloc>34</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Replace in string</name>
+    <name>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x43d;&#x430; &#x43f;&#x43e;&#x442;&#x43e;&#x43a;&#x438;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>&#x420;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x441; &#x423;&#x43b;&#x438;&#x446;&#x430;&#x43c;&#x438;</send_true_to>
+<send_false_to>&#x420;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x441; &#x433;&#x43e;&#x440;&#x43e;&#x434;&#x430;&#x43c;&#x438;</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>is_street</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>1</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>289</xloc>
+      <yloc>148</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x420;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x441; &#x423;&#x43b;&#x438;&#x446;&#x430;&#x43c;&#x438;</name>
     <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
@@ -427,10 +665,21 @@
            </partitioning>
     <fields>
       <field>
-        <in_stream_name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;</in_stream_name>
-        <out_stream_name>&#x413;&#x43e;&#x440;&#x43e;&#x434;1</out_stream_name>
+        <in_stream_name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</in_stream_name>
+        <out_stream_name>&#x414;&#x43e;&#x43c;1</out_stream_name>
         <use_regex>yes</use_regex>
-        <replace_string>&#x5e; &#x2a;&#x28;&#x441;.&#x7c;&#x43f;.&#x7c;&#x43f;&#x5c;.&#x7c;&#x433;&#x5c;.&#x7c;,&#x7c; &#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z -&#x5d;&#x2b;&#x29; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;,&#x443;&#x43b;.&#x7c;, &#x443;&#x43b;.&#x7c;,  &#x443;&#x43b;.&#x7c;, &#x43f;&#x440;.&#x7c;,&#x43f;&#x440;.&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x29; &#x2a;&#x28;&#x5b;0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
+        <replace_string>&#x5e; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;&#x43f;&#x440;.&#x7c;&#x43f;&#x440;&#x7c;&#x443;&#x43b;&#x29; &#x2a;&#x28;&#x5b;&#x5c;t&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x28;&#x29;&#x27; .&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x5c;t0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
+        <replace_by_string>&#x24;4</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>yes</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</in_stream_name>
+        <out_stream_name>&#x423;&#x43b;&#x438;&#x446;&#x430;1</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5e; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;&#x43f;&#x440;.&#x7c;&#x43f;&#x440;&#x7c;&#x443;&#x43b;&#x29; &#x2a;&#x28;&#x5b;&#x5c;t&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x28;&#x29;&#x27; .&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x5c;t0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
         <replace_by_string>&#x24;2</replace_by_string>
         <set_empty_string>N</set_empty_string>
         <replace_field_by_string/>
@@ -438,27 +687,49 @@
         <case_sensitive>no</case_sensitive>
       </field>
       <field>
-        <in_stream_name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;</in_stream_name>
-        <out_stream_name>&#x423;&#x43b;&#x438;&#x446;&#x430;1</out_stream_name>
-        <use_regex>yes</use_regex>
-        <replace_string>&#x5e; &#x2a;&#x28;&#x441;.&#x7c;&#x43f;.&#x7c;&#x43f;&#x5c;.&#x7c;&#x433;&#x5c;.&#x7c;,&#x7c; &#x7c;&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z -&#x5d;&#x2b;&#x29; &#x2a;&#x28;&#x443;&#x43b;.&#x7c;,&#x443;&#x43b;.&#x7c;, &#x443;&#x43b;.&#x7c;,  &#x443;&#x43b;.&#x7c;, &#x43f;&#x440;.&#x7c;,&#x43f;&#x440;.&#x29; &#x2a;&#x28;&#x5b;&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z0-9 -&#x5d;&#x2b;&#x29; &#x2a;&#x28;, &#x434;.&#x7c;,&#x434;.&#x7c;,  &#x434;.&#x7c;, &#x7c; &#x7c;,&#x29; &#x2a;&#x28;&#x5b;0-9&#x430;-&#x44f;&#x410;-&#x42f;a-zA-Z&#x5c;- &#x28;&#x29;,&#x2116;.&#x5d;&#x2b;&#x29; &#x2a;&#x24;</replace_string>
-        <replace_by_string>&#x24;4</replace_by_string>
-        <set_empty_string>N</set_empty_string>
+        <in_stream_name>&#x413;&#x43e;&#x440;&#x43e;&#x434;12</in_stream_name>
+        <out_stream_name>&#x413;&#x43e;&#x440;&#x43e;&#x434;1</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x433;.</replace_string>
+        <replace_by_string/>
+        <set_empty_string>Y</set_empty_string>
         <replace_field_by_string/>
-        <whole_word>yes</whole_word>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>&#x41d;&#x430;&#x438;&#x43c;</in_stream_name>
+        <out_stream_name>&#x41d;&#x41f;1</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>Y</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>&#x41d;&#x430;&#x438;&#x43c;</in_stream_name>
+        <out_stream_name>&#x421;&#x442;&#x440;&#x43e;&#x435;&#x43d;&#x438;&#x435;1</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>Y</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
       </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>176</xloc>
-      <yloc>162</yloc>
+      <xloc>406</xloc>
+      <yloc>174</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Text file output</name>
+    <name>&#x423;&#x43b;&#x438;&#x446;&#x44b;</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -476,13 +747,13 @@
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;</name>
+      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;_&#x443;&#x43b;&#x438;&#x446;&#x430;</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -536,11 +807,364 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
+      <field>
+        <name>&#x414;&#x43e;&#x43c;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>290</xloc>
-      <yloc>130</yloc>
+      <xloc>484</xloc>
+      <yloc>194</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x417;&#x430;&#x43c;&#x435;&#x43d;&#x430; &#x26;nbsp</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;</in_stream_name>
+        <out_stream_name>&#x410;&#x434;&#x440;</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string> </replace_string>
+        <replace_by_string> </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>yes</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;</in_stream_name>
+        <out_stream_name>&#x410;&#x434;&#x440;_&#x440;&#x435;&#x433;</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5b;&#x5e;&#x410;-&#x44f;A-z0-9.,&#x28;&#x29;&#x23;&#x2116;&#x5c;s&#x5d;</replace_string>
+        <replace_by_string> </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>189</xloc>
+      <yloc>129</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x435;&#x43d;&#x438;&#x435;</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;_&#x43e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x435;&#x43d;&#x438;&#x435;</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>&#x423;&#x43b;&#x438;&#x446;&#x430;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x413;&#x43e;&#x440;&#x43e;&#x434;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x41d;&#x41f;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x421;&#x442;&#x440;&#x43e;&#x435;&#x43d;&#x438;&#x435;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>676</xloc>
+      <yloc>154</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Append streams</name>
+    <type>Append</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<head_name>&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x430;</head_name>
+<tail_name>&#x423;&#x43b;&#x438;&#x446;&#x44b;</tail_name>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>587</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x41e;&#x442;&#x431;&#x438;&#x440;&#x430;&#x435;&#x43c; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x441; &#x43e;&#x448;&#x438;&#x431;&#x43a;&#x430;&#x43c;&#x438;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>&#x410;&#x434;&#x440;&#x435;&#x441;&#x430; &#x441; &#x43e;&#x448;&#x438;&#x431;&#x43a;&#x430;&#x43c;&#x438;</send_true_to>
+<send_false_to>Insert &#x2f; Update res_partner</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>&#x413;&#x43e;&#x440;&#x43e;&#x434;1</leftvalue>
+   <function>CONTAINS</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>&#x433;.</text><length>2</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>&#x423;&#x43b;&#x438;&#x446;&#x430;1</leftvalue>
+   <function>CONTAINS</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>&#x443;&#x43b;.</text><length>3</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>910</xloc>
+      <yloc>183</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x430; &#x441; &#x43e;&#x448;&#x438;&#x431;&#x43a;&#x430;&#x43c;&#x438;</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;&#x410;&#x434;&#x440;&#x435;&#x441;&#x430;_&#x441; &#x43e;&#x448;&#x438;&#x431;&#x43a;&#x430;&#x43c;&#x438;</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>&#x423;&#x43b;&#x438;&#x446;&#x430;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x413;&#x43e;&#x440;&#x43e;&#x434;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x41d;&#x41f;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x421;&#x442;&#x440;&#x43e;&#x435;&#x43d;&#x438;&#x435;1</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>&#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1018</xloc>
+      <yloc>60</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
