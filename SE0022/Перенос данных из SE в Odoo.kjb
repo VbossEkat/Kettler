@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 15&#x3a;51&#x3a;17.554</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;21 18&#x3a;31&#x3a;20.435</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;22 13&#x3a;32&#x3a;37.266</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -492,8 +492,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>869</xloc>
-      <yloc>262</yloc>
+      <xloc>882</xloc>
+      <yloc>258</yloc>
       </entry>
     <entry>
       <name>read from KAT_PPL to res_partner &#x28;1&#x29;</name>
