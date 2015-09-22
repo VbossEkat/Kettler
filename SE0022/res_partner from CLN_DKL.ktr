@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;09&#x2f;10 17&#x3a;07&#x3a;55.206</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;22 13&#x3a;32&#x3a;30.325</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;22 13&#x3a;37&#x3a;59.865</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -275,7 +275,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <commit>1</commit>
+    <commit>1000</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema>public</schema>
@@ -309,6 +309,11 @@
       <value>
         <name>street</name>
         <rename>&#x423;&#x43b;&#x438;&#x446;&#x430;1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>country_id</name>
+        <rename>country_id1</rename>
         <update>Y</update>
       </value>
     </lookup>
@@ -528,7 +533,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  cd.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, cd.&#x41c;&#x43d;&#x434;&#x436;&#x41a;&#x43e;&#x434;&#xa;, cd.&#x41a;&#x43e;&#x434;&#x413;&#x43b;&#x41a;&#x43b;&#x43d;&#xa;, cd.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#xa;, cd.&#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c;&#xa;, cd.&#x41a;&#x43b;&#x43d;&#x410;&#x434;&#x440;&#x435;&#x441;&#xa;, cd.&#x41a;&#x43b;&#x43d;&#x410;&#x434;&#x440;&#x435;&#x441; as &#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#xa;, cd.&#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x443;&#x437;&#x410;&#x434;&#x440;&#x435;&#x441;&#xa;, cd.&#x414;&#x43e;&#x43f;&#x421;&#x432;&#x435;&#x434;&#x435;&#x43d;&#x438;&#x44f;&#xa;, SUBSTRING&#x28;RTRIM&#x28;LTRIM&#x28;cd.&#x418;&#x41d;&#x41d;&#x29;&#x29;,1,12&#x29; &#x418;&#x41d;&#x41d;&#xa;, cd.&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#xa;, cd.&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#x413;&#x440;&#x443;&#x437;&#xa;, cd.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x413;&#x440;&#x443;&#x437;&#xa;, cd.&#x41c;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430;&#xa;, cd.email&#xa;, CASE SUBSTRING&#x28;LTRIM&#x28;cd.&#x41a;&#x43b;&#x43d;&#x410;&#x434;&#x440;&#x435;&#x441;&#x29;,1,2&#x29; when &#x27;&#x433;.&#x27; then 0 else 1 end as is_street&#xa;,  TW.&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x41d;&#x430;&#x438;&#x43c; as &#x413;&#x43e;&#x440;&#x43e;&#x434;12&#xa;FROM CLN_DKL cd&#xa;LEFT OUTER JOIN KAT_TWN TW ON cd.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434; &#x3d; TW.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#xa;order by cd.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;</sql>
+    <sql>SELECT&#xa;  cd.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, cd.&#x41c;&#x43d;&#x434;&#x436;&#x41a;&#x43e;&#x434;&#xa;, cd.&#x41a;&#x43e;&#x434;&#x413;&#x43b;&#x41a;&#x43b;&#x43d;&#xa;, cd.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#xa;, cd.&#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c;&#xa;, cd.&#x41a;&#x43b;&#x43d;&#x410;&#x434;&#x440;&#x435;&#x441;&#xa;, cd.&#x41a;&#x43b;&#x43d;&#x410;&#x434;&#x440;&#x435;&#x441; as &#x410;&#x434;&#x440;&#x435;&#x441;&#x414;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43a;&#x438;&#xa;, cd.&#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x443;&#x437;&#x410;&#x434;&#x440;&#x435;&#x441;&#xa;, cd.&#x414;&#x43e;&#x43f;&#x421;&#x432;&#x435;&#x434;&#x435;&#x43d;&#x438;&#x44f;&#xa;, SUBSTRING&#x28;RTRIM&#x28;LTRIM&#x28;cd.&#x418;&#x41d;&#x41d;&#x29;&#x29;,1,12&#x29; &#x418;&#x41d;&#x41d;&#xa;, cd.&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#xa;, cd.&#x418;&#x43d;&#x434;&#x435;&#x43a;&#x441;&#x413;&#x440;&#x443;&#x437;&#xa;, cd.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x413;&#x440;&#x443;&#x437;&#xa;, cd.&#x41c;&#x430;&#x442;&#x440;&#x438;&#x446;&#x430;&#xa;, cd.email&#xa;, CASE SUBSTRING&#x28;LTRIM&#x28;cd.&#x41a;&#x43b;&#x43d;&#x410;&#x434;&#x440;&#x435;&#x441;&#x29;,1,2&#x29; when &#x27;&#x433;.&#x27; then 0 else 1 end as is_street&#xa;,  TW.&#x413;&#x43e;&#x440;&#x43e;&#x434;&#x41d;&#x430;&#x438;&#x43c; as &#x413;&#x43e;&#x440;&#x43e;&#x434;12&#xa;, 192 as country_id1&#xa;FROM CLN_DKL cd&#xa;LEFT OUTER JOIN KAT_TWN TW ON cd.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434; &#x3d; TW.&#x41a;&#x43e;&#x434;&#x413;&#x43e;&#x440;&#x43e;&#x434;&#xa;order by cd.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;</sql>
     <limit/>
     <lookup/>
     <execute_each_row>N</execute_each_row>
