@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;09&#x2f;22 10&#x3a;35&#x3a;06.820</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;24 18&#x3a;58&#x3a;08.748</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;24 19&#x3a;05&#x3a;27.869</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -318,7 +318,7 @@
       </value>
       <value>
         <name>journal_id</name>
-        <rename>journal_id</rename>
+        <rename>journal_id_bn_comp</rename>
         <update>Y</update>
       </value>
       <value>
