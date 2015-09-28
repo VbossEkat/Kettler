@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;09&#x2f;22 10&#x3a;35&#x3a;06.820</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;25 16&#x3a;09&#x3a;02.399</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;28 14&#x3a;03&#x3a;31.705</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -254,7 +254,7 @@
   <hop> <from>Append streams</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter D C</from><to>is D</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter D C</from><to>is C</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438;</from><to>account_bank_statement_line</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438;</from><to>account_bank_statement_line</to><enabled>N</enabled> </hop>
   <hop> <from>is D</from><to>Calculator</to><enabled>Y</enabled> </hop>
   <hop> <from>Calculator</from><to>Append streams</to><enabled>Y</enabled> </hop>
   <hop> <from>is C</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
@@ -267,8 +267,8 @@
   <hop> <from>Concat Fields</from><to>Select values</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>account_bank_statement_line</name>
-    <type>InsertUpdate</type>
+    <name>Append streams</name>
+    <type>Append</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -277,478 +277,12 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>OdooSE0022</connection>
-    <commit>1000</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>public</schema>
-      <table>account_bank_statement_line</table>
-      <key>
-        <name>id_state</name>
-        <field>statement_id</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>company_id</name>
-        <field>company_id</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>number</name>
-        <field>ref</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>statement_id</name>
-        <rename>id_state</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>name</name>
-        <rename>text70</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ref</name>
-        <rename>number</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>journal_id</name>
-        <rename>journal_id_bn_comp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>company_id</name>
-        <rename>company_id_bn_comp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>amount</name>
-        <rename>sum_val_real</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>bank_account_id</name>
-        <rename>id_bn</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>date</name>
-        <rename>date_oper</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>partner_id</name>
-        <rename>partner_id_bn</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>state</name>
-        <rename>State</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>partner_name</name>
-        <rename>partn_name</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
+<head_name>Calculator</head_name>
+<tail_name>Calculator 2</tail_name>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1086</xloc>
-      <yloc>95</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>account_bank_statement 2</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id id_state&#xa;, date as  date_state&#xa;--, create_date&#xa;, rch_b rch_state&#xa;FROM account_bank_statement&#xa;where rch_b is not null&#xa;order by  date, rch&#xa;&#xa;&#xa;--where rch &#x3d; &#x27;&#x24;&#x7b;cRch&#x7d;&#x27;-- and date &#x3d; &#x27;&#x24;&#x7b;dDateState&#x7d;&#x27;&#xa;--&#x24;dDateState  01&#x2f;01&#x2f;201&#xa;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>38</xloc>
-      <yloc>108</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>Sort rows</step1>
-<step2>account_bank_statement 2</step2>
-    <keys_1>
-      <key>Date</key>
-      <key>Rch_b</key>
-    </keys_1>
-    <keys_2>
-      <key>date_state</key>
-      <key>rch_state</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>96</xloc>
-      <yloc>165</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>Date</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>Rch_b</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>564</xloc>
-      <yloc>85</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438;</name>
-    <type>TextFileOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <separator>&#x3b;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding>windows-1251</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438;</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-      <field>
-        <name>partner_bic</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>21</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>partner_acc</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>26</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>id_state</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>&#xa0;</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>text70</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>115</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>number</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>12</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>journal_id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal>,</decimal>
-        <group>&#xa0;</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>company_id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal>,</decimal>
-        <group>&#xa0;</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>sum_val</name>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>26</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>date_oper</name>
-        <type>Date</type>
-        <format>dd&#x2f;MM&#x2f;yyyy</format>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>28</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>State</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>pol_bic</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>20</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>pol_acc</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>25</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>plat_bic</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>21</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>plat_acc</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>26</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>id_bn</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>&#xa0;</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>company_id_bn</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>&#xa0;</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>partner_id_bn</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>&#xa0;</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>bank_bic_bn</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>16</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>acc_number_bn</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>64</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>journal_id_bn</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>&#xa0;</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>947</xloc>
-      <yloc>159</yloc>
+      <xloc>499</xloc>
+      <yloc>187</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1690,6 +1224,170 @@
     </step>
 
   <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>sum_val_real</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>sum_val</field_a>
+<field_b>minus1</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>418</xloc>
+      <yloc>156</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>sum_val_real</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>sum_val</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>427</xloc>
+      <yloc>235</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Concat Fields</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>file</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>Rch</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <ConcatFields>
+<targetFieldName>Rch1</targetFieldName>
+<targetFieldLength>25</targetFieldLength>
+<removeSelectedFields>N</removeSelectedFields>
+    </ConcatFields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>398</xloc>
+      <yloc>18</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter D C</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>is D</send_true_to>
+<send_false_to>is C</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>d_c</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>D</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>218</xloc>
+      <yloc>196</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
@@ -1714,6 +1412,260 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>162</xloc>
       <yloc>41</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort rows</step1>
+<step2>account_bank_statement 2</step2>
+    <keys_1>
+      <key>Date</key>
+      <key>Rch_b</key>
+    </keys_1>
+    <keys_2>
+      <key>date_state</key>
+      <key>rch_state</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>122</xloc>
+      <yloc>141</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort rows 2</step1>
+<step2>res_partner_bank</step2>
+    <keys_1>
+      <key>partner_bic</key>
+      <key>partner_acc</key>
+    </keys_1>
+    <keys_2>
+      <key>bank_bic_bn</key>
+      <key>acc_number_bn</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>646</xloc>
+      <yloc>173</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 2 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Sort rows 2 2</step1>
+<step2>res_partner_bank 2</step2>
+    <keys_1>
+      <key>partner_bic</key>
+      <key>partner_acc</key>
+    </keys_1>
+    <keys_2>
+      <key>bank_bic_bn_comp</key>
+      <key>acc_number_bn_comp</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>819</xloc>
+      <yloc>154</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string 2</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Type_close</in_stream_name>
+        <out_stream_name>period_id</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>0</replace_string>
+        <replace_by_string>27</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Type_close</in_stream_name>
+        <out_stream_name>journal_id</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>0</replace_string>
+        <replace_by_string>10</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Type_close</in_stream_name>
+        <out_stream_name>company_id</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>0</replace_string>
+        <replace_by_string>1</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Type_close</in_stream_name>
+        <out_stream_name>State</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>0</replace_string>
+        <replace_by_string>draft</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>bc_rur</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.</replace_string>
+        <replace_by_string>,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Tc_rur</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.</replace_string>
+        <replace_by_string>,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Date</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.</replace_string>
+        <replace_by_string>&#x2f;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>create_date</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.</replace_string>
+        <replace_by_string>&#x2f;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>date_oper</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.</replace_string>
+        <replace_by_string>&#x2f;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>pol_bic</in_stream_name>
+        <out_stream_name>partn_bic</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5c;d&#x2b;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>Y</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>pol_acc</in_stream_name>
+        <out_stream_name>partn_acc</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5c;d&#x2b;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>Y</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>sum_val</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.</replace_string>
+        <replace_by_string>,</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>d_c</in_stream_name>
+        <out_stream_name>minus1</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5c;D&#x2b;</replace_string>
+        <replace_by_string>-1</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>285</xloc>
+      <yloc>40</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1927,15 +1879,15 @@
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>489</xloc>
-      <yloc>41</yloc>
+      <xloc>480</xloc>
+      <yloc>10</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Replace in string 2</name>
-    <type>ReplaceString</type>
+    <name>Sort rows</name>
+    <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1944,211 +1896,31 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <in_stream_name>Type_close</in_stream_name>
-        <out_stream_name>period_id</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>0</replace_string>
-        <replace_by_string>27</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
+        <name>Date</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
       </field>
       <field>
-        <in_stream_name>Type_close</in_stream_name>
-        <out_stream_name>journal_id</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>0</replace_string>
-        <replace_by_string>10</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>Type_close</in_stream_name>
-        <out_stream_name>company_id</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>0</replace_string>
-        <replace_by_string>1</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>Type_close</in_stream_name>
-        <out_stream_name>State</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>0</replace_string>
-        <replace_by_string>draft</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>bc_rur</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>,</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>Tc_rur</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>,</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>Date</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>&#x2f;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>create_date</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>&#x2f;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>date_oper</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>&#x2f;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>pol_bic</in_stream_name>
-        <out_stream_name>partn_bic</out_stream_name>
-        <use_regex>yes</use_regex>
-        <replace_string>&#x5c;d&#x2b;</replace_string>
-        <replace_by_string/>
-        <set_empty_string>Y</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>pol_acc</in_stream_name>
-        <out_stream_name>partn_acc</out_stream_name>
-        <use_regex>yes</use_regex>
-        <replace_string>&#x5c;d&#x2b;</replace_string>
-        <replace_by_string/>
-        <set_empty_string>Y</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>sum_val</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>,</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>d_c</in_stream_name>
-        <out_stream_name>minus1</out_stream_name>
-        <use_regex>yes</use_regex>
-        <replace_string>&#x5c;D&#x2b;</replace_string>
-        <replace_by_string>-1</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
+        <name>Rch_b</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
       </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>285</xloc>
-      <yloc>40</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>res_partner_bank</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id as   id_bn&#xa;, company_id as company_id_bn&#xa;, partner_id as partner_id_bn&#xa;, bank_bic as bank_bic_bn&#xa;, acc_number as acc_number_bn&#xa;, journal_id as journal_id_bn&#xa;FROM res_partner_bank&#xa;order by bank_bic&#xa;, acc_number&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>676</xloc>
-      <yloc>267</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join 2</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>Sort rows 2</step1>
-<step2>res_partner_bank</step2>
-    <keys_1>
-      <key>partner_bic</key>
-      <key>partner_acc</key>
-    </keys_1>
-    <keys_2>
-      <key>bank_bic_bn</key>
-      <key>acc_number_bn</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>614</xloc>
-      <yloc>154</yloc>
+      <xloc>567</xloc>
+      <yloc>37</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2187,15 +1959,15 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>582</xloc>
-      <yloc>241</yloc>
+      <xloc>568</xloc>
+      <yloc>215</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter D C</name>
-    <type>FilterRows</type>
+    <name>Sort rows 2 2</name>
+    <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2204,27 +1976,38 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>is D</send_true_to>
-<send_false_to>is C</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>d_c</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>D</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Bik</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Rch1</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>201</xloc>
-      <yloc>190</yloc>
+      <xloc>731</xloc>
+      <yloc>159</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Append streams</name>
-    <type>Append</type>
+    <name>account_bank_statement 2</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2233,19 +2016,24 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<head_name>Calculator</head_name>
-<tail_name>Calculator 2</tail_name>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id id_state&#xa;, date as  date_state&#xa;--, create_date&#xa;, rch_b rch_state&#xa;FROM account_bank_statement&#xa;where rch_b is not null&#xa;order by  date, rch&#xa;&#xa;&#xa;--where rch &#x3d; &#x27;&#x24;&#x7b;cRch&#x7d;&#x27;-- and date &#x3d; &#x27;&#x24;&#x7b;dDateState&#x7d;&#x27;&#xa;--&#x24;dDateState  01&#x2f;01&#x2f;201&#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>499</xloc>
-      <yloc>187</yloc>
+      <xloc>33</xloc>
+      <yloc>232</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>is D</name>
-    <type>SelectValues</type>
+    <name>account_bank_statement_line</name>
+    <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2254,83 +2042,90 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>pol_bic</name>
-        <rename>partner_bic</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>pol_acc</name>
-        <rename>partner_acc</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>id_state</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>text70</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>number</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>journal_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>company_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>sum_val</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>date_oper</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>State</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>pol_bic</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>pol_acc</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>plat_bic</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>plat_acc</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>pol_name</name>
+    <connection>OdooSE0022</connection>
+    <commit>1000</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>public</schema>
+      <table>account_bank_statement_line</table>
+      <key>
+        <name>id_state</name>
+        <field>statement_id</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>company_id</name>
+        <field>company_id</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>number</name>
+        <field>ref</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>statement_id</name>
+        <rename>id_state</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>name</name>
+        <rename>text70</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ref</name>
+        <rename>number</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>journal_id</name>
+        <rename>journal_id_bn_comp</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>company_id</name>
+        <rename>company_id_bn_comp</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>amount</name>
+        <rename>sum_val_real</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>bank_account_id</name>
+        <rename>id_bn</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>date</name>
+        <rename>date_oper</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>partner_id</name>
+        <rename>partner_id_bn</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>state</name>
+        <rename>State</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>partner_name</name>
         <rename>partn_name</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>minus1</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Bik</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Rch1</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
+        <update>Y</update>
+      </value>
+    </lookup>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>320</xloc>
-      <yloc>155</yloc>
+      <xloc>1086</xloc>
+      <yloc>95</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2428,8 +2223,8 @@
     </step>
 
   <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
+    <name>is D</name>
+    <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2438,31 +2233,90 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <calculation><field_name>sum_val_real</field_name>
-<calc_type>MULTIPLY</calc_type>
-<field_a>sum_val</field_a>
-<field_b>minus1</field_b>
-<field_c/>
-<value_type>Number</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
+    <fields>      <field>        <name>pol_bic</name>
+        <rename>partner_bic</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>pol_acc</name>
+        <rename>partner_acc</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>id_state</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>text70</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>number</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>journal_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>company_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>sum_val</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>date_oper</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>State</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>pol_bic</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>pol_acc</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>plat_bic</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>plat_acc</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>pol_name</name>
+        <rename>partn_name</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>minus1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Bik</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Rch1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>400</xloc>
-      <yloc>154</yloc>
+      <xloc>330</xloc>
+      <yloc>159</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Calculator 2</name>
-    <type>Calculator</type>
+    <name>res_partner_bank</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2471,24 +2325,17 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <calculation><field_name>sum_val_real</field_name>
-<calc_type>COPY_FIELD</calc_type>
-<field_a>sum_val</field_a>
-<field_b/>
-<field_c/>
-<value_type>Number</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id as   id_bn&#xa;, company_id as company_id_bn&#xa;, partner_id as partner_id_bn&#xa;, bank_bic as bank_bic_bn&#xa;, acc_number as acc_number_bn&#xa;, journal_id as journal_id_bn&#xa;FROM res_partner_bank&#xa;order by bank_bic&#xa;, acc_number&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>394</xloc>
-      <yloc>229</yloc>
+      <xloc>676</xloc>
+      <yloc>267</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2520,8 +2367,8 @@
     </step>
 
   <step>
-    <name>Merge Join 2 2</name>
-    <type>MergeJoin</type>
+    <name>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438;</name>
+    <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2530,94 +2377,24 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>Sort rows 2 2</step1>
-<step2>res_partner_bank 2</step2>
-    <keys_1>
-      <key>partner_bic</key>
-      <key>partner_acc</key>
-    </keys_1>
-    <keys_2>
-      <key>bank_bic_bn_comp</key>
-      <key>acc_number_bn_comp</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>803</xloc>
-      <yloc>154</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows 2 2</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>Bik</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>Rch1</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>702</xloc>
-      <yloc>130</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Concat Fields</name>
-    <type>ConcatFields</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <separator/>
-    <enclosure/>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
+    <header>Y</header>
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>windows-1251</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>file</name>
+      <name>&#x2f;home&#x2f;boss&#x2f;workspace&#x2f;Temp_files&#x2f;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438;</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>txt</extention>
       <append>N</append>
       <split>N</split>
@@ -2633,8 +2410,116 @@
     </file>
     <fields>
       <field>
-        <name>Rch</name>
-        <type>None</type>
+        <name>partner_bic</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>21</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>partner_acc</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>26</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>id_state</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+        <currency/>
+        <decimal>,</decimal>
+        <group>&#xa0;</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>9</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>text70</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>115</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>number</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>12</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>journal_id</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group>&#xa0;</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>company_id</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group>&#xa0;</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>sum_val</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>26</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>date_oper</name>
+        <type>Date</type>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>28</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>State</name>
+        <type>String</type>
         <format/>
         <currency/>
         <decimal/>
@@ -2644,16 +2529,131 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
+      <field>
+        <name>pol_bic</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>20</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>pol_acc</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>25</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>plat_bic</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>21</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>plat_acc</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>26</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>id_bn</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+        <currency/>
+        <decimal>,</decimal>
+        <group>&#xa0;</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>9</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>company_id_bn</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+        <currency/>
+        <decimal>,</decimal>
+        <group>&#xa0;</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>9</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>partner_id_bn</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+        <currency/>
+        <decimal>,</decimal>
+        <group>&#xa0;</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>9</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>bank_bic_bn</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>16</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>acc_number_bn</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>64</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>journal_id_bn</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+        <currency/>
+        <decimal>,</decimal>
+        <group>&#xa0;</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>9</length>
+        <precision>0</precision>
+      </field>
     </fields>
-    <ConcatFields>
-<targetFieldName>Rch1</targetFieldName>
-<targetFieldLength>25</targetFieldLength>
-<removeSelectedFields>N</removeSelectedFields>
-    </ConcatFields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>398</xloc>
-      <yloc>18</yloc>
+      <xloc>947</xloc>
+      <yloc>159</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
