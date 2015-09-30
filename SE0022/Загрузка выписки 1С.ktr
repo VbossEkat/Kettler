@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;09&#x2f;25 16&#x3a;25&#x3a;07.067</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;28 14&#x3a;03&#x3a;26.866</modified_date>
+  <modified_date>2015&#x2f;09&#x2f;30 18&#x3a;47&#x3a;31.124</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -244,43 +244,47 @@
   </connection>
   <order>
   <hop> <from>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x432; 1&#x421;</from><to>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</to><enabled>Y</enabled> </hop>
   <hop> <from>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;</from><to>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
   <hop> <from>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c;</from><to>&#x41d;&#x443;&#x43c;&#x435;&#x440;&#x443;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x41d;&#x443;&#x43c;&#x435;&#x440;&#x443;&#x435;&#x43c;</from><to>Filter rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>Sort rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows</from><to>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41d;&#x443;&#x43c;&#x435;&#x440;&#x443;&#x435;&#x43c;</from><to>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>Sort </to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort </from><to>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>Sort rows 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string 2</from><to>Concat Fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41f;&#x440;&#x435;&#x43e;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x43c;</from><to>Concat Fields</to><enabled>Y</enabled> </hop>
   <hop> <from>res_partner_bank 2</from><to>Merge Join 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 2 2</from><to>account_bank_statement</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 2 2</from><to>Merge Join 2 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Concat Fields</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>Replace in string 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 2</from><to>Sort rows 2 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows 2</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows 2 2 2</from><to>Merge Join 2 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>res_partner_bank</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>res_partner_bank 2 2</from><to>Merge Join 2 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Calculator</from><to>Append streams</to><enabled>Y</enabled> </hop>
-  <hop> <from>Calculator 2</from><to>Append streams</to><enabled>Y</enabled> </hop>
-  <hop> <from>is C</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>is D</from><to>Calculator</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter D C</from><to>Add minus1</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add minus1</from><to>is D</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter D C</from><to>Add minus1 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add minus1 2</from><to>is C</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c; 2</from><to>Get Variables</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values 2</from><to>Filter D C</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables</from><to>Replace in string 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string 2 2</from><to>Select values 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Append streams</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 2 2 2</from><to>Block until account_bank_statement</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>&#x41f;&#x440;&#x435;&#x43e;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x418;&#x449;&#x435;&#x43c;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</from><to>Sort3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort2</from><to>&#x418;&#x449;&#x435;&#x43c;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort3</from><to>&#x418;&#x449;&#x435;&#x43c;&#x3f;&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x421;&#x447;&#x435;&#x442;&#x430;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</from><to>&#x418;&#x449;&#x435;&#x43c;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>res_partner_bank 2 2</from><to>&#x418;&#x449;&#x435;&#x43c;&#x3f;&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator</from><to>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 2</from><to>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x420;&#x430;&#x441;&#x445;&#x43e;&#x434;</from><to>Calculator</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x422;&#x435;&#x441;&#x442;&#x43e;&#x432;&#x44b;&#x439;</from><to>Var &#x414;&#x430;&#x442;&#x430; &#x421;&#x447;&#x435;&#x442;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Var &#x414;&#x430;&#x442;&#x430; &#x421;&#x447;&#x435;&#x442;</from><to>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430;</from><to>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</from><to>Sort2</to><enabled>Y</enabled> </hop>
   <hop> <from>account_bank_statement 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Block until account_bank_statement</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>account_bank_statement_line</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>&#x422;&#x435;&#x441;&#x442;&#x43e;&#x432;&#x44b;&#x439;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430; 2</from><to>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</from><to>Add minus1</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add minus1</from><to>&#x420;&#x430;&#x441;&#x445;&#x43e;&#x434;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add minus1 2</from><to>&#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</from><to>Add minus1 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x418;&#x449;&#x435;&#x43c;&#x3f;&#x3f;</from><to>Add fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add fields</from><to>&#x416;&#x434;&#x435;&#x43c;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x443;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x421;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x432;&#x44b;&#x43f;</from><to>&#x41f;&#x43b;&#x430;&#x442;&#x435;&#x436;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>&#x418;&#x437; &#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</from><to>&#x418;&#x437; &#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x418;&#x437; &#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>&#x421;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x432;&#x44b;&#x43f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 2 2</from><to>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x416;&#x434;&#x435;&#x43c;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x443;</from><to>Merge Join</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Concat Fields</name>
@@ -345,14 +349,14 @@
     </ConcatFields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>547</xloc>
-      <yloc>14</yloc>
+      <xloc>533</xloc>
+      <yloc>65</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter rows</name>
+    <name>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -374,8 +378,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>131</xloc>
-      <yloc>131</yloc>
+      <xloc>140</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -384,14 +388,14 @@
     <name>Merge Join 2 2</name>
     <type>MergeJoin</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-<join_type>LEFT OUTER</join_type>
+<join_type>INNER</join_type>
 <step1>Sort rows 2 2</step1>
 <step2>res_partner_bank 2</step2>
     <keys_1>
@@ -402,14 +406,14 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>866</xloc>
-      <yloc>77</yloc>
+      <xloc>830</xloc>
+      <yloc>27</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Replace in string 2</name>
+    <name>&#x41f;&#x440;&#x435;&#x43e;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x43c;</name>
     <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
@@ -677,14 +681,14 @@
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>631</xloc>
-      <yloc>53</yloc>
+      <xloc>621</xloc>
+      <yloc>36</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Sort rows</name>
+    <name>Sort </name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -717,8 +721,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>209</xloc>
-      <yloc>214</yloc>
+      <xloc>193</xloc>
+      <yloc>294</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -751,14 +755,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>765</xloc>
-      <yloc>53</yloc>
+      <xloc>707</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>account_bank_statement</name>
+    <name>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -818,7 +822,7 @@
       </value>
       <value>
         <name>company_id</name>
-        <rename>id_bn_comp</rename>
+        <rename>id_bn__comp</rename>
         <update>Y</update>
       </value>
       <value>
@@ -834,8 +838,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1023</xloc>
-      <yloc>45</yloc>
+      <xloc>1141</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -852,7 +856,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  rpb.id&#xa;, rc.id as   id_bn_comp&#xa;, rpb.company_id as company_id_bn_comp&#xa;, rpb.partner_id as partner_id_bn_comp&#xa;, rpb.bank_bic as bank_bic_bn_comp&#xa;, rpb.acc_number as acc_number_bn_comp&#xa;, rpb.journal_id as journal_id_bn_comp&#xa;FROM res_partner_bank rpb&#xa;left outer join res_company rc on rpb.partner_id &#x3d; rc.partner_id&#xa;where rc.id is not null&#xa;order by rpb.bank_bic&#xa;, rpb.acc_number&#xa;</sql>
+    <sql>SELECT&#xa;  rpb.id&#xa;, rc.id as   id_bn__comp&#xa;, rpb.company_id as company_id_bn_comp&#xa;, rpb.partner_id as partner_id_bn_comp&#xa;, rpb.bank_bic as bank_bic_bn_comp&#xa;, rpb.acc_number as acc_number_bn_comp&#xa;, rpb.journal_id as journal_id_bn_comp&#xa;, aj.default_debit_account_id&#xa;, aj.default_credit_account_id&#xa;FROM res_partner_bank rpb&#xa;left outer join res_company rc on rpb.partner_id &#x3d; rc.partner_id&#xa;left outer join account_journal aj on rpb.journal_id &#x3d; aj.id&#xa;where rc.id is not null&#xa;order by rpb.bank_bic&#xa;, rpb.acc_number&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -860,8 +864,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>867</xloc>
-      <yloc>0</yloc>
+      <xloc>828</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -992,8 +996,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>143</xloc>
-      <yloc>213</yloc>
+      <xloc>110</xloc>
+      <yloc>290</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1607,8 +1611,8 @@
         </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>293</xloc>
-      <yloc>215</yloc>
+      <xloc>231</xloc>
+      <yloc>222</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1834,8 +1838,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>66</xloc>
-      <yloc>214</yloc>
+      <xloc>25</xloc>
+      <yloc>223</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1864,14 +1868,14 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>30</xloc>
-      <yloc>125</yloc>
+      <xloc>31</xloc>
+      <yloc>107</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Merge Join 2</name>
+    <name>&#x418;&#x449;&#x435;&#x43c;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -1882,8 +1886,8 @@
            <schema_name/>
            </partitioning>
 <join_type>LEFT OUTER</join_type>
-<step1>Sort rows 2</step1>
-<step2>res_partner_bank</step2>
+<step1>Sort2</step1>
+<step2>&#x421;&#x447;&#x435;&#x442;&#x430;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</step2>
     <keys_1>
       <key>partner_bic</key>
       <key>partner_acc</key>
@@ -1894,14 +1898,14 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>962</xloc>
-      <yloc>164</yloc>
+      <xloc>861</xloc>
+      <yloc>201</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Merge Join 2 2 2</name>
+    <name>&#x418;&#x449;&#x435;&#x43c;&#x3f;&#x3f;</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -1912,7 +1916,7 @@
            <schema_name/>
            </partitioning>
 <join_type>LEFT OUTER</join_type>
-<step1>Sort rows 2 2 2</step1>
+<step1>Sort3</step1>
 <step2>res_partner_bank 2 2</step2>
     <keys_1>
       <key>partner_bic</key>
@@ -1924,14 +1928,14 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1129</xloc>
-      <yloc>171</yloc>
+      <xloc>962</xloc>
+      <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Sort rows 2</name>
+    <name>Sort2</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1964,14 +1968,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>880</xloc>
-      <yloc>171</yloc>
+      <xloc>785</xloc>
+      <yloc>193</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Sort rows 2 2 2</name>
+    <name>Sort3</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1998,14 +2002,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1036</xloc>
-      <yloc>158</yloc>
+      <xloc>959</xloc>
+      <yloc>189</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>account_bank_statement_line</name>
+    <name>&#x421;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x432;&#x44b;&#x43f;</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -2097,14 +2101,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1333</xloc>
-      <yloc>30</yloc>
+      <xloc>1383</xloc>
+      <yloc>223</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>res_partner_bank</name>
+    <name>&#x421;&#x447;&#x435;&#x442;&#x430;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -2115,7 +2119,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>&#xa;SELECT&#xa;  rpb.id id_bn&#xa;, rc.id as   id_bn_comp&#xa;, rpb.company_id as company_id_bn&#xa;, rpb.partner_id as partner_id_bn&#xa;, rpb.bank_bic as bank_bic_bn&#xa;, rpb.acc_number as acc_number_bn&#xa;, rpb.journal_id as journal_id_bn&#xa;FROM res_partner_bank rpb&#xa;left outer join res_company rc on rpb.partner_id &#x3d; rc.partner_id&#xa;--where rc.id is not null&#xa;order by rpb.bank_bic&#xa;, rpb.acc_number&#xa;&#xa;&#x2f;&#x2a;&#xa;SELECT&#xa;  id as   id_bn&#xa;, company_id as company_id_bn&#xa;, partner_id as partner_id_bn&#xa;, bank_bic as bank_bic_bn&#xa;, acc_number as acc_number_bn&#xa;, journal_id as journal_id_bn&#xa;FROM res_partner_bank&#xa;order by bank_bic&#xa;, acc_number&#xa;&#x2a;&#x2f;&#xa;</sql>
+    <sql>&#xa;SELECT&#xa;  rpb.id id_bn&#xa;, rc.id as   id_bn_comp&#xa;, rpb.company_id as company_id_bn&#xa;, rpb.partner_id as partner_id_bn&#xa;, rpb.bank_bic as bank_bic_bn&#xa;, rpb.acc_number as acc_number_bn&#xa;--, rpb.journal_id as journal_id_bn&#xa;FROM res_partner_bank rpb&#xa;left outer join res_company rc on rpb.partner_id &#x3d; rc.partner_id&#xa;--where rc.id is not null&#xa;order by rpb.bank_bic&#xa;, rpb.acc_number&#xa;&#xa;&#x2f;&#x2a;&#xa;SELECT&#xa;  id as   id_bn&#xa;, company_id as company_id_bn&#xa;, partner_id as partner_id_bn&#xa;, bank_bic as bank_bic_bn&#xa;, acc_number as acc_number_bn&#xa;, journal_id as journal_id_bn&#xa;FROM res_partner_bank&#xa;order by bank_bic&#xa;, acc_number&#xa;&#x2a;&#x2f;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2123,8 +2127,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>966</xloc>
-      <yloc>263</yloc>
+      <xloc>862</xloc>
+      <yloc>302</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2141,7 +2145,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id as   id_bn_comp&#xa;, company_id as company_id_bn_comp&#xa;, partner_id as partner_id_bn_comp&#xa;, bank_bic as bank_bic_bn_comp&#xa;, acc_number as acc_number_bn_comp&#xa;, journal_id as journal_id_bn_comp&#xa;FROM res_partner_bank&#xa;order by bank_bic&#xa;, acc_number&#xa;</sql>
+    <sql>SELECT&#xa;  rpb.id as   id_bn_comp&#xa;, rpb.company_id as company_id_bn_comp&#xa;, rpb.partner_id as partner_id_bn_comp&#xa;, rpb.bank_bic as bank_bic_bn_comp&#xa;, rpb.acc_number as acc_number_bn_comp&#xa;--, rpb.journal_id as journal_id_bn_comp&#xa;FROM res_partner_bank rpb&#xa;order by rpb.bank_bic&#xa;, rpb.acc_number&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2149,14 +2153,14 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1124</xloc>
-      <yloc>249</yloc>
+      <xloc>1045</xloc>
+      <yloc>212</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Append streams</name>
+    <name>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</name>
     <type>Append</type>
     <description/>
     <distribute>Y</distribute>
@@ -2170,8 +2174,8 @@
 <tail_name>Calculator 2</tail_name>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>811</xloc>
-      <yloc>212</yloc>
+      <xloc>786</xloc>
+      <yloc>275</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2203,8 +2207,8 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>704</xloc>
-      <yloc>174</yloc>
+      <xloc>690</xloc>
+      <yloc>193</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2236,14 +2240,14 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>706</xloc>
-      <yloc>257</yloc>
+      <xloc>694</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter D C</name>
+    <name>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -2265,14 +2269,14 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>488</xloc>
-      <yloc>203</yloc>
+      <xloc>511</xloc>
+      <yloc>271</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>is C</name>
+    <name>&#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -2310,14 +2314,6 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>journal_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>company_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>&#x421;&#x443;&#x43c;&#x43c;&#x430;</name>
         <rename/>
         <length>-2</length>
@@ -2358,21 +2354,21 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>State_</name>
+      </field>      <field>        <name>type</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>251</yloc>
+      <xloc>610</xloc>
+      <yloc>356</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>is D</name>
+    <name>&#x420;&#x430;&#x441;&#x445;&#x43e;&#x434;</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -2410,14 +2406,6 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>journal_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>company_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>&#x421;&#x443;&#x43c;&#x43c;&#x430;</name>
         <rename/>
         <length>-2</length>
@@ -2458,15 +2446,15 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>State_</name>
+      </field>      <field>        <name>type</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>616</xloc>
-      <yloc>165</yloc>
+      <xloc>611</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2496,37 +2484,13 @@
         <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>journal_id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>0</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>company_id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>0</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>State_</name>
+        <name>type</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>draft</nullif>
+        <nullif>payment</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -2534,8 +2498,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>552</xloc>
-      <yloc>168</yloc>
+      <xloc>529</xloc>
+      <yloc>193</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2565,37 +2529,13 @@
         <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>journal_id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>0</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>company_id</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>0</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>State_</name>
+        <name>type</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>draft</nullif>
+        <nullif>receipt</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -2603,14 +2543,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>551</xloc>
-      <yloc>256</yloc>
+      <xloc>524</xloc>
+      <yloc>357</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Get Variables</name>
+    <name>Var &#x414;&#x430;&#x442;&#x430; &#x421;&#x447;&#x435;&#x442;</name>
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
@@ -2648,14 +2588,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>373</xloc>
-      <yloc>207</yloc>
+      <xloc>349</xloc>
+      <yloc>318</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c; 2</name>
+    <name>&#x422;&#x435;&#x441;&#x442;&#x43e;&#x432;&#x44b;&#x439;</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
@@ -2672,14 +2612,14 @@
         <jsScript_script>&#x2f;&#x2f;var nameStr&#x3d;&#x22;RCH_OUN&#x22;&#x3b;&#xa;&#x2f;&#x2f;Alert&#x28;getVariable&#x28;nameStr, &#x22;&#x22;&#x29;&#x29;&#x3b;&#xa;&#xa;&#xa;&#xa;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>320</xloc>
-      <yloc>272</yloc>
+      <xloc>292</xloc>
+      <yloc>293</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select values 2</name>
+    <name>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430; 2</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -2722,14 +2662,14 @@
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>490</xloc>
-      <yloc>120</yloc>
+      <xloc>431</xloc>
+      <yloc>183</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Replace in string 2 2</name>
+    <name>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430;</name>
     <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
@@ -2765,14 +2705,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>395</xloc>
-      <yloc>127</yloc>
+      <xloc>348</xloc>
+      <yloc>202</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Block until account_bank_statement</name>
+    <name>&#x416;&#x434;&#x435;&#x43c;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x443;</name>
     <type>BlockUntilStepsFinish</type>
     <description/>
     <distribute>Y</distribute>
@@ -2784,14 +2724,14 @@
            </partitioning>
     <steps>
       <step>
-        <name>account_bank_statement</name>
+        <name>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</name>
         <CopyNr>0</CopyNr>
         </step>
       </steps>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1187</xloc>
-      <yloc>312</yloc>
+      <xloc>1093</xloc>
+      <yloc>323</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2808,7 +2748,7 @@
            <schema_name/>
            </partitioning>
 <join_type>LEFT OUTER</join_type>
-<step1>Block until account_bank_statement</step1>
+<step1>&#x416;&#x434;&#x435;&#x43c;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x443;</step1>
 <step2>account_bank_statement 2</step2>
     <keys_1>
       <key>Date_date</key>
@@ -2820,8 +2760,8 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1300</xloc>
-      <yloc>201</yloc>
+      <xloc>1241</xloc>
+      <yloc>276</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2846,8 +2786,293 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1347</xloc>
-      <yloc>313</yloc>
+      <xloc>1159</xloc>
+      <yloc>167</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x41f;&#x43b;&#x430;&#x442;&#x435;&#x436;</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <commit>1000</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>public</schema>
+      <table>account_voucher</table>
+      <key>
+        <name>Date_date</name>
+        <field>date_due</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>id_bn__comp</name>
+        <field>company_id</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>&#x41d;&#x43e;&#x43c;&#x435;&#x440;</name>
+        <field>number</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>partner_id_bn</name>
+        <field>partner_id</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>name</name>
+        <rename>&#x41d;&#x430;&#x437;&#x43d;&#x430;&#x447;&#x435;&#x43d;&#x438;&#x435;&#x41f;&#x43b;&#x430;&#x442;&#x435;&#x436;&#x430;</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>number</name>
+        <rename>&#x41d;&#x43e;&#x43c;&#x435;&#x440;</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>journal_id</name>
+        <rename>journal_id_bn_comp</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>company_id</name>
+        <rename>id_bn__comp</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>amount</name>
+        <rename>&#x421;&#x443;&#x43c;&#x43c;&#x430;</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>date_due</name>
+        <rename>Date_date</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>partner_id</name>
+        <rename>partner_id_bn</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>state</name>
+        <rename>State_</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pay_now</name>
+        <rename>pay_now</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>payment_rate_currency_id</name>
+        <rename>payment_rate_currency_id</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>payment_option</name>
+        <rename>payment_option</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>payment_rate</name>
+        <rename>payment_rate</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>comment</name>
+        <rename>comment</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>account_id</name>
+        <rename>default_debit_account_id</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>period_id</name>
+        <rename>period_id</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>date</name>
+        <rename>Date_date</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>type</name>
+        <rename>type</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>reference</name>
+        <rename>&#x41d;&#x43e;&#x43c;&#x435;&#x440;</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1448</xloc>
+      <yloc>212</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add fields</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>company_id</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>0</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>State_</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>draft</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>pay_now</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>pay_now</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>payment_option</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>without_writeoff</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>payment_rate</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>1,0</nullif>
+        <length>2</length>
+        <precision>1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>payment_rate_currency_id</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>31</nullif>
+        <length>3</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>comment</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Write-Off</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>period_id</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>36</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1003</xloc>
+      <yloc>361</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x418;&#x437; &#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>Merge Join</step1>
+<step2>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</step2>
+    <keys_1>
+      <key>Date_date</key>
+    </keys_1>
+    <keys_2>
+      <key>Date_date</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1317</xloc>
+      <yloc>254</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
