@@ -62,13 +62,14 @@
     <partitionschemas>
     </partitionschemas>
     <slaveservers>
+         <slaveserver><name>ODOO_RU_SlaveServer</name><hostname>192.168.1.30</hostname><port/><webAppName/><username>odoo-pg</username><password>Encrypted 2be98afc86aa7ce82b209a8618fc1fb82</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>N</master></slaveserver>
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 17&#x3a;30&#x3a;35.677</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;14 13&#x3a;09&#x3a;01.096</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;01 12&#x3a;52&#x3a;16.206</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -317,7 +318,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  Skucode&#xa;, LTRIM&#x28;RTRIM&#x28;upc&#x29;&#x29; upc1&#xa;, cast&#x28;Skuid as int&#x29; ef_id2&#xa;--, &#x2a;&#xa;FROM dbo.SKU_BAR_NOT_NULL&#xa;--where Skucode like &#x27;&#x25;073&#x25;&#x27;&#xa;order by skuid&#xa;</sql>
+    <sql>SELECT&#xa;  Skucode&#xa;, substring&#x28;LTRIM&#x28;RTRIM&#x28;upc&#x29;&#x29;,1,13&#x29; upc1&#xa;, cast&#x28;Skuid as int&#x29; ef_id2&#xa;--, &#x2a;&#xa;FROM dbo.SKU_BAR_NOT_NULL&#xa;--where Skucode like &#x27;&#x25;073&#x25;&#x27;&#xa;order by skuid&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

@@ -1,11 +1,11 @@
 <transformation>
   <info>
-    <name>&#x41d;&#x424; res_company  from kat_kln</name>
+    <name>KAT_SKL</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>1</trans_status>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -67,9 +67,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;09&#x2f;09 13&#x3a;22&#x3a;55.448</created_date>
+  <created_date>2015&#x2f;10&#x2f;01 13&#x3a;11&#x3a;57.401</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;01 13&#x3a;11&#x3a;04.228</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;01 13&#x3a;35&#x3a;11.286</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -243,12 +243,36 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Merge Join</from><to>Insert &#x2f; Update res_company</to><enabled>Y</enabled> </hop>
-  <hop> <from>read from &#x5b;KAT_KLN&#x5d;</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>res_partner</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>KAT_SKL</from><to>Insert &#x2f; Update res_partner</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Insert &#x2f; Update res_company</name>
+    <name>KAT_SKL</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>PR_Euras</connection>
+    <sql>SELECT ks.&#x5b;&#x421;&#x43a;&#x43b;&#x41d;&#x430;&#x438;&#x43c;&#x5d;  as name_1&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;&#x5d;&#xa;      ,ks.&#x5b;&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#x5d;&#xa;      ,ks.&#x5b;&#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x5d;&#xa;      ,ks.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#x5d;&#xa;      ,ks.&#x5b;&#x410;&#x440;&#x445;&#x5d;&#xa;      ,ks.&#x5b;&#x411;&#x438;&#x442;&#x424;&#x41b;&#x5d;&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x422;&#x438;&#x43f;&#x5d;&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x413;&#x440;&#x43f;&#x5d;&#xa;      ,gs.KodGrpSkl&#xa;      ,gs.NmGrpSkl&#xa;	, 12 lot_stock_id --integer NOT NULL, -- Location Stock&#xa;	, 1 company_id -- integer NOT NULL, -- Company&#xa;	, &#x27;WH&#x27; code -- character --varying&#x28;5&#x29; NOT NULL, -- Short Name&#xa;	, &#x27;ship_only&#x27; delivery_steps --character varying NOT NULL, -- Outgoing Shippings&#xa;	, 11 view_location_id --integer NOT NULL, -- View Location&#xa;	, &#x27;one_step&#x27; reception_steps --character varying NOT NULL, -- Incoming Shipments&#xa;  FROM &#x5b;KAT_SKL&#x5d; ks&#xa;  INNER JOIN kat_grps  gs ON ks.&#x421;&#x43a;&#x43b;&#x413;&#x440;&#x43f;&#x3d;gs.idGrpSkl&#xa;where ks.&#x410;&#x440;&#x445; &#x3d; 0&#xa;&#xa;&#xa;&#x2f;&#x2a;&#xa;&#xa;id serial NOT NULL,&#xa;  crossdock_route_id integer, -- Crossdock Route&#xa;  create_date timestamp without time zone, -- Created on&#xa;  lot_stock_id integer NOT NULL, -- Location Stock&#xa;  wh_pack_stock_loc_id integer, -- Packing Location&#xa;  company_id integer NOT NULL, -- Company&#xa;  pick_type_id integer, -- Pick Type&#xa;  code character varying&#x28;5&#x29; NOT NULL, -- Short Name&#xa;  partner_id integer, -- Address&#xa;  create_uid integer, -- Created by&#xa;  mto_pull_id integer, -- MTO rule&#xa;  reception_route_id integer, -- Receipt Route&#xa;  wh_input_stock_loc_id integer, -- Input Location&#xa;  delivery_steps character varying NOT NULL, -- Outgoing Shippings&#xa;  default_resupply_wh_id integer, -- Default Resupply Warehouse&#xa;  view_location_id integer NOT NULL, -- View Location&#xa;  wh_qc_stock_loc_id integer, -- Quality Control Location&#xa;  reception_steps character varying NOT NULL, -- Incoming Shipments&#xa;  resupply_from_wh boolean, -- Resupply From Other Warehouses&#xa;  pack_type_id integer, -- Pack Type&#xa;  wh_output_stock_loc_id integer, -- Output Location&#xa;  write_date timestamp without time zone, -- Last Updated on&#xa;  delivery_route_id integer, -- Delivery Route&#xa;  name character varying NOT NULL, -- Warehouse Name&#xa;  write_uid integer, -- Last Updated by&#xa;  in_type_id integer, -- In Type&#xa;  out_type_id integer, -- Out Type&#xa;  int_type_id integer, -- Internal Type&#xa;  buy_pull_id integer, -- BUY rule&#xa;  buy_to_resupply boolean, -- Purchase to resupply this warehouse&#xa;  manufacture_pull_id integer, -- Manufacture Rule&#xa;  manufacture_to_resupply boolean, -- Manufacture in this Warehouse&#xa;&#xa;&#x2a;&#x2f;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>176</xloc>
+      <yloc>201</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Insert &#x2f; Update res_partner</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -259,197 +283,62 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <commit>1</commit>
+    <commit>10000</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema>public</schema>
-      <table>res_company</table>
+      <table>stock_warehouse</table>
       <key>
-        <name>ef_id_kln</name>
-        <field>ef_id</field>
+        <name>&#x421;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;</name>
+        <field>manufacture_pull_id</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
       <value>
+        <name>lot_stock_id</name>
+        <rename>lot_stock_id</rename>
+        <update>Y</update>
+      </value>
+      <value>
         <name>name</name>
-        <rename>name_nf</rename>
+        <rename>name_1</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>currency_id</name>
-        <rename>currency_id</rename>
+        <name>code</name>
+        <rename>code</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>ef_id</name>
-        <rename>ef_id_kln</rename>
+        <name>company_id</name>
+        <rename>company_id</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>rml_paper_format</name>
-        <rename>rml_paper_format</rename>
+        <name>delivery_steps</name>
+        <rename>delivery_steps</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>rml_header1</name>
-        <rename>rml_header1</rename>
+        <name>reception_steps</name>
+        <rename>reception_steps</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>paperformat_id</name>
-        <rename>paperformat_id</rename>
+        <name>view_location_id</name>
+        <rename>view_location_id</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>expects_chart_of_accounts</name>
-        <rename>expects_chart_of_accounts</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>overdue_msg</name>
-        <rename>overdue_msg</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tax_calculation_rounding_method</name>
-        <rename>tax_calculation_rounding_method</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>po_lead</name>
-        <rename>po_lead</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>security_lead</name>
-        <rename>security_lead</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>partner_id</name>
-        <rename>id_nf</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>rml_header</name>
-        <rename>rml_header</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>rml_header2</name>
-        <rename>rml_header2</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>rml_header3</name>
-        <rename>rml_header2</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>parent_id</name>
-        <rename>parent_id</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>manufacturing_lead</name>
-        <rename>manufacturing_lead</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>timesheet_max_difference</name>
-        <rename>timesheet_max_difference</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>timesheet_range</name>
-        <rename>timesheet_range</rename>
+        <name>manufacture_pull_id</name>
+        <rename>&#x421;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;</rename>
         <update>Y</update>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>679</xloc>
-      <yloc>263</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>read from &#x5b;KAT_KLN&#x5d;</step1>
-<step2>res_partner</step2>
-    <keys_1>
-      <key>ef_id_kln</key>
-    </keys_1>
-    <keys_2>
-      <key>ef_id_nf</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>503</xloc>
-      <yloc>258</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>read from &#x5b;KAT_KLN&#x5d;</name>
-    <type>TableInput</type>
-    <description>Reads information from table &#x5b;KAT_KLN&#x5d; on database &#x5b;pr_euras&#x5d;</description>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  &#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c; as name_nf&#xa;, 31 as currency_id &#xa;, &#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; as ef_id_kln&#xa;, &#x27;a4&#x27; as rml_paper_format&#xa;, &#x27; &#x27; as rml_header&#xa;, &#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c; as rml_header1&#xa;, &#x27; &#x27; as rml_header2&#xa;, 1 as paperformat_id&#xa;, CAST&#x28; 1 AS bit&#x29; as expects_chart_of_accounts&#xa;, &#x27;Dear Sir&#x2f;Madam,&#x27; as overdue_msg&#xa;, &#x27;round_per_line&#x27; as tax_calculation_rounding_method&#xa;, 1 as  po_lead&#xa;, 0 as security_lead&#xa;, 1 as parent_id&#xa;, 1 manufacturing_lead &#xa;, 0 timesheet_max_difference&#xa;, &#x27;week&#x27; timesheet_range &#xa;&#x2f;&#x2a;&#xa;, &#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434;&#xa;, &#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432;&#xa;, &#x41a;&#x43b;&#x43d;&#x422;&#x438;&#x43f;&#xa;, &#x41a;&#x43b;&#x43d;&#x424;&#x441;&#xa;, &#x410;&#x440;&#x445;&#x438;&#x432;&#x43d;&#x44b;&#x439;&#xa;, &#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#xa;, &#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#xa;, &#x41f;&#x43e;&#x43b;&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;, &#x27;none&#x27; notify_email&#xa;, &#x27;delivery&#x27; type&#xa;, &#x27;ru_RU&#x27; lang&#xa;, &#x27;Asia&#x2f;Ashgabat&#x27; tz&#xa;, CAST&#x28; CASE &#x41a;&#x43b;&#x43d;&#x410;&#x440;&#x445;&#x438;&#x432; when 0 then 0 else 1 end AS bit&#x29; active&#xa;, CAST&#x28; 1 AS bit&#x29; customer &#x2a;&#x2f;&#xa;FROM KAT_KLN&#xa;where &#x41a;&#x43b;&#x43d;&#x413;&#x440;&#x43f;&#x41a;&#x43e;&#x434; &#x3d; 7 and &#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#x3c;&#x3e;1&#xa;order by &#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;</sql>
-    <limit/>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>277</xloc>
-      <yloc>258</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>res_partner</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id as id_nf&#xa;, ef_id as ef_id_nf&#xa;FROM res_partner&#xa;where ef_id &#x3c;&#x3e; 0&#xa;order by ef_id&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>502</xloc>
-      <yloc>148</yloc>
+      <xloc>404</xloc>
+      <yloc>190</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
