@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;10&#x2f;02 14&#x3a;46&#x3a;11.861</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;02 14&#x3a;48&#x3a;41.230</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;02 16&#x3a;56&#x3a;49.996</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -254,8 +254,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>240</xloc>
-      <yloc>157</yloc>
+      <xloc>251</xloc>
+      <yloc>141</yloc>
       </entry>
     <entry>
       <name>HIST_SKL</name>
@@ -288,8 +288,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>408</xloc>
-      <yloc>149</yloc>
+      <xloc>379</xloc>
+      <yloc>166</yloc>
       </entry>
     <entry>
       <name>&#x417;&#x430;&#x433;&#x440;&#x443;&#x437;&#x43a;&#x430; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438; 1&#x421;</name>
