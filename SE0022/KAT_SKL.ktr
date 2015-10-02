@@ -46,7 +46,7 @@
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
-    <size_rowset>10000</size_rowset>
+    <size_rowset>100000</size_rowset>
     <sleep_time_empty>50</sleep_time_empty>
     <sleep_time_full>50</sleep_time_full>
     <unique_connections>N</unique_connections>
@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;10&#x2f;01 13&#x3a;11&#x3a;57.401</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;02 13&#x3a;36&#x3a;15.159</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;02 18&#x3a;02&#x3a;24.464</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -246,32 +246,6 @@
   <hop> <from>KAT_SKL</from><to>Insert &#x2f; Update stock_warehouse</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>KAT_SKL</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>PR_Euras</connection>
-    <sql>SELECT ks.&#x5b;&#x421;&#x43a;&#x43b;&#x41d;&#x430;&#x438;&#x43c;&#x5d;  as name_1&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;&#x5d;&#xa;      ,ks.&#x5b;&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#x5d;&#xa;      ,ks.&#x5b;&#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x5d;&#xa;      ,ks.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#x5d;&#xa;      ,ks.&#x5b;&#x410;&#x440;&#x445;&#x5d;&#xa;      ,ks.&#x5b;&#x411;&#x438;&#x442;&#x424;&#x41b;&#x5d;&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x422;&#x438;&#x43f;&#x5d;&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x413;&#x440;&#x43f;&#x5d;&#xa;      ,gs.KodGrpSkl&#xa;      ,gs.NmGrpSkl&#xa;	, 12 lot_stock_id --integer NOT NULL, -- Location Stock&#xa;	, 1 company_id -- integer NOT NULL, -- Company&#xa;	, &#x27;S&#x27;&#x2b;LTRIM&#x28;STR&#x28;ks.&#x5b;&#x421;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;&#x5d;,10&#x29;&#x29; code -- character --varying&#x28;5&#x29; NOT NULL, -- Short Name&#xa;	, &#x27;ship_only&#x27; delivery_steps --character varying NOT NULL, -- Outgoing Shippings&#xa;	, 11 view_location_id --integer NOT NULL, -- View Location&#xa;	, &#x27;one_step&#x27; reception_steps --character varying NOT NULL, -- Incoming Shipments&#xa;	, 6 manufacture_pull_id&#xa;  FROM &#x5b;KAT_SKL&#x5d; ks&#xa;  INNER JOIN kat_grps  gs ON ks.&#x421;&#x43a;&#x43b;&#x413;&#x440;&#x43f;&#x3d;gs.idGrpSkl&#xa;where ks.&#x410;&#x440;&#x445; &#x3d; 0&#xa;&#xa;&#xa;&#xa;&#x2f;&#x2a;&#xa;&#xa;id serial NOT NULL,&#xa;  crossdock_route_id integer, -- Crossdock Route&#xa;  create_date timestamp without time zone, -- Created on&#xa;  lot_stock_id integer NOT NULL, -- Location Stock&#xa;  wh_pack_stock_loc_id integer, -- Packing Location&#xa;  company_id integer NOT NULL, -- Company&#xa;  pick_type_id integer, -- Pick Type&#xa;  code character varying&#x28;5&#x29; NOT NULL, -- Short Name&#xa;  partner_id integer, -- Address&#xa;  create_uid integer, -- Created by&#xa;  mto_pull_id integer, -- MTO rule&#xa;  reception_route_id integer, -- Receipt Route&#xa;  wh_input_stock_loc_id integer, -- Input Location&#xa;  delivery_steps character varying NOT NULL, -- Outgoing Shippings&#xa;  default_resupply_wh_id integer, -- Default Resupply Warehouse&#xa;  view_location_id integer NOT NULL, -- View Location&#xa;  wh_qc_stock_loc_id integer, -- Quality Control Location&#xa;  reception_steps character varying NOT NULL, -- Incoming Shipments&#xa;  resupply_from_wh boolean, -- Resupply From Other Warehouses&#xa;  pack_type_id integer, -- Pack Type&#xa;  wh_output_stock_loc_id integer, -- Output Location&#xa;  write_date timestamp without time zone, -- Last Updated on&#xa;  delivery_route_id integer, -- Delivery Route&#xa;  name character varying NOT NULL, -- Warehouse Name&#xa;  write_uid integer, -- Last Updated by&#xa;  in_type_id integer, -- In Type&#xa;  out_type_id integer, -- Out Type&#xa;  int_type_id integer, -- Internal Type&#xa;  buy_pull_id integer, -- BUY rule&#xa;  buy_to_resupply boolean, -- Purchase to resupply this warehouse&#xa;  manufacture_pull_id integer, -- Manufacture Rule&#xa;  manufacture_to_resupply boolean, -- Manufacture in this Warehouse&#xa;&#xa;&#x2a;&#x2f;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>83</xloc>
-      <yloc>179</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Insert &#x2f; Update stock_warehouse</name>
     <type>InsertUpdate</type>
     <description/>
@@ -344,7 +318,7 @@
     </step>
 
   <step>
-    <name>&#x421;&#x43a;&#x43b;&#x430;&#x434;&#x44b;</name>
+    <name>KAT_SKL</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -354,17 +328,17 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id&#xa;, crossdock_route_id&#xa;, create_date&#xa;, lot_stock_id&#xa;, wh_pack_stock_loc_id&#xa;, company_id&#xa;, pick_type_id&#xa;, code&#xa;, partner_id&#xa;, create_uid&#xa;, mto_pull_id&#xa;, reception_route_id&#xa;, wh_input_stock_loc_id&#xa;, delivery_steps&#xa;, default_resupply_wh_id&#xa;, view_location_id&#xa;, wh_qc_stock_loc_id&#xa;, reception_steps&#xa;, resupply_from_wh&#xa;, pack_type_id&#xa;, wh_output_stock_loc_id&#xa;, write_date&#xa;, delivery_route_id&#xa;, &#x22;name&#x22;&#xa;, write_uid&#xa;, in_type_id&#xa;, out_type_id&#xa;, int_type_id&#xa;, buy_pull_id&#xa;, buy_to_resupply&#xa;, manufacture_pull_id&#xa;, manufacture_to_resupply&#xa;, ef_id&#xa;FROM stock_warehouse&#xa;</sql>
+    <connection>PR_Euras</connection>
+    <sql>SELECT ks.&#x5b;&#x421;&#x43a;&#x43b;&#x41d;&#x430;&#x438;&#x43c;&#x5d;  as name_1&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;&#x5d;&#xa;      ,ks.&#x5b;&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#x5d;&#xa;      ,ks.&#x5b;&#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x5d;&#xa;      ,ks.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#x5d;&#xa;      ,ks.&#x5b;&#x410;&#x440;&#x445;&#x5d;&#xa;      ,ks.&#x5b;&#x411;&#x438;&#x442;&#x424;&#x41b;&#x5d;&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x422;&#x438;&#x43f;&#x5d;&#xa;      ,ks.&#x5b;&#x421;&#x43a;&#x43b;&#x413;&#x440;&#x43f;&#x5d;&#xa;      ,gs.KodGrpSkl&#xa;      ,gs.NmGrpSkl&#xa;	, 12 lot_stock_id --integer NOT NULL, -- Location Stock&#xa;	, 1 company_id -- integer NOT NULL, -- Company&#xa;	, &#x27;S&#x27;&#x2b;LTRIM&#x28;STR&#x28;ks.&#x5b;&#x421;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;&#x5d;,10&#x29;&#x29; code -- character --varying&#x28;5&#x29; NOT NULL, -- Short Name&#xa;	, &#x27;ship_only&#x27; delivery_steps --character varying NOT NULL, -- Outgoing Shippings&#xa;	, 11 view_location_id --integer NOT NULL, -- View Location&#xa;	, &#x27;one_step&#x27; reception_steps --character varying NOT NULL, -- Incoming Shipments&#xa;	, 6 manufacture_pull_id&#xa;  FROM &#x5b;KAT_SKL&#x5d; ks&#xa;  INNER JOIN kat_grps  gs ON ks.&#x421;&#x43a;&#x43b;&#x413;&#x440;&#x43f;&#x3d;gs.idGrpSkl&#xa;where ks.&#x410;&#x440;&#x445; &#x3d; 0&#xa;&#xa;&#xa;&#xa;&#x2f;&#x2a;&#xa;&#xa;id serial NOT NULL,&#xa;  crossdock_route_id integer, -- Crossdock Route&#xa;  create_date timestamp without time zone, -- Created on&#xa;  lot_stock_id integer NOT NULL, -- Location Stock&#xa;  wh_pack_stock_loc_id integer, -- Packing Location&#xa;  company_id integer NOT NULL, -- Company&#xa;  pick_type_id integer, -- Pick Type&#xa;  code character varying&#x28;5&#x29; NOT NULL, -- Short Name&#xa;  partner_id integer, -- Address&#xa;  create_uid integer, -- Created by&#xa;  mto_pull_id integer, -- MTO rule&#xa;  reception_route_id integer, -- Receipt Route&#xa;  wh_input_stock_loc_id integer, -- Input Location&#xa;  delivery_steps character varying NOT NULL, -- Outgoing Shippings&#xa;  default_resupply_wh_id integer, -- Default Resupply Warehouse&#xa;  view_location_id integer NOT NULL, -- View Location&#xa;  wh_qc_stock_loc_id integer, -- Quality Control Location&#xa;  reception_steps character varying NOT NULL, -- Incoming Shipments&#xa;  resupply_from_wh boolean, -- Resupply From Other Warehouses&#xa;  pack_type_id integer, -- Pack Type&#xa;  wh_output_stock_loc_id integer, -- Output Location&#xa;  write_date timestamp without time zone, -- Last Updated on&#xa;  delivery_route_id integer, -- Delivery Route&#xa;  name character varying NOT NULL, -- Warehouse Name&#xa;  write_uid integer, -- Last Updated by&#xa;  in_type_id integer, -- In Type&#xa;  out_type_id integer, -- Out Type&#xa;  int_type_id integer, -- Internal Type&#xa;  buy_pull_id integer, -- BUY rule&#xa;  buy_to_resupply boolean, -- Purchase to resupply this warehouse&#xa;  manufacture_pull_id integer, -- Manufacture Rule&#xa;  manufacture_to_resupply boolean, -- Manufacture in this Warehouse&#xa;&#xa;&#x2a;&#x2f;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
+    <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>360</xloc>
-      <yloc>50</yloc>
+      <xloc>214</xloc>
+      <yloc>190</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
