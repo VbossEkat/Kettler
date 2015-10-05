@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>&#x417;&#x430;&#x433;&#x440;&#x443;&#x437;&#x43a;&#x430; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438; 1&#x421;</name>
+    <name>&#x414;&#x43e;&#x431;&#x430;&#x432;&#x43b; &#x440;&#x430;&#x441;&#x447;. &#x441;&#x447;&#x435;&#x442;&#x43e;&#x432;</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,9 +67,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;09&#x2f;25 16&#x3a;25&#x3a;07.067</created_date>
+  <created_date>2015&#x2f;10&#x2f;05 16&#x3a;51&#x3a;28.249</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;05 18&#x3a;05&#x3a;35.703</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;05 17&#x3a;53&#x3a;51.187</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -243,48 +243,32 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x432; 1&#x421;</from><to>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;</from><to>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c;</from><to>&#x41d;&#x443;&#x43c;&#x435;&#x440;&#x443;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x41d;&#x443;&#x43c;&#x435;&#x440;&#x443;&#x435;&#x43c;</from><to>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>Sort </to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort </from><to>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Sort rows 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x41f;&#x440;&#x435;&#x43e;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x43c;</from><to>Concat Fields</to><enabled>Y</enabled> </hop>
-  <hop> <from>res_partner_bank 2</from><to>Merge Join 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows 2 2</from><to>Merge Join 2 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Concat Fields</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>&#x41f;&#x440;&#x435;&#x43e;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x418;&#x449;&#x435;&#x43c;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</from><to>Sort3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort2</from><to>&#x418;&#x449;&#x435;&#x43c;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort3</from><to>&#x418;&#x449;&#x435;&#x43c;&#x3f;&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x421;&#x447;&#x435;&#x442;&#x430;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</from><to>&#x418;&#x449;&#x435;&#x43c;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</to><enabled>Y</enabled> </hop>
-  <hop> <from>res_partner_bank 2 2</from><to>&#x418;&#x449;&#x435;&#x43c;&#x3f;&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Calculator</from><to>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Calculator 2</from><to>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x420;&#x430;&#x441;&#x445;&#x43e;&#x434;</from><to>Calculator</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x422;&#x435;&#x441;&#x442;&#x43e;&#x432;&#x44b;&#x439;</from><to>Var &#x414;&#x430;&#x442;&#x430; &#x421;&#x447;&#x435;&#x442;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Var &#x414;&#x430;&#x442;&#x430; &#x421;&#x447;&#x435;&#x442;</from><to>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430;</from><to>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</from><to>Sort2</to><enabled>Y</enabled> </hop>
-  <hop> <from>account_bank_statement 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>&#x422;&#x435;&#x441;&#x442;&#x43e;&#x432;&#x44b;&#x439;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430; 2</from><to>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</from><to>Add minus1</to><enabled>Y</enabled> </hop>
   <hop> <from>Add minus1</from><to>&#x420;&#x430;&#x441;&#x445;&#x43e;&#x434;</to><enabled>Y</enabled> </hop>
   <hop> <from>Add minus1 2</from><to>&#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator</from><to>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 2</from><to>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort </from><to>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort3</from><to>&#x418;&#x449;&#x435;&#x43c; &#x418;&#x41d;&#x41d;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Var &#x414;&#x430;&#x442;&#x430; &#x421;&#x447;&#x435;&#x442;</from><to>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430; &#x432; 1&#x421;</from><to>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</from><to>Add minus1</to><enabled>Y</enabled> </hop>
   <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</from><to>Add minus1 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x418;&#x449;&#x435;&#x43c;&#x3f;&#x3f;</from><to>Add fields</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add fields</from><to>&#x416;&#x434;&#x435;&#x43c;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x443;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x421;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x432;&#x44b;&#x43f;</from><to>&#x41f;&#x43b;&#x430;&#x442;&#x435;&#x436;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>&#x418;&#x437; &#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</from><to>&#x418;&#x437; &#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x418;&#x437; &#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>&#x421;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x432;&#x44b;&#x43f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 2 2</from><to>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x416;&#x434;&#x435;&#x43c;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x443;</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</from><to>Sort </to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x414;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</from><to>&#x422;&#x435;&#x441;&#x442;&#x43e;&#x432;&#x44b;&#x439;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x418;&#x449;&#x435;&#x43c; &#x418;&#x41d;&#x41d;</from><to>Add fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41d;&#x443;&#x43c;&#x435;&#x440;&#x443;&#x435;&#x43c;</from><to>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x437;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a;&#x2f;&#x434;&#x43e;&#x43a;&#x443;&#x43c;&#x435;&#x43d;&#x442;&#x44b;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41e;&#x431;&#x44a;&#x435;&#x434;&#x438;&#x43d;&#x44f;&#x435;&#x43c;</from><to>Sort2</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x420;&#x430;&#x437;&#x43c;&#x435;&#x447;&#x430;&#x435;&#x43c;</from><to>&#x41d;&#x443;&#x43c;&#x435;&#x440;&#x443;&#x435;&#x43c;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x420;&#x430;&#x441;&#x445;&#x43e;&#x434;</from><to>Calculator</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430;</from><to>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x421;&#x443;&#x43c;&#x43c;&#x430; &#x414;&#x430;&#x442;&#x430; 2</from><to>&#x414;&#x435;&#x43b;&#x438;&#x43c; &#x41f;&#x440;&#x438;&#x445;&#x43e;&#x434;&#x2f;&#x440;&#x430;&#x441;&#x445;&#x43e;&#x434;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x422;&#x435;&#x441;&#x442;&#x43e;&#x432;&#x44b;&#x439;</from><to>Var &#x414;&#x430;&#x442;&#x430; &#x421;&#x447;&#x435;&#x442;</to><enabled>Y</enabled> </hop>
+  <hop> <from>res_partner INN</from><to>&#x418;&#x449;&#x435;&#x43c; &#x418;&#x41d;&#x41d;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add fields</from><to>res_partner_bank</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort2</from><to>Sort3</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add fields</name>
@@ -317,7 +301,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>draft</nullif>
+        <nullif>bank</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -389,7 +373,31 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>31</nullif>
+        <nullif>36</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>country_id</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>192</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>jurn_id</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>8</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -397,8 +405,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1003</xloc>
-      <yloc>361</yloc>
+      <xloc>1131</xloc>
+      <yloc>346</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -442,8 +450,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>529</xloc>
-      <yloc>193</yloc>
+      <xloc>669</xloc>
+      <yloc>246</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -487,8 +495,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>524</xloc>
-      <yloc>357</yloc>
+      <xloc>664</xloc>
+      <yloc>410</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -520,8 +528,8 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>690</xloc>
-      <yloc>193</yloc>
+      <xloc>830</xloc>
+      <yloc>246</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -553,290 +561,8 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>694</xloc>
-      <yloc>352</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Concat Fields</name>
-    <type>ConcatFields</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <separator/>
-    <enclosure/>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding/>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>file</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-      <field>
-        <name>&#x420;&#x430;&#x441;&#x447;&#x421;&#x447;&#x435;&#x442;</name>
-        <type>None</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
-    <ConcatFields>
-<targetFieldName>Rch1</targetFieldName>
-<targetFieldLength>25</targetFieldLength>
-<removeSelectedFields>N</removeSelectedFields>
-    </ConcatFields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>533</xloc>
-      <yloc>65</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>&#x416;&#x434;&#x435;&#x43c;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x443;</step1>
-<step2>account_bank_statement 2</step2>
-    <keys_1>
-      <key>Date_date</key>
-      <key>RCH_OUN</key>
-    </keys_1>
-    <keys_2>
-      <key>date_state</key>
-      <key>rch_state</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1241</xloc>
-      <yloc>276</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join 2 2</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>INNER</join_type>
-<step1>Sort rows 2 2</step1>
-<step2>res_partner_bank 2</step2>
-    <keys_1>
-      <key>Rch1</key>
-    </keys_1>
-    <keys_2>
-      <key>acc_number_bn_comp</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>830</xloc>
-      <yloc>27</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>&#x414;&#x430;&#x442;&#x430;&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x430;</name>
-        <rename>&#x414;&#x430;&#x442;&#x430;&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x430;</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>dd&#x2f;MM&#x2f;yyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale>ru_RU</date_format_locale>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>&#x414;&#x430;&#x442;&#x430;&#x421;&#x43e;&#x437;&#x434;&#x430;&#x43d;&#x438;&#x44f;</name>
-        <rename>create_date_date</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>dd&#x2f;MM&#x2f;yyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale>ru_RU</date_format_locale>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>period_id</name>
-        <rename>period_id</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>journal_id</name>
-        <rename>journal_id</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>company_id</name>
-        <rename>company_id</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x44c;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</name>
-        <rename>&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x44c;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</rename>
-        <type>Number</type>
-        <length>15</length>
-        <precision>4</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>&#x41a;&#x43e;&#x43d;&#x435;&#x447;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</name>
-        <rename>&#x41a;&#x43e;&#x43d;&#x435;&#x447;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</rename>
-        <type>Number</type>
-        <length>15</length>
-        <precision>4</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>&#x420;&#x430;&#x441;&#x447;&#x421;&#x447;&#x435;&#x442;</name>
-        <rename>Rch_b</rename>
-        <type>String</type>
-        <length>20</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>&#x414;&#x430;&#x442;&#x430;&#x41a;&#x43e;&#x43d;&#x446;&#x430;</name>
-        <rename>Date_date</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>dd&#x2f;MM&#x2f;yyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale>ru_RU</date_format_locale>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>621</xloc>
-      <yloc>36</yloc>
+      <xloc>834</xloc>
+      <yloc>405</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -875,42 +601,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>193</xloc>
-      <yloc>294</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows 2 2</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>Rch1</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>707</xloc>
-      <yloc>50</yloc>
+      <xloc>292</xloc>
+      <yloc>349</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -949,8 +641,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>785</xloc>
-      <yloc>193</yloc>
+      <xloc>925</xloc>
+      <yloc>246</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -975,7 +667,7 @@
       <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>RCH_OUN</name>
+        <name>partner_inn</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <presorted>N</presorted>
@@ -983,8 +675,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>959</xloc>
-      <yloc>189</yloc>
+      <xloc>1032</xloc>
+      <yloc>247</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1028,169 +720,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>349</xloc>
-      <yloc>318</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>account_bank_statement 2</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id id_state&#xa;, date as  date_state&#xa;--, create_date&#xa;, rch_b rch_state&#xa;FROM account_bank_statement&#xa;where rch_b is not null&#xa;order by  date, rch_b&#xa;&#xa;&#xa;--where rch &#x3d; &#x27;&#x24;&#x7b;cRch&#x7d;&#x27;-- and date &#x3d; &#x27;&#x24;&#x7b;dDateState&#x7d;&#x27;&#xa;--&#x24;dDateState  01&#x2f;01&#x2f;201&#xa;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1159</xloc>
-      <yloc>167</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>res_partner_bank 2</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  rpb.id&#xa;, rc.id as   id_bn__comp&#xa;, rpb.company_id as company_id_bn_comp&#xa;, rpb.partner_id as partner_id_bn_comp&#xa;, rpb.bank_bic as bank_bic_bn_comp&#xa;, rpb.acc_number as acc_number_bn_comp&#xa;, rpb.journal_id as journal_id_bn_comp&#xa;, aj.default_debit_account_id&#xa;, aj.default_credit_account_id&#xa;FROM res_partner_bank rpb&#xa;left outer join res_company rc on rpb.partner_id &#x3d; rc.partner_id&#xa;left outer join account_journal aj on rpb.journal_id &#x3d; aj.id&#xa;where rc.id is not null&#xa;order by  rpb.acc_number&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>828</xloc>
-      <yloc>102</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>res_partner_bank 2 2</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  rpb.id as   id_bn_comp&#xa;, rpb.company_id as company_id_bn_comp&#xa;, rpb.partner_id as partner_id_bn_comp&#xa;, rpb.bank_bic as bank_bic_bn_comp&#xa;, rpb.acc_number as acc_number_bn_comp&#xa;--, rpb.journal_id as journal_id_bn_comp&#xa;FROM res_partner_bank rpb&#xa;order by  rpb.acc_number&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1045</xloc>
-      <yloc>212</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <commit>1000</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>public</schema>
-      <table>account_bank_statement</table>
-      <key>
-        <name>Rch_b</name>
-        <field>rch_b</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>Date_date</name>
-        <field>date</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>create_date</name>
-        <rename>create_date_date</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>date</name>
-        <rename>Date_date</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>period_id</name>
-        <rename>period_id</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>journal_id</name>
-        <rename>journal_id_bn_comp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>balance_start</name>
-        <rename>&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x44c;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>balance_end_real</name>
-        <rename>&#x41a;&#x43e;&#x43d;&#x435;&#x447;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>company_id</name>
-        <rename>id_bn__comp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>state</name>
-        <rename>State</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>rch_b</name>
-        <rename>Rch_b</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1141</xloc>
-      <yloc>32</yloc>
+      <xloc>489</xloc>
+      <yloc>371</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1302,8 +833,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>36</xloc>
-      <yloc>21</yloc>
+      <xloc>83</xloc>
+      <yloc>62</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1331,8 +862,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>511</xloc>
-      <yloc>271</yloc>
+      <xloc>651</xloc>
+      <yloc>324</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1360,8 +891,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>140</xloc>
-      <yloc>128</yloc>
+      <xloc>188</xloc>
+      <yloc>249</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1379,8 +910,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>110</xloc>
-      <yloc>290</yloc>
+      <xloc>189</xloc>
+      <yloc>350</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1994,33 +1525,8 @@
         </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>231</xloc>
-      <yloc>222</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x416;&#x434;&#x435;&#x43c;&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x443;</name>
-    <type>BlockUntilStepsFinish</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <steps>
-      <step>
-        <name>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</name>
-        <CopyNr>0</CopyNr>
-        </step>
-      </steps>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1093</xloc>
-      <yloc>323</yloc>
+      <xloc>371</xloc>
+      <yloc>275</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2038,223 +1544,14 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>183</xloc>
-      <yloc>28</yloc>
+      <xloc>252</xloc>
+      <yloc>147</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x432;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</name>
-    <type>Denormaliser</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <key_field>text</key_field>
-      <group>
-        <field>
-          <name>attraction</name>
-          </field>
-        </group>
-      <fields>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x41e;&#x442;&#x43f;&#x440;&#x430;&#x432;&#x438;&#x442;&#x435;&#x43b;&#x44c;</key_value>
-          <target_name>&#x41e;&#x442;&#x43f;&#x440;&#x430;&#x432;&#x438;&#x442;&#x435;&#x43b;&#x44c;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x41f;&#x43e;&#x43b;&#x443;&#x447;&#x430;&#x442;&#x435;&#x43b;&#x44c;</key_value>
-          <target_name>&#x41f;&#x43e;&#x43b;&#x443;&#x447;&#x430;&#x442;&#x435;&#x43b;&#x44c;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x414;&#x430;&#x442;&#x430;&#x421;&#x43e;&#x437;&#x434;&#x430;&#x43d;&#x438;&#x44f;</key_value>
-          <target_name>&#x414;&#x430;&#x442;&#x430;&#x421;&#x43e;&#x437;&#x434;&#x430;&#x43d;&#x438;&#x44f;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x412;&#x440;&#x435;&#x43c;&#x44f;&#x421;&#x43e;&#x437;&#x434;&#x430;&#x43d;&#x438;&#x44f;</key_value>
-          <target_name>&#x412;&#x440;&#x435;&#x43c;&#x44f;&#x421;&#x43e;&#x437;&#x434;&#x430;&#x43d;&#x438;&#x44f;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x414;&#x430;&#x442;&#x430;&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x430;</key_value>
-          <target_name>&#x414;&#x430;&#x442;&#x430;&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x430;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x414;&#x430;&#x442;&#x430;&#x41a;&#x43e;&#x43d;&#x446;&#x430;</key_value>
-          <target_name>&#x414;&#x430;&#x442;&#x430;&#x41a;&#x43e;&#x43d;&#x446;&#x430;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x420;&#x430;&#x441;&#x447;&#x421;&#x447;&#x435;&#x442;</key_value>
-          <target_name>&#x420;&#x430;&#x441;&#x447;&#x421;&#x447;&#x435;&#x442;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x44c;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</key_value>
-          <target_name>&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x44c;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x412;&#x441;&#x435;&#x433;&#x43e;&#x41f;&#x43e;&#x441;&#x442;&#x443;&#x43f;&#x438;&#x43b;&#x43e;</key_value>
-          <target_name>&#x412;&#x441;&#x435;&#x433;&#x43e;&#x41f;&#x43e;&#x441;&#x442;&#x443;&#x43f;&#x438;&#x43b;&#x43e;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x412;&#x441;&#x435;&#x433;&#x43e;&#x421;&#x43f;&#x438;&#x441;&#x430;&#x43d;&#x43e;</key_value>
-          <target_name>&#x412;&#x441;&#x435;&#x433;&#x43e;&#x421;&#x43f;&#x438;&#x441;&#x430;&#x43d;&#x43e;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        <field>
-          <field_name>value</field_name>
-          <key_value>&#x41a;&#x43e;&#x43d;&#x435;&#x447;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</key_value>
-          <target_name>&#x41a;&#x43e;&#x43d;&#x435;&#x447;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</target_name>
-          <target_type>String</target_type>
-          <target_format/>
-          <target_length>-1</target_length>
-          <target_precision>-1</target_precision>
-          <target_decimal_symbol/>
-          <target_grouping_symbol/>
-          <target_currency_symbol/>
-          <target_null_string/>
-          <target_aggregation_type>-</target_aggregation_type>
-          </field>
-        </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>335</xloc>
-      <yloc>24</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x418;&#x437; &#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x438;</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>Merge Join</step1>
-<step2>&#x412;&#x44b;&#x43f;&#x438;&#x441;&#x43a;&#x430;</step2>
-    <keys_1>
-      <key>Date_date</key>
-    </keys_1>
-    <keys_2>
-      <key>Date_date</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1317</xloc>
-      <yloc>254</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x418;&#x449;&#x435;&#x43c;&#x3f;&#x3f;</name>
+    <name>&#x418;&#x449;&#x435;&#x43c; &#x418;&#x41d;&#x41d;</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -2266,47 +1563,17 @@
            </partitioning>
 <join_type>LEFT OUTER</join_type>
 <step1>Sort3</step1>
-<step2>res_partner_bank 2 2</step2>
+<step2>res_partner INN</step2>
     <keys_1>
-      <key>partner_acc</key>
+      <key>partner_inn</key>
     </keys_1>
     <keys_2>
-      <key>acc_number_bn_comp</key>
+      <key>partn_inn</key>
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>962</xloc>
-      <yloc>300</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x418;&#x449;&#x435;&#x43c;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>Sort2</step1>
-<step2>&#x421;&#x447;&#x435;&#x442;&#x430;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</step2>
-    <keys_1>
-      <key>partner_bic</key>
-      <key>partner_acc</key>
-    </keys_1>
-    <keys_2>
-      <key>bank_bic_bn</key>
-      <key>acc_number_bn</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>861</xloc>
-      <yloc>201</yloc>
+      <xloc>1027</xloc>
+      <yloc>347</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2332,8 +1599,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>25</xloc>
-      <yloc>223</yloc>
+      <xloc>88</xloc>
+      <yloc>245</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2353,262 +1620,8 @@
 <tail_name>Calculator 2</tail_name>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>786</xloc>
-      <yloc>275</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x41f;&#x43b;&#x430;&#x442;&#x435;&#x436;</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <commit>1000</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>public</schema>
-      <table>account_voucher</table>
-      <key>
-        <name>Date_date</name>
-        <field>date_due</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>&#x41d;&#x43e;&#x43c;&#x435;&#x440;</name>
-        <field>number</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>partner_id_bn</name>
-        <field>partner_id</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>name</name>
-        <rename>&#x41d;&#x430;&#x437;&#x43d;&#x430;&#x447;&#x435;&#x43d;&#x438;&#x435;&#x41f;&#x43b;&#x430;&#x442;&#x435;&#x436;&#x430;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>number</name>
-        <rename>&#x41d;&#x43e;&#x43c;&#x435;&#x440;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>journal_id</name>
-        <rename>journal_id_bn_comp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>company_id</name>
-        <rename>id_bn__comp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>amount</name>
-        <rename>&#x421;&#x443;&#x43c;&#x43c;&#x430;</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>date_due</name>
-        <rename>Date_date</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>partner_id</name>
-        <rename>partner_id_bn</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>state</name>
-        <rename>State_</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>pay_now</name>
-        <rename>pay_now</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>payment_rate_currency_id</name>
-        <rename>payment_rate_currency_id</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>payment_option</name>
-        <rename>payment_option</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>payment_rate</name>
-        <rename>payment_rate</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>comment</name>
-        <rename>comment</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>account_id</name>
-        <rename>default_debit_account_id</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>period_id</name>
-        <rename>period_id</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>date</name>
-        <rename>Date_date</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>type</name>
-        <rename>type</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>reference</name>
-        <rename>&#x41d;&#x43e;&#x43c;&#x435;&#x440;</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1503</xloc>
-      <yloc>277</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x41f;&#x440;&#x435;&#x43e;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x43c;</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>attraction</in_stream_name>
-        <out_stream_name>period_id</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>0</replace_string>
-        <replace_by_string>27</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>attraction</in_stream_name>
-        <out_stream_name>journal_id</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>0</replace_string>
-        <replace_by_string>8</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>attraction</in_stream_name>
-        <out_stream_name>company_id</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>0</replace_string>
-        <replace_by_string>1</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>attraction</in_stream_name>
-        <out_stream_name>State</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>0</replace_string>
-        <replace_by_string>draft</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x44c;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>,</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>&#x41a;&#x43e;&#x43d;&#x435;&#x447;&#x43d;&#x44b;&#x439;&#x41e;&#x441;&#x442;&#x430;&#x442;&#x43e;&#x43a;</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>,</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>&#x414;&#x430;&#x442;&#x430;&#x41d;&#x430;&#x447;&#x430;&#x43b;&#x430;</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>&#x2f;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>&#x414;&#x430;&#x442;&#x430;&#x41a;&#x43e;&#x43d;&#x446;&#x430;</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>&#x2f;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>&#x414;&#x430;&#x442;&#x430;&#x421;&#x43e;&#x437;&#x434;&#x430;&#x43d;&#x438;&#x44f;</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.</replace_string>
-        <replace_by_string>&#x2f;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>454</xloc>
-      <yloc>42</yloc>
+      <xloc>926</xloc>
+      <yloc>328</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2699,8 +1712,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>610</xloc>
-      <yloc>356</yloc>
+      <xloc>750</xloc>
+      <yloc>409</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2729,8 +1742,8 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>31</xloc>
-      <yloc>107</yloc>
+      <xloc>86</xloc>
+      <yloc>155</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2821,14 +1834,14 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>611</xloc>
-      <yloc>192</yloc>
+      <xloc>751</xloc>
+      <yloc>245</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>&#x421;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x432;&#x44b;&#x43f;</name>
+    <name>res_partner_bank</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -2843,68 +1856,47 @@
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema>public</schema>
-      <table>account_bank_statement_line</table>
+      <table>res_partner_bank</table>
       <key>
-        <name>id_state</name>
-        <field>statement_id</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>partner_id_bn</name>
+        <name>id_part</name>
         <field>partner_id</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
       <key>
-        <name>&#x41d;&#x43e;&#x43c;&#x435;&#x440;</name>
-        <field>ref</field>
+        <name>partner_acc</name>
+        <field>acc_number</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
       <value>
-        <name>statement_id</name>
-        <rename>id_state</rename>
+        <name>partner_id</name>
+        <rename>id_part</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>name</name>
-        <rename>&#x41d;&#x430;&#x437;&#x43d;&#x430;&#x447;&#x435;&#x43d;&#x438;&#x435;&#x41f;&#x43b;&#x430;&#x442;&#x435;&#x436;&#x430;</rename>
+        <name>bank_bic</name>
+        <rename>partner_bic</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>ref</name>
-        <rename>&#x41d;&#x43e;&#x43c;&#x435;&#x440;</rename>
+        <name>acc_number</name>
+        <rename>partner_acc</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>journal_id</name>
-        <rename>journal_id_bn_comp</rename>
+        <name>owner_name</name>
+        <rename>partn_name</rename>
         <update>Y</update>
       </value>
       <value>
         <name>company_id</name>
-        <rename>company_id_bn_comp</rename>
+        <rename>id_comp</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>amount</name>
-        <rename>sum_val_real</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>bank_account_id</name>
-        <rename>id_bn</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>date</name>
-        <rename>Date_date</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>partner_id</name>
-        <rename>partner_id_bn</rename>
+        <name>country_id</name>
+        <rename>country_id</rename>
         <update>Y</update>
       </value>
       <value>
@@ -2913,15 +1905,15 @@
         <update>Y</update>
       </value>
       <value>
-        <name>partner_name</name>
-        <rename>partn_name</rename>
+        <name>journal_id</name>
+        <rename>jurn_id</rename>
         <update>Y</update>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1431</xloc>
-      <yloc>281</yloc>
+      <xloc>1234</xloc>
+      <yloc>348</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2963,8 +1955,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>348</xloc>
-      <yloc>202</yloc>
+      <xloc>488</xloc>
+      <yloc>255</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3013,34 +2005,8 @@
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>431</xloc>
-      <yloc>183</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>&#x421;&#x447;&#x435;&#x442;&#x430;&#x41a;&#x43e;&#x43c;&#x43f;&#x430;&#x43d;&#x438;&#x438;</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>&#xa;SELECT&#xa;  rpb.id id_bn&#xa;, rc.id as   id_bn_comp&#xa;, rpb.company_id as company_id_bn&#xa;, rpb.partner_id as partner_id_bn&#xa;, rpb.bank_bic as bank_bic_bn&#xa;, rpb.acc_number as acc_number_bn&#xa;--, rpb.journal_id as journal_id_bn&#xa;FROM res_partner_bank rpb&#xa;left outer join res_company rc on rpb.partner_id &#x3d; rc.partner_id&#xa;--where rc.id is not null&#xa;order by rpb.bank_bic&#xa;, rpb.acc_number&#xa;&#xa;&#x2f;&#x2a;&#xa;SELECT&#xa;  id as   id_bn&#xa;, company_id as company_id_bn&#xa;, partner_id as partner_id_bn&#xa;, bank_bic as bank_bic_bn&#xa;, acc_number as acc_number_bn&#xa;, journal_id as journal_id_bn&#xa;FROM res_partner_bank&#xa;order by bank_bic&#xa;, acc_number&#xa;&#x2a;&#x2f;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>862</xloc>
-      <yloc>302</yloc>
+      <xloc>571</xloc>
+      <yloc>236</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3063,8 +2029,34 @@
         <jsScript_script>&#x2f;&#x2f;var nameStr&#x3d;&#x22;RCH_OUN&#x22;&#x3b;&#xa;&#x2f;&#x2f;Alert&#x28;getVariable&#x28;nameStr, &#x22;&#x22;&#x29;&#x29;&#x3b;&#xa;&#xa;&#xa;&#xa;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>292</xloc>
-      <yloc>293</yloc>
+      <xloc>432</xloc>
+      <yloc>346</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>res_partner INN</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  rp.id as   id_part&#xa;, rp.inn  partn_inn&#xa;, rc.id as   id_comp&#xa;, rpb.id as   id_bn_comp&#xa;, rpb.company_id as company_id_bn_comp&#xa;, rpb.partner_id as partner_id_bn_comp&#xa;, rpb.bank_bic as bank_bic_bn_comp&#xa;, rpb.acc_number as acc_number_bn_comp&#xa;--, rpb.journal_id as journal_id_bn_comp&#xa;FROM res_partner rp&#xa;left outer join res_partner_bank rpb on rpb.partner_id &#x3d; rp.id&#xa;left outer join res_company rc on rp.id &#x3d; rc.partner_id&#xa;order by rp.inn&#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1149</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

@@ -62,13 +62,14 @@
     <partitionschemas>
     </partitionschemas>
     <slaveservers>
+         <slaveserver><name>ODOO_RU_SlaveServer</name><hostname>192.168.1.30</hostname><port/><webAppName/><username>odoo-pg</username><password>Encrypted 2be98afc86aa7ce82b209a8618fc1fb82</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>N</master></slaveserver>
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;01 16&#x3a;42&#x3a;28.855</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;09&#x2f;11 11&#x3a;19&#x3a;00.288</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;05 16&#x3a;28&#x3a;15.523</modified_date>
   </info>
   <notepads>
     <notepad>
@@ -328,7 +329,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <commit>10000</commit>
+    <commit>100000</commit>
     <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema>public</schema>
