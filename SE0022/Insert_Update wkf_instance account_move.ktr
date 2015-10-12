@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>Insert_Update wkf_instance</name>
+    <name>Insert_Update wkf_instance account_move</name>
     <description/>
     <extended_description>INSERT INTO wkf_instance&#x28;res_id,res_type, uid, wkf_id, state &#x29;&#xa;SELECT&#xa;  id res_id_1&#xa;, &#x27;account.invoice&#x27; res_type_1 &#xa;, 1 uid_1&#xa;, 1 wkf_id_1&#xa;, &#x27;active&#x27; state_1&#xa;FROM account_invoice&#xa;where id not in &#xa;&#x28; SELECT res_id FROM wkf_instance WHERE res_type &#x3d; &#x27;account.invoice&#x27;&#x29;&#xa;and ef_id is not null&#xa;&#xa;&#xa;INSERT INTO wkf_workitem&#x28;&#xa;            act_id, inst_id, subflow_id, state&#x29;&#xa;&#xa;SELECT&#xa; 3 act_id_1&#xa;, id inst_id_1&#xa;, null subflow_id_1&#xa;, &#x27;complete&#x27; state_1&#xa;FROM wkf_instance&#xa;where id not in &#xa;&#x28; SELECT&#xa;  inst_id FROM wkf_workitem&#x29;&#xa;&#xa;</extended_description>
     <trans_version/>
@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;10&#x2f;07 13&#x3a;50&#x3a;59.811</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;07 14&#x3a;46&#x3a;34.160</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;12 18&#x3a;40&#x3a;31.186</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -244,7 +244,106 @@
   </connection>
   <order>
   <hop> <from>wkf_instance</from><to>wkf_workitem</to><enabled>Y</enabled> </hop>
+  <hop> <from>account_fiscalyear</from><to>wkf_instance</to><enabled>Y</enabled> </hop>
+  <hop> <from>wkf_workitem</from><to>account_move</to><enabled>Y</enabled> </hop>
+  <hop> <from>account_move</from><to>account_move_line</to><enabled>N</enabled> </hop>
   </order>
+  <step>
+    <name>account_fiscalyear</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>Y</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>&#x2f;&#x2a;INSERT INTO account_fiscalyear&#x28;&#xa;create_uid, &#xa;date_stop, &#xa;code, &#xa;create_date, &#xa;name, &#xa;--end_journal_period_id, &#xa;date_start, &#xa;company_id, &#xa;write_uid, &#xa;state, &#xa;write_date&#x29;&#xa;SELECT  DISTINCT &#xa;1 create_uid,&#xa;&#x27;2015-12-31&#x27;&#x3a;&#x3a;date date_stop, &#xa;&#x27;2015&#x27; code, &#xa; current_date create_date, &#xa;&#x27;2015 &#x27;&#x7c;&#x7c;TRIM&#x28;rc.name&#x29; name_, &#xa;--end_journal_period_id, &#xa;&#x27;2015-01-01&#x27;&#x3a;&#x3a;date date_start, &#xa;ai.company_id, &#xa;1 write_uid, &#xa;&#x27;draft&#x27; state,&#xa;current_date write_date &#xa;  FROM account_invoice ai&#xa;left outer join res_company rc on ai.company_id &#x3d; rc.id&#xa;where company_id not in &#x28;SELECT company_id FROM account_fiscalyear &#x29;&#xa;order by 1&#x3b;&#xa;&#x2a;&#x2f;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>134</xloc>
+      <yloc>115</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>account_move</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>Y</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>&#xa;INSERT INTO&#xa;  public.account_move&#xa;&#x28;&#xa; -- id,&#xa; -- create_uid,&#xa;  partner_id,&#xa;  company_id,&#xa;--  create_date,&#xa;  name,&#xa;--  write_uid,&#xa;  journal_id,&#xa;  state,&#xa;  period_id,&#xa;--  write_date,&#xa;--  narration,&#xa;  date,&#xa;--  balance,&#xa;  ref,&#xa;--  to_check&#xa;  ef_id&#xa;&#x29;&#xa;SELECT&#xa;  partner_id,&#xa;  company_id,&#xa;  case when number is null then ef_id&#x3a;&#x3a;CHARACTER else number END,&#xa;  journal_id,&#xa;  &#x27;posted&#x27;,&#xa;  period_id,&#xa;--  id,&#xa;  date_invoice,&#xa;  name,&#xa;  ef_id&#xa;FROM&#xa;  public.account_invoice&#xa;  where ef_id is not null and ef_id&#x3c;&#x3e;0 and period_id is not null&#xa;  and ef_id not in &#x28;select ef_id from public.account_move where ef_id is not null and ef_id&#x3c;&#x3e;0&#x29; &#x3b;&#xa;&#xa;&#xa;UPDATE&#xa;  public.account_invoice ai&#xa;SET&#xa;  move_id &#x3d; am.id,&#xa;  move_name &#x3d; &#x27;&#x2f;&#x27;&#xa;FROM public.account_move am&#xa;WHERE ai.ef_id &#x3d; am.ef_id&#xa;&#x3b;&#xa;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>438</xloc>
+      <yloc>87</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>account_move_line</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>Y</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>&#xa;INSERT INTO&#xa;  public.account_move_line&#xa;&#x28;&#xa; -- id,&#xa; -- create_date,&#xa; -- statement_id,&#xa; company_id,&#xa; currency_id,&#xa; -- date_maturity,&#xa;  partner_id,&#xa; -- reconcile_partial_id,&#xa; -- blocked,&#xa; -- analytic_account_id,&#xa; -- create_uid,&#xa;  credit,&#xa;  debit,&#xa;  centralisation,&#xa;  journal_id,&#xa;  account_id,&#xa; -- reconcile_ref,&#xa;  tax_code_id,&#xa;  state,&#xa;  --debit,&#xa;  ref,&#xa;  period_id,&#xa; -- write_date,&#xa; -- date_created,&#xa;  date,&#xa;--  write_uid,&#xa;  move_id,&#xa;  name,&#xa;--  reconcile_id,&#xa;  tax_amount,&#xa;  product_id,&#xa;--  account_tax_id,&#xa;  product_uom_id,&#xa;  amount_currency,&#xa;  quantity,&#xa;--  followup_date,&#xa;--  followup_line_id,&#xa;  ef_id,&#xa;  ef_list_id&#xa;&#x29;&#xa;SELECT  -- &#x432;&#x441;&#x442;&#x430;&#x432;&#x43b;&#x44f;&#x435;&#x43c; &#x441;&#x443;&#x43c;&#x43c;&#x443; &#x431;&#x435;&#x437; &#x43d;&#x430;&#x43b;&#x43e;&#x433;&#x430;&#xa;  ail.company_id,&#xa;  null&#x3a;&#x3a;INTEGER currency_id,&#xa;  ail.partner_id,&#xa;  CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29;&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29; END credit,&#xa;  CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29;&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29;&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN null&#x3a;&#x3a;NUMERIC END debit,&#xa;  &#x27;normal&#x27; as centralisation,&#xa;  ai.journal_id,&#xa;  ail.account_id,&#xa;  atx.ref_base_code_id tax_code_id,&#xa;  &#x27;valid&#x27; state,&#xa;  am.name as ref,&#xa;  am.period_id,&#xa;  am.date date_,&#xa;  am.id,&#xa;  ail.name ,&#xa;  ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29; tax_amount,&#xa;  ail.product_id,&#xa;  ail.uos_id,&#xa;  0 amount_currency,&#xa;  ail.quantity,&#xa;  ail.ef_id,&#xa;  ail.ef_list_id&#xa;FROM public.account_invoice_line ail&#xa;inner JOIN public.account_invoice ai on ail.invoice_id &#x3d; ai.id&#xa;left outer join public.account_account_tax_default_rel aatdr on ail.account_id &#x3d; aatdr.account_id&#xa;left outer join public.account_tax atx on aatdr.tax_id&#x3d;atx.id&#xa;left outer join public.account_move am on ail.ef_list_id &#x3d; am.ef_id&#xa;where&#xa;--ai.type &#x3d; &#x27;out_invoice&#x27; and&#xa;ai.ef_id is not null and ai.ef_id&#x3c;&#x3e;0&#xa;UNION ALL&#xa;SELECT  -- &#x432;&#x441;&#x442;&#x430;&#x432;&#x43b;&#x44f;&#x435;&#x43c; &#x43d;&#x430;&#x43b;&#x43e;&#x433;&#xa;  ail.company_id,&#xa;  null&#x3a;&#x3a;INTEGER currency_id,&#xa;  ail.partner_id,&#xa;  CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN ail.price_subtotal &#x2a; atx.amount&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN ail.price_subtotal &#x2a; atx.amount END credit,&#xa;  CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN ail.price_subtotal &#x2a; atx.amount&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN ail.price_subtotal &#x2a; atx.amount&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN null&#x3a;&#x3a;NUMERIC END debit,&#xa;  &#x27;normal&#x27; as centralisation,&#xa;  ai.journal_id,&#xa;  atx.account_paid_id,&#xa;  atx.ref_tax_code_id tax_code_id,&#xa;  &#x27;valid&#x27; state,&#xa;  am.name as ref,&#xa;  am.period_id,&#xa;  am.date date_,&#xa;  am.id,&#xa;  atx.name ,&#xa;  ail.price_subtotal &#x2a; atx.amount tax_amount,&#xa;  null&#x3a;&#x3a;INTEGER  product_id,&#xa;  null&#x3a;&#x3a;INTEGER  uos_id,&#xa;  0 amount_currency,&#xa;  1 quantity,&#xa;  ail.ef_id,&#xa;  ail.ef_list_id&#xa;FROM public.account_invoice_line ail&#xa;inner JOIN public.account_invoice ai on ail.invoice_id &#x3d; ai.id&#xa;left outer join public.account_account_tax_default_rel aatdr on ail.account_id &#x3d; aatdr.account_id&#xa;left outer join public.account_tax atx on aatdr.tax_id&#x3d;atx.id&#xa;left outer join public.account_move am on ail.ef_list_id &#x3d; am.ef_id&#xa;where&#xa;--ai.type &#x3d; &#x27;out_invoice&#x27; and&#xa;ai.ef_id is not null and ai.ef_id&#x3c;&#x3e;0&#xa;UNION ALL&#xa;SELECT  -- &#x432;&#x441;&#x442;&#x430;&#x432;&#x43b;&#x44f;&#x435;&#x43c; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x443;&#xa;  ail.company_id,&#xa;  null&#x3a;&#x3a;INTEGER currency_id,&#xa;  ail.partner_id,&#xa;  sum&#x28;CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN ail.price_subtotal&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN ail.price_subtotal&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN null&#x3a;&#x3a;NUMERIC END&#x29; credit,&#xa;  sum&#x28;CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN ail.price_subtotal&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN ail.price_subtotal END&#x29; debit,&#xa;  &#x27;normal&#x27; as centralisation,&#xa;  ai.journal_id,&#xa;  ai.account_id,&#xa;  NULL&#x3a;&#x3a;INTEGER  tax_code_id,&#xa;  &#x27;valid&#x27; state,&#xa;  am.name as ref,&#xa;  am.period_id,&#xa;  am.date date_,&#xa;  am.id,&#xa;  &#x27;&#x2f;&#x27; ,&#xa;  null&#x3a;&#x3a;NUMERIC tax_amount,&#xa;  null&#x3a;&#x3a;INTEGER product_id,&#xa;  null&#x3a;&#x3a;INTEGER uos_id,&#xa;  0 amount_currency,&#xa;  1 quantity,&#xa;  null&#x3a;&#x3a;INTEGER ef_id, -- ail.ef_id,&#xa;  ail.ef_list_id&#xa;FROM public.account_invoice_line ail&#xa;inner JOIN public.account_invoice ai on ail.invoice_id &#x3d; ai.id&#xa;left outer join public.account_account_tax_default_rel aatdr on ail.account_id &#x3d; aatdr.account_id&#xa;left outer join public.account_tax atx on aatdr.tax_id&#x3d;atx.id&#xa;left outer join public.account_move am on ail.ef_list_id &#x3d; am.ef_id&#xa;where&#xa;--ai.type &#x3d; &#x27;out_invoice&#x27; and&#xa;ai.ef_id is not null and ai.ef_id&#x3c;&#x3e;0&#xa;group by&#xa;  ail.company_id,&#xa;  ail.partner_id,&#xa;  ai.journal_id,&#xa;  ai.account_id,&#xa;  am.name,&#xa;  am.period_id,&#xa;  am.date ,&#xa;  am.id,&#xa;  ail.ef_list_id&#xa;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>537</xloc>
+      <yloc>108</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>wkf_instance</name>
     <type>ExecSQL</type>
@@ -271,8 +370,8 @@
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>281</xloc>
-      <yloc>132</yloc>
+      <xloc>246</xloc>
+      <yloc>91</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -293,7 +392,7 @@
     <single_statement>Y</single_statement>
     <replace_variables>N</replace_variables>
     <quoteString>N</quoteString>
-    <sql>&#xa;INSERT INTO wkf_workitem&#x28;&#xa;            act_id, inst_id, subflow_id, state&#x29;&#xa;&#xa;SELECT&#xa; 3 act_id_1&#xa;, id inst_id_1&#xa;, null subflow_id_1&#xa;, &#x27;complete&#x27; state_1&#xa;FROM wkf_instance&#xa;where id not in &#xa;&#x28; SELECT&#xa;  inst_id FROM wkf_workitem&#x29;&#xa;&#xa;</sql>
+    <sql>&#xa;INSERT INTO wkf_workitem&#x28;&#xa;            act_id, inst_id, subflow_id, state&#x29;&#xa;&#xa;SELECT&#xa; 3 act_id_1&#xa;, id inst_id_1&#xa;, null subflow_id_1&#xa;, &#x27;complete&#x27; state_1&#xa;FROM wkf_instance&#xa;where id not in &#xa;&#x28; SELECT&#xa;  inst_id FROM wkf_workitem&#x29;&#xa;&#xa;&#xa;&#xa;&#xa;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -303,8 +402,8 @@
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>473</xloc>
-      <yloc>136</yloc>
+      <xloc>340</xloc>
+      <yloc>115</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
