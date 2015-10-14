@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;10&#x2f;07 13&#x3a;50&#x3a;59.811</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;12 18&#x3a;40&#x3a;31.186</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;13 14&#x3a;51&#x3a;00.877</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -243,10 +243,11 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>wkf_instance</from><to>wkf_workitem</to><enabled>Y</enabled> </hop>
-  <hop> <from>account_fiscalyear</from><to>wkf_instance</to><enabled>Y</enabled> </hop>
-  <hop> <from>wkf_workitem</from><to>account_move</to><enabled>Y</enabled> </hop>
+  <hop> <from>wkf_instance</from><to>wkf_workitem</to><enabled>N</enabled> </hop>
+  <hop> <from>account_fiscalyear</from><to>wkf_instance</to><enabled>N</enabled> </hop>
+  <hop> <from>wkf_workitem</from><to>account_move</to><enabled>N</enabled> </hop>
   <hop> <from>account_move</from><to>account_move_line</to><enabled>N</enabled> </hop>
+  <hop> <from>account_invoice wkf_instance  wkf_workitem</from><to>account_fiscalyear</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>account_fiscalyear</name>
@@ -370,8 +371,8 @@
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>246</xloc>
-      <yloc>91</yloc>
+      <xloc>253</xloc>
+      <yloc>103</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -404,6 +405,38 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>340</xloc>
       <yloc>115</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>account_invoice wkf_instance  wkf_workitem</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE SAND</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>Y</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>&#xa;&#xa;UPDATE&#xa;  public.account_invoice ai1&#xa;SET&#xa;  journal_id &#x3d; aj.id ,&#xa;  account_id &#x3d; aa.id,&#xa;  period_id &#x3d; ap.id ,&#xa;  commercial_partner_id &#x3d; CASE WHEN ai.commercial_partner_id is null then ai.partner_id else ai.commercial_partner_id end&#xa;FROM public.account_invoice ai&#xa;INNER JOIN public.account_period ap&#xa;     on  ai.company_id &#x3d; ap.company_id&#xa;     and ai.date_invoice BETWEEN ap.date_start and ap.date_stop&#xa;     and not ap.special&#xa;INNER JOIN public.account_journal aj&#xa;	 on ai.company_id &#x3d; aj.company_id&#xa;     AND aj.type &#x3d; CASE WHEN ai.type &#x3d; &#x27;in_invoice&#x27; THEN &#x27;purchase&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;out_invoice&#x27; THEN &#x27;sale&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;in_refund&#x27; THEN &#x27;purchase_refund&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;out_refund&#x27; THEN &#x27;sale_refund&#x27;&#xa;                   END&#xa;INNER JOIN public.account_account aa&#xa;	 on ai.company_id &#x3d; aa.company_id&#xa;     AND aa.code &#x3d; CASE WHEN ai.type &#x3d; &#x27;in_invoice&#x27; THEN &#x27;120000&#x27; --&#x27;purchase&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;out_invoice&#x27; THEN &#x27;110200&#x27; --&#x27;sale&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;in_refund&#x27; THEN &#x27;110200&#x27; --&#x27;purchase_refund&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;out_refund&#x27; THEN &#x27;120000&#x27; --&#x27;sale_refund&#x27;&#xa;                   END &#xa;WHERE ai1.id &#x3d; ai.id&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2a;&#xa;&#xa;DELETE from public.wkf_instance wk_&#xa;where wk_.res_id in &#x28;SELECT&#xa;  id &#xa;FROM public.account_invoice where ef_id is not null&#x29;&#xa;&#xa;&#xa;delete from public.wkf_workitem wk_w&#xa;where wk_w.inst_id not in &#x28;SELECT id FROM wkf_instance&#x29;&#xa;&#xa;select &#x2a; from public.wkf_workitem&#xa;&#x2a;&#x2f;&#xa;&#xa;&#xa;INSERT INTO public.wkf_instance&#x28;res_id,res_type, uid, wkf_id, state &#x29;&#xa;SELECT&#xa;  id res_id_1&#xa;, &#x27;account.invoice&#x27; res_type_1 &#xa;, 1 uid_1&#xa;, 1 wkf_id_1&#xa;, &#x27;active&#x27; state_1&#xa;FROM public.account_invoice&#xa;where id not in &#xa;&#x28; SELECT res_id FROM public.wkf_instance WHERE res_type &#x3d; &#x27;account.invoice&#x27;&#x29;&#xa;and ef_id is not null&#x3b;&#xa;&#xa;&#xa;INSERT INTO public.wkf_workitem&#x28;&#xa;            act_id, inst_id, subflow_id, state&#x29;&#xa;&#xa;SELECT&#xa; 3 act_id_1&#xa;, id inst_id_1&#xa;, null subflow_id_1&#xa;, &#x27;complete&#x27; state_1&#xa;FROM public.wkf_instance&#xa;where id not in &#xa;&#x28; SELECT&#xa;  inst_id FROM public.wkf_workitem&#x29;&#x3b;&#xa;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>87</xloc>
+      <yloc>40</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
