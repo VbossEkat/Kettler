@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>Transformation 1</name>
+    <name>&#x41f;&#x440;&#x430;&#x439;&#x441; &#x43f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430;</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,9 +67,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;10&#x2f;13 15&#x3a;20&#x3a;30.151</created_date>
+  <created_date>2015&#x2f;10&#x2f;14 16&#x3a;38&#x3a;32.015</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;15 10&#x3a;21&#x3a;50.247</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;15 10&#x3a;21&#x3a;47.096</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -245,8 +245,8 @@
   <order>
   </order>
   <step>
-    <name>account_invoice wkf_instance  wkf_workitem</name>
-    <type>ExecSQL</type>
+    <name>TVR_STV</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -255,23 +255,43 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>OdooSE SAND</connection>
+    <connection>PR_Euras</connection>
+    <sql>SELECT&#xa;  ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id_prod&#xa;  ,kt.&#x422;&#x43e;&#x432;&#x41d;&#x430;&#x438;&#x43c;&#xa;  ,kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;&#xa;-- , &#x410;&#x43a;&#x422;&#x438;&#x41b;&#x441;&#xa;-- , &#x410;&#x43a;&#x446;&#x438;&#x437;&#xa;-- , &#x410;&#x43a;&#x446;&#x438;&#x437;1&#xa;--, ts.&#x410;&#x43a;&#x446;&#x438;&#x437;2&#xa;--, ts.&#x410;&#x43a;&#x446;&#x438;&#x437;3&#xa;--, ts.&#x41f;&#x440;&#x438;&#x437;&#x43d;&#x430;&#x43a;&#x422;&#x430;&#x440;&#x44b;&#xa;-- , &#x421;&#x447;&#x435;&#x442;&#x411;&#x443;&#x445;&#xa;-- , &#x412;&#x43b;&#x44e;&#x442;&#x430;&#xa;--, ts.&#x423;&#x431;&#x43b;1&#xa;--, ts.&#x423;&#x431;&#x43b;2&#xa;--, ts.&#x423;&#x431;&#x43b;3&#xa;--, ts.&#x423;&#x431;&#x43b;4&#xa;--, ts.&#x423;&#x431;&#x43b;5&#xa;, ts.&#x41a;&#x43e;&#x434;&#x41e;&#x41a;&#x415;&#x419;&#xa;, ts.&#x413;&#x440;&#x43f;1&#xa;, ts.&#x413;&#x440;&#x43f;2&#xa;-- , &#x413;&#x440;&#x43f;3&#xa;-- , &#x413;&#x440;&#x43f;4&#xa;-- , &#x413;&#x440;&#x43f;5&#xa;-- , &#x413;&#x440;&#x43f;6&#xa;-- , &#x413;&#x440;&#x43f;7&#xa;-- , &#x413;&#x440;&#x43f;8&#xa;-- , &#x413;&#x440;&#x43f;9&#xa;-- , &#x413;&#x440;&#x43f;10&#xa;-- , &#x413;&#x440;&#x43f;11&#xa;-- , &#x413;&#x440;&#x43f;12&#xa;-- , &#x413;&#x440;&#x43f;13&#xa;-- , &#x413;&#x440;&#x43f;14&#xa;-- , &#x413;&#x440;&#x43f;15&#xa;-- , &#x413;&#x440;&#x43f;16&#xa;-- , &#x413;&#x440;&#x43f;17&#xa;-- , &#x413;&#x440;&#x43f;18&#xa;-- , &#x413;&#x440;&#x43f;19&#xa;-- , &#x413;&#x440;&#x43f;20&#xa;-- , &#x413;&#x440;&#x43f;21&#xa;-- , &#x413;&#x440;&#x43f;22&#xa;-- , &#x413;&#x440;&#x43f;23&#xa;-- , &#x413;&#x440;&#x43f;24&#xa;-- , &#x413;&#x440;&#x43f;25&#xa;-- , &#x413;&#x440;&#x43f;26&#xa;-- , &#x413;&#x440;&#x43f;27&#xa;-- , &#x413;&#x440;&#x43f;28&#xa;-- , &#x413;&#x440;&#x43f;29&#xa;-- , &#x413;&#x440;&#x43f;30&#xa;-- , &#x413;&#x440;&#x43f;31&#xa;-- , &#x413;&#x440;&#x43f;32&#xa;-- , &#x422;&#x432;&#x440;&#x41e;&#x43f;&#x438;&#x441;&#xa;-- , &#x413;&#x440;&#x43f;33&#xa;-- , &#x413;&#x440;&#x43f;34&#xa;-- , &#x413;&#x440;&#x43f;35&#xa;-- , &#x413;&#x440;&#x43f;36&#xa;-- , &#x413;&#x440;&#x43f;37&#xa;-- , &#x413;&#x440;&#x43f;38&#xa;-- , &#x413;&#x440;&#x43f;39&#xa;-- , &#x413;&#x440;&#x43f;40&#xa;-- , &#x413;&#x440;&#x43f;41&#xa;-- , &#x413;&#x440;&#x43f;42&#xa;-- , &#x413;&#x440;&#x43f;43&#xa;-- , &#x413;&#x440;&#x43f;44&#xa;-- , &#x413;&#x440;&#x43f;45&#xa;-- , &#x413;&#x440;&#x43f;46&#xa;-- , &#x413;&#x440;&#x43f;47&#xa;-- , &#x413;&#x440;&#x43f;48&#xa;-- , &#x413;&#x440;&#x43f;49&#xa;-- , &#x413;&#x440;&#x43f;50&#xa;-- , &#x413;&#x440;&#x43f;51&#xa;-- , &#x413;&#x440;&#x43f;52&#xa;-- , &#x413;&#x440;&#x43f;53&#xa;-- , &#x413;&#x440;&#x43f;54&#xa;-- , &#x413;&#x440;&#x43f;55&#xa;-- , &#x413;&#x440;&#x43f;56&#xa;-- , &#x413;&#x440;&#x43f;57&#xa;-- , &#x413;&#x440;&#x43f;58&#xa;-- , &#x413;&#x440;&#x43f;59&#xa;-- , &#x413;&#x440;&#x43f;60&#xa;-- , &#x413;&#x440;&#x43f;61&#xa;-- , &#x413;&#x440;&#x43f;62&#xa;-- , &#x413;&#x440;&#x43f;63&#xa;-- , &#x413;&#x440;&#x43f;64&#xa;, td.&#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430; intId&#xa;, td.&#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434; ef_id_partn&#xa;, kk.&#x41a;&#x43b;&#x43d;&#x41d;&#x430;&#x438;&#x43c; &#xa;FROM TVR_STV ts&#xa;inner join tvr_def td on td.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; ts.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;inner join kat_tvr kt on td.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; &#x3d; kt.&#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;left outer join kat_kln kk on td.&#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434; &#x3d; kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434;&#xa;where &#xa;SUBSTRING&#x28;kt.&#x422;&#x43e;&#x432;&#x410;&#x440;&#x442;,4,1&#x29;&#x3d;&#x27;w&#x27; and&#xa;kk.&#x41a;&#x43b;&#x43d;&#x41a;&#x43e;&#x434; in &#x28;7699&#x29;&#xa;&#xa;&#x2f;&#x2a;&#xa;SELECT&#xa;  &#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x435;&#x441;&#x411;&#x440;&#x443;&#x442;&#x442;&#x43e;&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x435;&#x441;&#x41d;&#x435;&#x442;&#x442;&#x43e;&#xa;, &#x422;&#x43e;&#x432;&#x417;&#x43e;&#x43d;&#x430;&#x425;&#x440;&#x430;&#x43d;&#xa;, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;1&#xa;, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;2&#xa;, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3&#xa;, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;4&#xa;, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;5&#xa;, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;6&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;1&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;2&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;3&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;4&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;5&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;6&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;7&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;8&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;9&#xa;, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;10&#xa;, &#x41e;&#x431;&#x44a;&#x435;&#x43c;&#xa;, &#x41c;&#x438;&#x43d;&#x41e;&#x441;&#x442;&#xa;, &#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430;&#xa;, &#x414;&#x43e;&#x43f;&#xa;, &#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434;&#xa;, &#x421;&#x442;&#x440;&#x430;&#x43d;&#x430;&#xa;, &#x413;&#x422;&#x414;&#xa;, &#x421;&#x435;&#x440;&#x442;&#x438;&#x444;&#xa;, &#x417;&#x430;&#x43a;&#x443;&#x43f;&#xa;, &#x421;&#x440;&#x43e;&#x43a;&#x416;&#xa;FROM TVR_DEF&#xa;&#x2a;&#x2f;</sql>
+    <limit/>
+    <lookup/>
     <execute_each_row>N</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>N</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>&#xa;select &#x2a;&#xa;FROM public.account_invoice ai&#xa;INNER JOIN public.account_period ap&#xa;     on  ai.company_id &#x3d; ap.company_id&#xa;     and ai.date_invoice BETWEEN ap.date_start and ap.date_stop&#xa;     and not ap.special&#xa;INNER JOIN public.account_journal aj&#xa;	 on ai.company_id &#x3d; aj.company_id&#xa;     AND aj.type &#x3d; CASE WHEN ai.type &#x3d; &#x27;in_invoice&#x27; THEN &#x27;purchase&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;out_invoice&#x27; THEN &#x27;sale&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;in_refund&#x27; THEN &#x27;purchase_refund&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;out_refund&#x27; THEN &#x27;sale_refund&#x27;&#xa;                   END&#xa;INNER JOIN public.account_account aa&#xa;	 on ai.company_id &#x3d; aa.company_id&#xa;     AND aa.code &#x3d; CASE WHEN ai.type &#x3d; &#x27;in_invoice&#x27; THEN &#x27;120000&#x27; --&#x27;purchase&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;out_invoice&#x27; THEN &#x27;110200&#x27; --&#x27;sale&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;in_refund&#x27; THEN &#x27;110200&#x27; --&#x27;purchase_refund&#x27;&#xa;                        WHEN ai.type &#x3d; &#x27;out_refund&#x27; THEN &#x27;120000&#x27; --&#x27;sale_refund&#x27;&#xa;                   END &#xa;&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2a;&#xa;&#xa;DELETE from public.wkf_instance wk_&#xa;where wk_.res_id in &#x28;SELECT&#xa;  id &#xa;FROM public.account_invoice where ef_id is not null&#x29;&#xa;&#xa;&#xa;delete from public.wkf_workitem wk_w&#xa;where wk_w.inst_id not in &#x28;SELECT id FROM wkf_instance&#x29;&#xa;&#xa;select &#x2a; from public.wkf_workitem&#xa;&#x2a;&#x2f;&#xa;&#xa;SELECT&#xa;  id res_id_1&#xa;, &#x27;account.invoice&#x27; res_type_1 &#xa;, 1 uid_1&#xa;, 1 wkf_id_1&#xa;, &#x27;active&#x27; state_1&#xa;FROM public.account_invoice&#xa;where id not in &#xa;&#x28; SELECT res_id FROM public.wkf_instance WHERE res_type &#x3d; &#x27;account.invoice&#x27;&#x29;&#xa;and ef_id is not null&#x3b;&#xa;&#xa;&#xa;SELECT&#xa; 3 act_id_1&#xa;, id inst_id_1&#xa;, null subflow_id_1&#xa;, &#x27;complete&#x27; state_1&#xa;FROM public.wkf_instance&#xa;where id not in &#xa;&#x28; SELECT&#xa;  inst_id FROM public.wkf_workitem&#x29;&#x3b;&#xa;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-    </arguments>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>216</xloc>
-      <yloc>75</yloc>
+      <xloc>90</xloc>
+      <yloc>132</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43e;&#x43a; &#x43f;&#x430;&#x440;&#x439;&#x441;&#x43e;&#x432;</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id inv_id&#xa;, ef_id ef_id_inv&#xa;, company_id company_id_3&#xa;, partner_id partner_id_3&#xa;FROM account_invoice&#xa;where ef_id is not null and ef_id &#x3c;&#x3e; 0&#xa;ORDER BY ef_id&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>228</xloc>
+      <yloc>35</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
