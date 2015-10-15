@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;10&#x2f;02 13&#x3a;41&#x3a;13.800</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;15 10&#x3a;22&#x3a;09.123</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;15 13&#x3a;03&#x3a;21.787</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -248,8 +248,11 @@
   <hop> <from>HIST_SKL</from><to>&#x41f;&#x440;&#x43e;&#x434;&#x443;&#x43a;&#x442;&#x44b;</to><enabled>Y</enabled> </hop>
   <hop> <from>&#x41f;&#x440;&#x43e;&#x434;&#x443;&#x43a;&#x442;&#x44b;</from><to>&#x41f;&#x43e; &#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x435;</to><enabled>Y</enabled> </hop>
   <hop> <from>&#x41f;&#x43e; &#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x435;</from><to>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43a;&#x438;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43a;&#x438;</from><to>If is null</to><enabled>Y</enabled> </hop>
   <hop> <from>If is null</from><to>account_invoice_line</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x411;&#x443;&#x445; &#x441;&#x447;&#x435;&#x442;&#x430;</from><to>&#x440;&#x430;&#x441;&#x441;&#x442; &#x441;&#x447;&#x435;&#x442;&#x43e;&#x432;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41f;&#x43e; &#x441;&#x447;&#x435;&#x442;&#x430;&#x43c;</from><to>&#x440;&#x430;&#x441;&#x441;&#x442; &#x441;&#x447;&#x435;&#x442;&#x43e;&#x432;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x417;&#x430;&#x433;&#x43e;&#x43b;&#x43e;&#x432;&#x43a;&#x438;</from><to>&#x41f;&#x43e; &#x441;&#x447;&#x435;&#x442;&#x430;&#x43c;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x440;&#x430;&#x441;&#x441;&#x442; &#x441;&#x447;&#x435;&#x442;&#x43e;&#x432;</from><to>If is null</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>HIST_SKL</name>
@@ -263,7 +266,7 @@
            <schema_name/>
            </partitioning>
     <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x434; ef_id_1&#xa;, hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x434;&#x422;&#x43e;&#x432;&#xa;, hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x43b; quantity_1&#xa;, hs.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#xa;, hs.&#x41e;&#x43f;&#x426;&#x435;&#x43d;&#x430; price_unit_1&#xa;, hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x434;&#x423;&#x43f;&#x430;&#x43a;&#xa;, hs.&#x41e;&#x43f;&#x421;&#x43a;&#x43b;&#xa;, hs.&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#xa;, hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#xa;, hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;_old&#xa;, hs.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41a;&#x43b;&#x43d;&#xa;, hs.&#x41e;&#x43f;&#x422;&#x43e;&#x432;&#x41d;&#x43e;&#x43c; sequence_1&#xa;, hs.&#x41e;&#x43f;&#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#xa;, hs.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#xa;, hs.&#x414;&#x430;&#x442;&#x430;&#x420;&#x435;&#x430;&#x43b;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438;&#x414;&#x43e;&#xa;, hs.&#x410;&#x43a;&#x446;&#x438;&#x44f;&#x41a;&#x43e;&#x434;&#xa;, hs.&#x41e;&#x43f;&#x426;&#x435;&#x43d;&#x430;&#x411;&#x430;&#x437;&#x430; &#xa;, hs.&#x414;&#x435;&#x43b;&#x44c;&#x442;&#x430;&#xa;, hs.&#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438; price_subtotal&#xa;, hs.&#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#x411;&#x430;&#x437;&#x430;&#xa;, hs.&#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#x414;&#x435;&#x43b;&#x44c;&#x442;&#x430;&#xa;, hs.pcnId&#xa;, hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434; ef_list_id_1&#xa;, hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x43b;&#x412;&#x43e;&#x437;&#x432;&#x440;&#xa;, hs.&#x422;&#x440;&#x430;&#x43d;&#x441;&#x43f;&#x41d;&#x430;&#x446;&#xa;, case  when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;0&#x29; then 23 -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;0&#x29; then 19  -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;1&#x29; then 23 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;1&#x29; then 19 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;        else 23 end account_id_1&#xa;FROM HIST_SKL hs&#xa;left outer join LIST_SKL ls ON hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434; &#x3d; ls.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;&#xa;WHERE ls.&#x41e;&#x43f;&#x414;&#x430;&#x442;&#x430;&#x420;&#x430;&#x441;&#x447; &#x3e; &#x27;20150831&#x27;&#xa;--WHERE ls.&#x41e;&#x43f;&#x414;&#x430;&#x442;&#x430;&#x420;&#x430;&#x441;&#x447; BETWEEN &#x27;20150831&#x27; AND &#x27;20150910&#x27;&#xa;order by hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x434;&#x422;&#x43e;&#x432;&#xa;&#xa;&#xa;&#xa;&#xa;&#x2f;&#x2a;&#xa;&#xa;  id serial NOT NULL,&#xa;  origin character varying, -- Source Document&#xa;  create_uid integer, -- Created by&#xa;  uos_id integer, -- Unit of Measure&#xa;  create_date timestamp without time zone, -- Created on&#xa;  account_id integer NOT NULL, -- Account&#xa;  sequence integer, -- Sequence&#xa;  invoice_id integer, -- Invoice Reference&#xa;  price_unit numeric NOT NULL, -- Unit Price&#xa;  price_subtotal numeric, -- Amount&#xa;  company_id integer, -- Company&#xa;  write_uid integer, -- Last Updated by&#xa;  discount numeric, -- Discount &#x28;&#x25;&#x29;&#xa;  product_id integer, -- Product&#xa;  write_date timestamp without time zone, -- Last Updated on&#xa;  account_analytic_id integer, -- Analytic Account&#xa;  partner_id integer, -- Partner&#xa;  quantity numeric NOT NULL, -- Quantity&#xa;  name text NOT NULL, -- Description&#xa;  purchase_line_id integer, -- Purchase Order Line&#xa;  ef_id bigint, -- &#x41a;&#x43e;&#x434; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x438;&#x437; HIST_SKL &#x41b;&#x41e;&#xa;  ef_list_id bigint, -- &#x41a;&#x43e;&#x434; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x438;&#x437; LIST_SKL &#x41b;&#x41e;&#xa;&#xa;      , case  when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then &#x27;in_invoice&#x27; -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then &#x27;out_invoice&#x27;  -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then &#x27;out_refund&#x27; -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then &#x27;in_refund&#x27; -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;        else &#x27;out_invoice&#x27; end type_1&#xa;      , case  when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then 13  -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then 8   -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then 13 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then 8 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a;&#xa;        else 8 end account_id_1&#xa;       , case  when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then 2  -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then 1   -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then 3 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then 4 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a; &#xa;        else 8 end journal_id_1&#xa;&#xa;&#xa;&#x2a;&#x2f;&#xa;</sql>
+    <sql>SELECT&#xa;  hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x434; ef_id_1&#xa;, hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x434;&#x422;&#x43e;&#x432;&#xa;, hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x43b; quantity_1&#xa;, hs.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#xa;, hs.&#x41e;&#x43f;&#x426;&#x435;&#x43d;&#x430; price_unit_1&#xa;, hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x434;&#x423;&#x43f;&#x430;&#x43a;&#xa;, hs.&#x41e;&#x43f;&#x421;&#x43a;&#x43b;&#xa;, hs.&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#xa;, hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#xa;, hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;_old&#xa;, hs.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41a;&#x43b;&#x43d;&#xa;, hs.&#x41e;&#x43f;&#x422;&#x43e;&#x432;&#x41d;&#x43e;&#x43c; sequence_1&#xa;, hs.&#x41e;&#x43f;&#x41d;&#x43e;&#x43c;&#x435;&#x440;&#x41f;&#x43e;&#x441;&#x442;&#xa;, hs.&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x41f;&#x43e;&#x441;&#x442;&#xa;, hs.&#x414;&#x430;&#x442;&#x430;&#x420;&#x435;&#x430;&#x43b;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438;&#x414;&#x43e;&#xa;, hs.&#x410;&#x43a;&#x446;&#x438;&#x44f;&#x41a;&#x43e;&#x434;&#xa;, hs.&#x41e;&#x43f;&#x426;&#x435;&#x43d;&#x430;&#x411;&#x430;&#x437;&#x430; &#xa;, hs.&#x414;&#x435;&#x43b;&#x44c;&#x442;&#x430;&#xa;, hs.&#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438; price_subtotal&#xa;, hs.&#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#x411;&#x430;&#x437;&#x430;&#xa;, hs.&#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#x414;&#x435;&#x43b;&#x44c;&#x442;&#x430;&#xa;, hs.pcnId&#xa;, hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434; ef_list_id_1&#xa;, hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x43b;&#x412;&#x43e;&#x437;&#x432;&#x440;&#xa;, hs.&#x422;&#x440;&#x430;&#x43d;&#x441;&#x43f;&#x41d;&#x430;&#x446;&#xa;, case  when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;0&#x29; then 23 -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;0&#x29; then 19  -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;1&#x29; then 23 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;1&#x29; then 19 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;        else 23 end account_id_1&#xa;, case  when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;0&#x29; then &#x27;220000&#x27; -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;0&#x29; then &#x27;200000&#x27;  -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;1&#x29; then &#x27;200000&#x27; -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a;&#xa;              when &#x28;hs.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and hs.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x5d;&#x3d;1&#x29; then &#x27;220000&#x27; -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;        else &#x27;220000&#x27; end account_code_1&#xa;FROM HIST_SKL hs&#xa;left outer join LIST_SKL ls ON hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434; &#x3d; ls.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434;&#xa;WHERE ls.&#x41e;&#x43f;&#x414;&#x430;&#x442;&#x430;&#x420;&#x430;&#x441;&#x447; &#x3e; &#x27;20150831&#x27;&#xa;and hs.&#x41e;&#x43f;&#x41d;&#x430;&#x43a;&#x43b;&#x41a;&#x43e;&#x434; in &#x28;111191,121191,4011131,3941131,738762,11272,140682,51152&#x29;&#xa;--WHERE ls.&#x41e;&#x43f;&#x414;&#x430;&#x442;&#x430;&#x420;&#x430;&#x441;&#x447; BETWEEN &#x27;20150831&#x27; AND &#x27;20150910&#x27;&#xa;order by hs.&#x41e;&#x43f;&#x41a;&#x43e;&#x434;&#x422;&#x43e;&#x432;&#xa;&#xa;&#xa;&#xa;&#xa;&#x2f;&#x2a;&#xa;&#xa;  id serial NOT NULL,&#xa;  origin character varying, -- Source Document&#xa;  create_uid integer, -- Created by&#xa;  uos_id integer, -- Unit of Measure&#xa;  create_date timestamp without time zone, -- Created on&#xa;  account_id integer NOT NULL, -- Account&#xa;  sequence integer, -- Sequence&#xa;  invoice_id integer, -- Invoice Reference&#xa;  price_unit numeric NOT NULL, -- Unit Price&#xa;  price_subtotal numeric, -- Amount&#xa;  company_id integer, -- Company&#xa;  write_uid integer, -- Last Updated by&#xa;  discount numeric, -- Discount &#x28;&#x25;&#x29;&#xa;  product_id integer, -- Product&#xa;  write_date timestamp without time zone, -- Last Updated on&#xa;  account_analytic_id integer, -- Analytic Account&#xa;  partner_id integer, -- Partner&#xa;  quantity numeric NOT NULL, -- Quantity&#xa;  name text NOT NULL, -- Description&#xa;  purchase_line_id integer, -- Purchase Order Line&#xa;  ef_id bigint, -- &#x41a;&#x43e;&#x434; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x438;&#x437; HIST_SKL &#x41b;&#x41e;&#xa;  ef_list_id bigint, -- &#x41a;&#x43e;&#x434; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x438; &#x438;&#x437; LIST_SKL &#x41b;&#x41e;&#xa;&#xa;      , case  when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then &#x27;in_invoice&#x27; -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then &#x27;out_invoice&#x27;  -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then &#x27;out_refund&#x27; -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then &#x27;in_refund&#x27; -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;        else &#x27;out_invoice&#x27; end type_1&#xa;      , case  when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then 13  -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then 8   -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then 13 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then 8 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a;&#xa;        else 8 end account_id_1&#xa;       , case  when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then 2  -- &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x43a;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;0&#x29; then 1   -- &#x41f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x438;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;1 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then 3 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#xa;              when &#x28;ls.&#x5b;&#x41e;&#x43f;&#x422;&#x438;&#x43f;&#x5d;&#x3d;2 and ls.&#x5b;&#x41e;&#x43f;&#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x5d;&#x3d;1&#x29; then 4 -- &#x412;&#x43e;&#x437;&#x432;&#x440;&#x430;&#x442;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x43e;&#x43a; &#xa;        else 8 end journal_id_1&#xa;&#xa;&#xa;&#x2a;&#x2f;&#xa;</sql>
     <limit/>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -305,8 +308,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>703</xloc>
-      <yloc>265</yloc>
+      <xloc>894</xloc>
+      <yloc>264</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -387,7 +390,7 @@
       </value>
       <value>
         <name>account_id</name>
-        <rename>account_id_3</rename>
+        <rename>acc_id_4</rename>
         <update>Y</update>
       </value>
       <value>
@@ -408,8 +411,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>841</xloc>
-      <yloc>259</yloc>
+      <xloc>1044</xloc>
+      <yloc>269</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -552,6 +555,102 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>364</xloc>
       <yloc>254</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x440;&#x430;&#x441;&#x441;&#x442; &#x441;&#x447;&#x435;&#x442;&#x43e;&#x432;</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>LEFT OUTER</join_type>
+<step1>&#x41f;&#x43e; &#x441;&#x447;&#x435;&#x442;&#x430;&#x43c;</step1>
+<step2>&#x411;&#x443;&#x445; &#x441;&#x447;&#x435;&#x442;&#x430;</step2>
+    <keys_1>
+      <key>account_code_1</key>
+      <key>company_id_3</key>
+    </keys_1>
+    <keys_2>
+      <key>acc_code_4</key>
+      <key>acc_comp_id_4</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>739</xloc>
+      <yloc>263</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x411;&#x443;&#x445; &#x441;&#x447;&#x435;&#x442;&#x430;</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id acc_id_4&#xa;, code acc_code_4&#xa;, company_id acc_comp_id_4&#xa;FROM account_account&#xa;order by  code&#xa;, company_id&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>733</xloc>
+      <yloc>106</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x41f;&#x43e; &#x441;&#x447;&#x435;&#x442;&#x430;&#x43c;</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>account_code_1</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>company_id_3</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>644</xloc>
+      <yloc>266</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
