@@ -1,0 +1,351 @@
+<transformation>
+  <info>
+    <name>&#x424;&#x43e;&#x440;&#x43c;&#x438;&#x440;&#x43e;&#x432;&#x430;&#x43d;&#x438;&#x435; &#x43f;&#x440;&#x43e;&#x432;&#x43e;&#x434;&#x43e;&#x43a;</name>
+    <description/>
+    <extended_description>INSERT INTO wkf_instance&#x28;res_id,res_type, uid, wkf_id, state &#x29;&#xa;SELECT&#xa;  id res_id_1&#xa;, &#x27;account.invoice&#x27; res_type_1 &#xa;, 1 uid_1&#xa;, 1 wkf_id_1&#xa;, &#x27;active&#x27; state_1&#xa;FROM account_invoice&#xa;where id not in &#xa;&#x28; SELECT res_id FROM wkf_instance WHERE res_type &#x3d; &#x27;account.invoice&#x27;&#x29;&#xa;and ef_id is not null&#xa;&#xa;&#xa;INSERT INTO wkf_workitem&#x28;&#xa;            act_id, inst_id, subflow_id, state&#x29;&#xa;&#xa;SELECT&#xa; 3 act_id_1&#xa;, id inst_id_1&#xa;, null subflow_id_1&#xa;, &#x27;complete&#x27; state_1&#xa;FROM wkf_instance&#xa;where id not in &#xa;&#x28; SELECT&#xa;  inst_id FROM wkf_workitem&#x29;&#xa;&#xa;</extended_description>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+         <slaveserver><name>ODOO_RU_SlaveServer</name><hostname>192.168.1.30</hostname><port/><webAppName/><username>odoo-pg</username><password>Encrypted 2be98afc86aa7ce82b209a8618fc1fb82</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>N</master></slaveserver>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2015&#x2f;10&#x2f;07 13&#x3a;50&#x3a;59.811</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2015&#x2f;10&#x2f;15 13&#x3a;13&#x3a;45.101</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>Odoo_SE0022</name>
+    <server>localhost</server>
+    <type>OpenERPDatabaseMeta</type>
+    <access>Plugin</access>
+    <database>SE0022</database>
+    <port>8069</port>
+    <username>admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4f949ff20dc9dbcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>8069</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>OdooSE SAND</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>OdooSE SAND &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x43d;&#x430; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x435; RU</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>OdooSE0022</name>
+    <server>192.168.1.29</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gke_sand001</database>
+    <port>5432</port>
+    <username>odoo</username>
+    <password>Encrypted 2be98afc86aa7f28baf16a13dce93bcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>OdooSE0022 &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430; &#x43b;&#x43e;&#x43a;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>SE0022</database>
+    <port>5432</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98dfa719d39596ae0aff228dc6fa8c</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>PostgresSE0022</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>SBA1</database>
+    <port>5432</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98dfa719d39596ae0aff228dc6fa8c</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>PR_Euras</name>
+    <server>192.168.1.225</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>PR_Euras</database>
+    <port>1433</port>
+    <username>boss</username>
+    <password>Encrypted 2be98afc86aa7f2e4f949ff20dc9dbcc9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>Y</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>account_move</from><to>update account_invoice</to><enabled>Y</enabled> </hop>
+  <hop> <from>update account_invoice</from><to>account_move_line</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>account_move</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>&#xa;INSERT INTO&#xa;  public.account_move&#xa;&#x28;&#xa; -- id,&#xa; -- create_uid,&#xa;  partner_id,&#xa;  company_id,&#xa;--  create_date,&#xa;  name,&#xa;--  write_uid,&#xa;  journal_id,&#xa;  state,&#xa;  period_id,&#xa;--  write_date,&#xa;--  narration,&#xa;  date,&#xa;--  balance,&#xa;  ref,&#xa;--  to_check&#xa;  ef_id&#xa;&#x29;&#xa;SELECT&#xa;  partner_id,&#xa;  company_id,&#xa;  case when number is null then ef_id&#x3a;&#x3a;CHARACTER else number END,&#xa;  journal_id,&#xa;  &#x27;posted&#x27;,&#xa;  period_id,&#xa;--  id,&#xa;  date_invoice,&#xa;  name,&#xa;  ef_id&#xa;FROM&#xa;  public.account_invoice&#xa;  where ef_id is not null and ef_id&#x3c;&#x3e;0 and period_id is not null&#xa;  and ef_id not in &#x28;select ef_id from public.account_move where ef_id is not null and ef_id&#x3c;&#x3e;0&#x29; &#x3b;&#xa;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>183</xloc>
+      <yloc>132</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>update account_invoice</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>&#xa;UPDATE&#xa;  public.account_invoice ai&#xa;SET&#xa;  move_id &#x3d; am.id,&#xa;  move_name &#x3d; &#x27;&#x2f;&#x27;&#xa;FROM public.account_move am&#xa;WHERE ai.ef_id &#x3d; am.ef_id&#xa;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>338</xloc>
+      <yloc>126</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>account_move_line</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>&#xa;INSERT INTO  &#xa;  public.account_move_line&#xa;&#x28;&#xa; -- id,&#xa; -- create_date,&#xa; -- statement_id,&#xa; company_id,&#xa; currency_id,&#xa; -- date_maturity,&#xa;  partner_id,&#xa; -- reconcile_partial_id,&#xa; -- blocked,&#xa; -- analytic_account_id,&#xa; -- create_uid,&#xa;  credit,&#xa;  debit,&#xa;  centralisation,&#xa;  journal_id,&#xa;  account_id,&#xa; -- reconcile_ref,&#xa;  tax_code_id,&#xa;  state,&#xa;  --debit,&#xa;  ref,&#xa;  period_id,&#xa; -- write_date,&#xa; -- date_created,&#xa;  date,&#xa;--  write_uid,&#xa;  move_id,&#xa;  name,&#xa;--  reconcile_id,&#xa;  tax_amount,&#xa;  product_id,&#xa;--  account_tax_id,&#xa;  product_uom_id,&#xa;  amount_currency,&#xa;  quantity,&#xa;--  followup_date,&#xa;--  followup_line_id,&#xa;  ef_id,&#xa;  ef_list_id&#xa;&#x29;&#xa;SELECT  -- &#x432;&#x441;&#x442;&#x430;&#x432;&#x43b;&#x44f;&#x435;&#x43c; &#x441;&#x443;&#x43c;&#x43c;&#x443; &#x431;&#x435;&#x437; &#x43d;&#x430;&#x43b;&#x43e;&#x433;&#x430;&#xa;  ail.company_id,&#xa;  null&#x3a;&#x3a;NUMERIC currency_id,&#xa;  ail.partner_id,&#xa;  CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29;&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29; END credit,&#xa;  CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29;&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29;&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN null&#x3a;&#x3a;NUMERIC END debit,&#xa;  &#x27;normal&#x27; as centralisation,&#xa;  ai.journal_id,&#xa;  ail.account_id,&#xa;  atx.ref_base_code_id tax_code_id,&#xa;  &#x27;valid&#x27; state,&#xa;  am.name as ref,&#xa;  am.period_id,&#xa;  am.date date_,&#xa;  am.id,&#xa;  ail.name ,&#xa;  ail.price_subtotal &#x2a; &#x28;1-atx.amount&#x29; tax_amount,&#xa;  ail.product_id,&#xa;  ail.uos_id,&#xa;  0 amount_currency,&#xa;  ail.quantity,&#xa;  ail.ef_id,&#xa;  ail.ef_list_id&#xa;FROM public.account_invoice_line ail&#xa;inner JOIN public.account_invoice ai on ail.invoice_id &#x3d; ai.id&#xa;left outer join public.account_account_tax_default_rel aatdr on ail.account_id &#x3d; aatdr.account_id&#xa;left outer join public.account_tax atx on aatdr.tax_id&#x3d;atx.id&#xa;left outer join public.account_move am on ail.ef_list_id &#x3d; am.ef_id&#xa;where &#xa;--ai.type &#x3d; &#x27;out_invoice&#x27; and &#xa;ai.ef_id is not null and ai.ef_id&#x3c;&#x3e;0 and ai.date_invoice &#x3c;&#x27;20160101&#x27; --and am.period_id is null&#xa;UNION ALL&#xa;SELECT  -- &#x432;&#x441;&#x442;&#x430;&#x432;&#x43b;&#x44f;&#x435;&#x43c; &#x43d;&#x430;&#x43b;&#x43e;&#x433;&#xa;  ail.company_id,&#xa;  null&#x3a;&#x3a;NUMERIC currency_id,&#xa;  ail.partner_id,&#xa;  CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN ail.price_subtotal &#x2a; atx.amount&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN ail.price_subtotal &#x2a; atx.amount END credit,&#xa;  CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN ail.price_subtotal &#x2a; atx.amount&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN ail.price_subtotal &#x2a; atx.amount&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN null&#x3a;&#x3a;NUMERIC END debit,&#xa;  &#x27;normal&#x27; as centralisation,&#xa;  ai.journal_id,&#xa;  atx.account_paid_id,&#xa;  atx.ref_tax_code_id tax_code_id,&#xa;  &#x27;valid&#x27; state,&#xa;  am.name as ref,&#xa;  am.period_id,&#xa;  am.date date_,&#xa;  am.id,&#xa;  atx.name ,&#xa;  ail.price_subtotal &#x2a; atx.amount tax_amount,&#xa;  null&#x3a;&#x3a;INTEGER  product_id,&#xa;  null&#x3a;&#x3a;INTEGER  uos_id,&#xa;  0 amount_currency,&#xa;  1 quantity,&#xa;  ail.ef_id,&#xa;  ail.ef_list_id&#xa; -- ,aatdr.tax_id&#xa; -- , ai.id&#xa;--  , ail.account_id&#xa;FROM public.account_invoice_line ail&#xa;inner JOIN public.account_invoice ai on ail.invoice_id &#x3d; ai.id&#xa;left outer join public.account_account_tax_default_rel aatdr on ail.account_id &#x3d; aatdr.account_id&#xa;left outer join public.account_tax atx on aatdr.tax_id&#x3d;atx.id&#xa;left outer join public.account_move am on ail.ef_list_id &#x3d; am.ef_id&#xa;where &#xa;--ai.type &#x3d; &#x27;out_invoice&#x27; and &#xa;ai.ef_id is not null and ai.ef_id&#x3c;&#x3e;0 and ai.date_invoice &#x3c;&#x27;20160101&#x27; --and am.period_id is null&#xa;UNION ALL&#xa;SELECT  -- &#x432;&#x441;&#x442;&#x430;&#x432;&#x43b;&#x44f;&#x435;&#x43c; &#x43f;&#x440;&#x43e;&#x434;&#x430;&#x436;&#x443;&#xa;  ail.company_id,&#xa;   null&#x3a;&#x3a;NUMERIC currency_id,&#xa;  ail.partner_id,&#xa;  sum&#x28;CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN ail.price_subtotal&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN ail.price_subtotal&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN null&#x3a;&#x3a;NUMERIC END&#x29; credit,&#xa;  sum&#x28;CASE WHEN  ai.type &#x3d; &#x27;out_invoice&#x27; THEN ail.price_subtotal&#xa;       WHEN  ai.type &#x3d; &#x27;in_invoice&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;out_refund&#x27;  THEN null&#x3a;&#x3a;NUMERIC&#xa;       WHEN  ai.type &#x3d; &#x27;in_refund&#x27;   THEN ail.price_subtotal END&#x29; debit,&#xa;  &#x27;normal&#x27; as centralisation,&#xa;  ai.journal_id,&#xa;  ai.account_id,&#xa;  NULL&#x3a;&#x3a;INTEGER  tax_code_id,&#xa;  &#x27;valid&#x27; state,&#xa;  am.name as ref,&#xa;  am.period_id,&#xa;  am.date date_,&#xa;  am.id,&#xa;  &#x27;&#x2f;&#x27; ,&#xa;  null&#x3a;&#x3a;NUMERIC tax_amount,&#xa;  null&#x3a;&#x3a;INTEGER product_id,&#xa;  null&#x3a;&#x3a;INTEGER uos_id,&#xa;  0 amount_currency,&#xa;  1 quantity,&#xa;  null&#x3a;&#x3a;INTEGER ef_id, -- ail.ef_id,&#xa;  ail.ef_list_id&#xa;FROM public.account_invoice_line ail&#xa;inner JOIN public.account_invoice ai on ail.invoice_id &#x3d; ai.id&#xa;left outer join public.account_account_tax_default_rel aatdr on ail.account_id &#x3d; aatdr.account_id&#xa;left outer join public.account_tax atx on aatdr.tax_id&#x3d;atx.id&#xa;left outer join public.account_move am on ail.ef_list_id &#x3d; am.ef_id&#xa;where &#xa;--ai.type &#x3d; &#x27;out_invoice&#x27; and &#xa;ai.ef_id is not null and ai.ef_id&#x3c;&#x3e;0 and ai.date_invoice &#x3c;&#x27;20160101&#x27; --and am.period_id is null&#xa;group by   &#xa;  ail.company_id,&#xa;  ail.partner_id,&#xa;  ai.journal_id,&#xa;  ai.account_id,&#xa;  am.name,&#xa;  am.period_id,&#xa;  am.date ,&#xa;  am.id,&#xa;  ail.ef_list_id&#xa;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>564</xloc>
+      <yloc>141</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
