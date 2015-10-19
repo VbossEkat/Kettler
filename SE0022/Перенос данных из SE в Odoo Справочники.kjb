@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 15&#x3a;51&#x3a;17.554</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;07 14&#x3a;48&#x3a;51.872</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;16 14&#x3a;53&#x3a;31.867</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -887,7 +887,7 @@
       <to>res_partner_Title from kat_kln to </to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -905,7 +905,7 @@
       <to>read from KAT_PPL to res_partner &#x28;1&#x29;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -986,7 +986,7 @@
       <to>KAT_SKL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>

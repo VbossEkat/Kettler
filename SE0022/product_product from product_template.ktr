@@ -69,7 +69,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;06&#x2f;02 17&#x3a;30&#x3a;35.677</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;01 12&#x3a;52&#x3a;16.206</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;16 14&#x3a;53&#x3a;06.093</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -450,7 +450,7 @@
       </value>
       <value>
         <name>default_code</name>
-        <rename>Skucode</rename>
+        <rename>ef_def_code</rename>
         <update>Y</update>
       </value>
       <value>
@@ -479,7 +479,7 @@
            <schema_name/>
            </partitioning>
     <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id&#xa;, warranty&#xa;, uos_id&#xa;, list_price&#xa;, weight&#xa;, color&#xa;, image&#xa;, write_uid&#xa;, mes_type&#xa;, uom_id&#xa;, description_purchase&#xa;, create_date&#xa;, uos_coeff&#xa;, create_uid&#xa;, sale_ok&#xa;, categ_id&#xa;, product_manager&#xa;, message_last_post&#xa;, company_id&#xa;, &#x22;state&#x22;&#xa;, uom_po_id&#xa;, description_sale&#xa;, description&#xa;, weight_net&#xa;, volume&#xa;, write_date&#xa;, active&#xa;, rental&#xa;, image_medium&#xa;, &#x22;name&#x22;&#xa;, &#x22;type&#x22;&#xa;, image_small&#xa;, track_all&#xa;, loc_row&#xa;, track_outgoing&#xa;, loc_rack&#xa;, loc_case&#xa;, track_incoming&#xa;, sale_delay&#xa;, purchase_ok&#xa;, ef_id ef_id0&#xa;FROM product_template&#xa;where  ef_id is not null and ef_id &#x3c;&#x3e; 0  --&#x3d; 1069329630&#xa;order by ef_id&#xa;</sql>
+    <sql>SELECT&#xa;  id&#xa;, warranty&#xa;, uos_id&#xa;, list_price&#xa;, weight&#xa;, color&#xa;, image&#xa;, write_uid&#xa;, mes_type&#xa;, uom_id&#xa;, description_purchase&#xa;, create_date&#xa;, uos_coeff&#xa;, create_uid&#xa;, sale_ok&#xa;, categ_id&#xa;, product_manager&#xa;, message_last_post&#xa;, company_id&#xa;, &#x22;state&#x22;&#xa;, uom_po_id&#xa;, description_sale&#xa;, description&#xa;, weight_net&#xa;, volume&#xa;, write_date&#xa;, active&#xa;, rental&#xa;, image_medium&#xa;, &#x22;name&#x22;&#xa;, &#x22;type&#x22;&#xa;, image_small&#xa;, track_all&#xa;, loc_row&#xa;, track_outgoing&#xa;, loc_rack&#xa;, loc_case&#xa;, track_incoming&#xa;, sale_delay&#xa;, purchase_ok&#xa;, ef_id ef_id0&#xa;, ef_def_code&#xa;FROM product_template&#xa;where  ef_id is not null and ef_id &#x3c;&#x3e; 0  --&#x3d; 1069329630&#xa;order by ef_id&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
