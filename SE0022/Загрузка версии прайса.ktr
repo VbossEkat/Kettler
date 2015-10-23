@@ -1,11 +1,11 @@
 <transformation>
   <info>
-    <name>product_product from product_template</name>
+    <name>&#x417;&#x430;&#x433;&#x440;&#x443;&#x437;&#x43a;&#x430; &#x432;&#x435;&#x440;&#x441;&#x438;&#x438; &#x43f;&#x440;&#x430;&#x439;&#x441;&#x430;</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>1</trans_status>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -54,7 +54,7 @@
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
     <shared_objects_file/>
-    <capture_step_performance>Y</capture_step_performance>
+    <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
     <dependencies>
@@ -67,9 +67,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;06&#x2f;02 17&#x3a;30&#x3a;35.677</created_date>
+  <created_date>2015&#x2f;10&#x2f;22 15&#x3a;27&#x3a;31.863</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;10&#x2f;20 14&#x3a;14&#x3a;31.002</modified_date>
+  <modified_date>2015&#x2f;10&#x2f;22 16&#x3a;24&#x3a;56.314</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -243,13 +243,306 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>SKU_BAR_NOT_NULL &#x415;&#x410;&#x41d;13</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>product_template</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 2</from><to>ins_upd product_product</to><enabled>Y</enabled> </hop>
-  <hop> <from>ins_upd product_product</from><to>Update product_template</to><enabled>Y</enabled> </hop>
-  <hop> <from>TVR_DEF &#x432;&#x435;&#x441; &#x43e;&#x431;&#x44a;&#x435;&#x43c;</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x417;&#x430;&#x433;&#x440;&#x443;&#x437;&#x43a;&#x430; &#x41f;&#x440;&#x430;&#x439;&#x441;&#x430;</from><to>&#x41e;&#x442;&#x441;&#x435;&#x43a;&#x430;&#x435;&#x43c; &#x43f;&#x443;&#x441;&#x442;&#x44b;&#x435;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41e;&#x442;&#x441;&#x435;&#x43a;&#x430;&#x435;&#x43c; &#x43f;&#x443;&#x441;&#x442;&#x44b;&#x435;</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>product_product</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x41e;&#x442;&#x441;&#x435;&#x43a;&#x430;&#x435;&#x43c; &#x43f;&#x443;&#x441;&#x442;&#x44b;&#x435;</from><to>Sort rows</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>&#x417;&#x430;&#x433;&#x440;&#x443;&#x437;&#x43a;&#x430; &#x41f;&#x440;&#x430;&#x439;&#x441;&#x430;</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding>windows-1251</encoding>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>&#x2f;home&#x2f;boss&#x2f;&#x417;&#x430;&#x433;&#x440;&#x443;&#x437;&#x43a;&#x438;&#x2f;&#x41f;&#x440;&#x430;&#x439;&#x441; &#x434;&#x438;&#x441;&#x442;&#x440;&#x438;&#x431;&#x44c;&#x44e;&#x442;&#x43e;&#x440;&#x441;&#x43a;&#x438;&#x439;   21.10  &#x43e;&#x432;&#x43e;&#x449;&#x438;  &#x43e;&#x433;&#x443;&#x440;&#x446;&#x44b; &#x43f;&#x43e;&#x432;&#x44b;&#x448;&#x435;&#x43d;&#x438;&#x435; , c 23.10  &#x43c;&#x44f;&#x441;&#x43d;&#x430;&#x44f; &#x43a;&#x43e;&#x43d;&#x441;&#x435;&#x440;&#x432;&#x430;&#x446;&#x438;&#x44f;.xls</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>&#x422;&#x413;</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x41d;&#x430;&#x437;&#x432;&#x430;&#x43d;&#x438;&#x435;</name>
+        <type>None</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x448;&#x442;&#x440;&#x438;&#x445;_&#x43a;&#x43e;&#x434;</name>
+        <type>BigNumber</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x43f;&#x443;&#x441;&#x442;&#x43e;</name>
+        <type>None</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x412;_&#x443;&#x43f;&#x430;&#x43a;&#x43e;&#x432;&#x43a;&#x435;</name>
+        <type>None</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x412;&#x435;&#x441;_&#x443;&#x43f;&#x430;&#x43a;&#x43e;&#x432;&#x43a;&#x430;_&#x431;&#x440;&#x443;&#x442;&#x442;&#x43e;</name>
+        <type>None</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x412;&#x435;&#x441;_&#x437;&#x430;&#x43a;&#x430;&#x437;&#x430;_&#x411;&#x420;&#x423;&#x422;&#x422;&#x41e;</name>
+        <type>None</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x43e;&#x431;&#x44a;&#x435;&#x43c;_&#x443;&#x43f;&#x430;&#x43a;&#x43e;&#x432;&#x43a;&#x438;_&#x43c;3</name>
+        <type>None</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x43e;&#x431;&#x44a;&#x435;&#x43c;</name>
+        <type>None</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>&#x426;&#x435;&#x43d;&#x430;_&#x437;&#x430;_&#x448;&#x442;</name>
+        <type>None</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>&#x446;&#x435;&#x43d;&#x44b;</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>Y</error_ignored>
+    <error_line_skipped>Y</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <spreadsheet_type>POI</spreadsheet_type>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>77</xloc>
+      <yloc>173</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>&#x41e;&#x442;&#x441;&#x435;&#x43a;&#x430;&#x435;&#x43c; &#x43f;&#x443;&#x441;&#x442;&#x44b;&#x435;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Sort rows</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29; 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>&#x448;&#x442;&#x440;&#x438;&#x445;_&#x43a;&#x43e;&#x434;</leftvalue>
+   <function>IS NOT NULL</function>
+   <rightvalue/>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>&#x448;&#x442;&#x440;&#x438;&#x445;_&#x43a;&#x43e;&#x434;</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Integer</type><text>4606180007257</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>204</xloc>
+      <yloc>173</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>726</xloc>
+      <yloc>173</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>203</xloc>
+      <yloc>70</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>product_product</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>OdooSE0022</connection>
+    <sql>SELECT&#xa;  id&#xa;, ean13&#xa;, cast&#x28;ean13 as bigint&#x29; ean13_int&#xa;, default_code&#xa;, name_template&#xa;, product_tmpl_id&#xa;, image_variant&#xa;, active&#xa;, ef_id&#xa;FROM product_product&#xa;where default_code &#x3d; &#x27;640w081&#x27;&#xa;order by ean13&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>603</xloc>
+      <yloc>73</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Merge Join</name>
     <type>MergeJoin</type>
@@ -262,25 +555,25 @@
            <schema_name/>
            </partitioning>
 <join_type>LEFT OUTER</join_type>
-<step1>product_template</step1>
-<step2>SKU_BAR_NOT_NULL &#x415;&#x410;&#x41d;13</step2>
+<step1>Sort rows</step1>
+<step2>product_product</step2>
     <keys_1>
-      <key>ef_id0</key>
+      <key>&#x448;&#x442;&#x440;&#x438;&#x445;_&#x43a;&#x43e;&#x434;</key>
     </keys_1>
     <keys_2>
-      <key>ef_id2</key>
+      <key>ean13_int</key>
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>247</xloc>
-      <yloc>173</yloc>
+      <xloc>584</xloc>
+      <yloc>170</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Merge Join 2</name>
-    <type>MergeJoin</type>
+    <name>Sort rows</name>
+    <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -289,26 +582,32 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<join_type>LEFT OUTER</join_type>
-<step1>Merge Join</step1>
-<step2>TVR_DEF &#x432;&#x435;&#x441; &#x43e;&#x431;&#x44a;&#x435;&#x43c;</step2>
-    <keys_1>
-      <key>ef_id0</key>
-    </keys_1>
-    <keys_2>
-      <key>ef_id1</key>
-    </keys_2>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>&#x448;&#x442;&#x440;&#x438;&#x445;_&#x43a;&#x43e;&#x434;</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>445</xloc>
-      <yloc>174</yloc>
+      <xloc>376</xloc>
+      <yloc>171</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>SKU_BAR_NOT_NULL &#x415;&#x410;&#x41d;13</name>
-    <type>TableInput</type>
+    <name>&#x41f;&#x440;&#x435;&#x43e;&#x431;&#x440;&#x430;&#x437;&#x443;&#x435;&#x43c; &#x428;&#x41a;</name>
+    <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -317,178 +616,26 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  Skucode&#xa;, substring&#x28;LTRIM&#x28;RTRIM&#x28;upc&#x29;&#x29;,1,13&#x29; upc1&#xa;, cast&#x28;Skuid as int&#x29; ef_id2&#xa;--, &#x2a;&#xa;FROM dbo.SKU_BAR_NOT_NULL&#xa;--where Skucode like &#x27;&#x25;073&#x25;&#x27;&#xa;order by skuid&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>&#x448;&#x442;&#x440;&#x438;&#x445;_&#x43a;&#x43e;&#x434;</name>
+        <rename>&#x448;&#x43a;_&#x441;&#x442;&#x440;</rename>
+        <type>String</type>
+        <length>13</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>244</xloc>
-      <yloc>49</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>TVR_DEF &#x432;&#x435;&#x441; &#x43e;&#x431;&#x44a;&#x435;&#x43c;</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>PR_Euras</connection>
-    <sql>SELECT&#xa;  &#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434; ef_id1&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x435;&#x441;&#x411;&#x440;&#x443;&#x442;&#x442;&#x43e; weight1&#xa;, &#x422;&#x43e;&#x432;&#x412;&#x435;&#x441;&#x41d;&#x435;&#x442;&#x442;&#x43e; weight_net1&#xa;--, &#x422;&#x43e;&#x432;&#x417;&#x43e;&#x43d;&#x430;&#x425;&#x440;&#x430;&#x43d;&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;1&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;2&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;3&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;4&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;5&#xa;--, &#x414;&#x43e;&#x43f;&#x425;&#x430;&#x440;6&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;1&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;2&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;3&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;4&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;5&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;6&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;7&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;8&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;9&#xa;--, &#x414;&#x43e;&#x43f;&#x423;&#x43f;&#x430;&#x43a;10&#xa;, &#x41e;&#x431;&#x44a;&#x435;&#x43c; volume1&#xa;--, &#x41c;&#x438;&#x43d;&#x41e;&#x441;&#x442;&#xa;, substring&#x28;rtrim&#x28;ltrim&#x28;&#x41a;&#x43e;&#x434;&#x41f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x449;&#x438;&#x43a;&#x430;&#x29;&#x29;,1,13&#x29; ean131&#xa;--, &#x414;&#x43e;&#x43f;&#xa;--, &#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434;&#xa;--, &#x421;&#x442;&#x440;&#x430;&#x43d;&#x430;&#xa;--, &#x413;&#x422;&#x414;&#xa;--, &#x421;&#x435;&#x440;&#x442;&#x438;&#x444;&#xa;--, &#x417;&#x430;&#x43a;&#x443;&#x43f;&#xa; -- , &#x421;&#x440;&#x43e;&#x43a;&#x416; warranty1&#xa;FROM TVR_DEF&#xa;order by &#x422;&#x43e;&#x432;&#x41a;&#x43e;&#x434;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>436</xloc>
-      <yloc>14</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Update product_template</name>
-    <type>Update</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <skip_lookup>N</skip_lookup>
-    <commit>10000</commit>
-    <use_batch>Y</use_batch>
-    <error_ignored>N</error_ignored>
-    <ignore_flag_field/>
-    <lookup>
-      <schema>public</schema>
-      <table>product_template</table>
-      <key>
-        <name>ef_id0</name>
-        <field>ef_id</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-        </key>
-      <value>
-        <name>weight</name>
-        <rename>weight1</rename>
-        </value>
-      <value>
-        <name>weight_net</name>
-        <rename>weight_net1</rename>
-        </value>
-      <value>
-        <name>volume</name>
-        <rename>volume1</rename>
-        </value>
-      </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>754</xloc>
-      <yloc>175</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>ins_upd product_product</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <commit>10000</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>public</schema>
-      <table>product_product</table>
-      <key>
-        <name>ef_id0</name>
-        <field>ef_id</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>active</name>
-        <rename>active</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>product_tmpl_id</name>
-        <rename>id</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>name_template</name>
-        <rename>name</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ean13</name>
-        <rename>upc1</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>default_code</name>
-        <rename>ef_def_code</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ef_id</name>
-        <rename>ef_id0</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>583</xloc>
-      <yloc>214</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>product_template</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>OdooSE0022</connection>
-    <sql>SELECT&#xa;  id&#xa;, warranty&#xa;, uos_id&#xa;, list_price&#xa;, weight&#xa;, color&#xa;, image&#xa;, write_uid&#xa;, mes_type&#xa;, uom_id&#xa;, description_purchase&#xa;, create_date&#xa;, uos_coeff&#xa;, create_uid&#xa;, sale_ok&#xa;, categ_id&#xa;, product_manager&#xa;, message_last_post&#xa;, company_id&#xa;, &#x22;state&#x22;&#xa;, uom_po_id&#xa;, description_sale&#xa;, description&#xa;, weight_net&#xa;, volume&#xa;, write_date&#xa;, active&#xa;, rental&#xa;, image_medium&#xa;, &#x22;name&#x22;&#xa;, &#x22;type&#x22;&#xa;, image_small&#xa;, track_all&#xa;, loc_row&#xa;, track_outgoing&#xa;, loc_rack&#xa;, loc_case&#xa;, track_incoming&#xa;, sale_delay&#xa;, purchase_ok&#xa;, ef_id ef_id0&#xa;, ef_def_code&#xa;FROM product_template&#xa;where  ef_id is not null and ef_id &#x3c;&#x3e; 0  --&#x3d; 1069329630&#xa;order by ef_id&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>73</xloc>
-      <yloc>177</yloc>
+      <xloc>408</xloc>
+      <yloc>44</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
